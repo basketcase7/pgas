@@ -1,0 +1,10 @@
+.git
+.env
+secrets
+docs
+requests
+**/build
+**/.gradle
+.idea
+applicant-web
+staff-panel

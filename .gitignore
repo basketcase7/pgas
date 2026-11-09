@@ -1,0 +1,22 @@
+# секреты — никогда не коммитятся
+.env
+secrets/
+
+# сборка
+.gradle/
+build/
+**/build/
+out/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.kotlin/
+
+# служебное
+*.log
+docs/build/
