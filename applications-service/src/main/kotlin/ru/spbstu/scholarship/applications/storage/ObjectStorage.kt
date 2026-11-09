@@ -47,6 +47,12 @@ class ObjectStorage(
         return UploadForm("/$bucket/", fields, expires)
     }
 
+    /**
+     * Ссылка на скачивание (presigned GET, 5 минут). Файл отдаётся как вложение:
+     * заголовок Content-Disposition: attachment ставит nginx клиентского контейнера
+     * (SeaweedFS не поддерживает параметр response-content-disposition), имя файла
+     * подставляет атрибут download у ссылки в интерфейсе.
+     */
     fun presignDownload(objectKey: String, ttl: Duration = DOWNLOAD_TTL): String {
         val url = client.getPresignedObjectUrl(
             GetPresignedObjectUrlArgs.builder().method(Method.GET).bucket(bucket).`object`(objectKey)

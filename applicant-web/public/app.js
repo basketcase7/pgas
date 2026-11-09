@@ -214,7 +214,7 @@ async function appPage(id) {
       ? h('table', {}, h('tbody', {}, ...a.attachments.map(f => h('tr', {},
           h('td', {}, DOC_RU[f.doc_type] || f.doc_type), h('td', {}, f.file_name),
           h('td', {}, Math.round(f.size_bytes / 1024) + ' КБ'),
-          h('td', {}, h('a', { href: f.download_url, target: '_blank', rel: 'noopener' }, 'скачать'))))))
+          h('td', {}, h('a', { href: f.download_url, download: f.file_name }, 'скачать'))))))
       : h('p', { class: 'muted' }, 'Нет вложений'),
     editable ? uploadForm(a.id, () => appPage(id)) : null);
 

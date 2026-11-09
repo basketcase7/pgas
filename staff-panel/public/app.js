@@ -108,7 +108,7 @@ async function appPage(id) {
       h('div', {}, 'Обоснование'), h('div', { style: 'white-space:pre-wrap' }, a.statement),
       h('div', {}, 'Баллы'), h('div', {}, a.scores ? (a.scores.map(s => `${s.title}: ${s.value} из ${s.max_score}`).join('; ') || '—') : 'нет доступа'),
       h('div', {}, 'Вложения'), h('div', {}, a.attachments
-        ? (a.attachments.length ? a.attachments.map(f => h('div', {}, h('a', { href: f.download_url, target: '_blank', rel: 'noopener' }, `${DOC_RU[f.doc_type] || f.doc_type}: ${f.file_name}`))) : '—')
+        ? (a.attachments.length ? a.attachments.map(f => h('div', {}, h('a', { href: f.download_url, download: f.file_name }, `${DOC_RU[f.doc_type] || f.doc_type}: ${f.file_name}`))) : '—')
         : 'нет доступа'),
     ));
   const nodes = [card];
