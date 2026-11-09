@@ -1,0 +1,42 @@
+server:
+  port: 8443
+  # TLS терминируется на шлюзе (B-01/B-02). Сертификат и ключ — файлы вне репозитория.
+  ssl:
+    enabled: true
+    certificate: file:${TLS_CERT_PATH}
+    certificate-private-key: file:${TLS_KEY_PATH}
+    protocol: TLS
+    enabled-protocols: TLSv1.3,TLSv1.2
+
+spring:
+  application.name: api-gateway
+  main.banner-mode: off
+  data.redis:
+    host: ${REDIS_HOST:redis}
+    port: 6379
+    username: ${REDIS_USERNAME}
+    password: ${REDIS_PASSWORD}
+    timeout: 2s
+  cloud.gateway.server.webflux:
+    httpclient:
+      connect-timeout: 3000
+      response-timeout: 30s
+
+management:
+  server:
+    port: 8079
+    ssl.enabled: false
+  endpoints.web.exposure.include: health
+  health.redis.enabled: false
+
+gateway:
+  jwt-public-key-b64: ${JWT_PUBLIC_KEY_B64}
+  trusted-proxies: ${TRUSTED_PROXIES:}
+  routes:
+    auth: ${AUTH_SERVICE_URL}
+    applications: ${APPLICATIONS_SERVICE_URL}
+    review: ${REVIEW_SERVICE_URL}
+
+logging:
+  level:
+    root: INFO
