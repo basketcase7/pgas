@@ -1,0 +1,101 @@
+# Заглушка корпоративного каталога R-09 (LDAP/AD).
+# Каталог — источник истины о статусе обучающегося: employeeType
+#   student-active   — действующий обучающийся (может подавать заявки);
+#   student-expelled — отчислен (OP-02 → 403);
+#   staff            — сотрудник.
+# departmentNumber — код подразделения (units.code). Паролей в каталоге нет:
+# аутентификация выполняется auth-service по Argon2id-хешу в БД.
+
+dn: ou=people,dc=spbstu,dc=local
+objectClass: organizationalUnit
+ou: people
+
+dn: uid=stud001,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: stud001
+cn: Иванов Иван Иванович
+sn: Иванов
+mail: stud001@example.edu
+employeeType: student-active
+departmentNumber: ICST
+
+dn: uid=stud002,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: stud002
+cn: Петрова Анна Сергеевна
+sn: Петрова
+mail: stud002@example.edu
+employeeType: student-active
+departmentNumber: ICST
+
+dn: uid=stud003,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: stud003
+cn: Сидоров Пётр Алексеевич
+sn: Сидоров
+mail: stud003@example.edu
+employeeType: student-active
+departmentNumber: IEE
+
+dn: uid=stud004,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: stud004
+cn: Орлов Кирилл Павлович
+sn: Орлов
+mail: stud004@example.edu
+employeeType: student-expelled
+departmentNumber: ICST
+
+dn: uid=stud010,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: stud010
+cn: Новикова Мария Олеговна
+sn: Новикова
+mail: stud010@example.edu
+employeeType: student-active
+departmentNumber: ICST
+
+dn: uid=emp001,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: emp001
+cn: Смирнова Ольга Викторовна
+sn: Смирнова
+mail: emp001@example.edu
+employeeType: staff
+departmentNumber: ICST
+
+dn: uid=emp002,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: emp002
+cn: Волков Дмитрий Игоревич
+sn: Волков
+mail: emp002@example.edu
+employeeType: staff
+departmentNumber: IEE
+
+dn: uid=chair001,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: chair001
+cn: Кузнецов Андрей Николаевич
+sn: Кузнецов
+mail: chair001@example.edu
+employeeType: staff
+departmentNumber: ICST
+
+dn: uid=sup001,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: sup001
+cn: Морозова Елена Андреевна
+sn: Морозова
+mail: sup001@example.edu
+employeeType: staff
+departmentNumber: ICST
+
+dn: uid=chair002,ou=people,dc=spbstu,dc=local
+objectClass: inetOrgPerson
+uid: chair002
+cn: Белова Ирина Сергеевна
+sn: Белова
+mail: chair002@example.edu
+employeeType: staff
+departmentNumber: IEE

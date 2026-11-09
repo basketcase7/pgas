@@ -1,0 +1,357 @@
+# =====================================================================
+#  Сервис заявок на материальную поддержку и ПГАС — локальное развёртывание (ЛР № 3).
+#  Имена сервисов совпадают с контейнерами контейнерной диаграммы ЛР № 2.
+#  Запуск:  docker compose up -d --build      Остановка: docker compose down
+#  Сброс БД и всех данных в исходное состояние: docker compose down -v
+#  llm-orchestrator по условию ЛР3 не разворачивается (OP-06/OP-11 → 501).
+# =====================================================================
+name: scholarship
+
+x-java-service: &java-service
+  restart: unless-stopped
+  networks: [backend]
+  environment: &java-env
+    TZ: Europe/Moscow
+    JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=70 -XX:+ExitOnOutOfMemoryError"
+    JWT_PUBLIC_KEY_B64: ${JWT_PUBLIC_KEY_B64:?}
+  healthcheck:
+    test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8079/actuator/health"]
+    interval: 10s
+    timeout: 5s
+    retries: 30
+    start_period: 30s
+
+services:
+  # ------------------------------------------------------------------ клиенты (TB-01)
+  applicant-web:
+    build: ./applicant-web
+    restart: unless-stopped
+    depends_on:
+      api-gateway: { condition: service_healthy }
+    ports: ["127.0.0.1:8080:8080"]
+    volumes:
+      - ./secrets/gateway.crt:/etc/nginx/certs/gateway.crt:ro
+    networks:
+      frontend: { ipv4_address: 172.28.10.10 }
+      storage-edge: {}
+
+  staff-panel:
+    build: ./staff-panel
+    restart: unless-stopped
+    depends_on:
+      api-gateway: { condition: service_healthy }
+    ports: ["127.0.0.1:8081:8080"]
+    volumes:
+      - ./secrets/gateway.crt:/etc/nginx/certs/gateway.crt:ro
+    networks:
+      frontend: { ipv4_address: 172.28.10.11 }
+      storage-edge: {}
+
+  # ------------------------------------------------------------------ шлюз (TB-02)
+  api-gateway:
+    <<: *java-service
+    build: { context: ., dockerfile: api-gateway/Dockerfile }
+    depends_on:
+      redis: { condition: service_healthy }
+    ports: ["127.0.0.1:8443:8443"]
+    networks: [frontend, backend]
+    volumes:
+      - ./secrets/gateway.crt:/run/secrets/gateway.crt:ro
+      - ./secrets/gateway.key:/run/secrets/gateway.key:ro
+    environment:
+      <<: *java-env
+      TLS_CERT_PATH: /run/secrets/gateway.crt
+      TLS_KEY_PATH: /run/secrets/gateway.key
+      REDIS_USERNAME: gateway
+      REDIS_PASSWORD: ${REDIS_GATEWAY_PASSWORD:?}
+      # X-Real-IP принимается только от этих адресов (nginx клиентских контейнеров)
+      TRUSTED_PROXIES: 172.28.10.10,172.28.10.11
+      AUTH_SERVICE_URL: http://auth-service:8080
+      APPLICATIONS_SERVICE_URL: http://applications-service:8080
+      REVIEW_SERVICE_URL: http://review-service:8080
+
+  # ------------------------------------------------------------------ прикладные сервисы
+  auth-service:
+    <<: *java-service
+    build: { context: ., dockerfile: auth-service/Dockerfile }
+    depends_on:
+      liquibase: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+      kafka-init: { condition: service_completed_successfully }
+      ldap: { condition: service_healthy }
+    environment:
+      <<: *java-env
+      DB_URL: jdbc:postgresql://postgres:5432/scholarship
+      DB_USER: svc_auth
+      DB_PASSWORD: ${SVC_AUTH_DB_PASSWORD:?}
+      REDIS_USERNAME: auth
+      REDIS_PASSWORD: ${REDIS_AUTH_PASSWORD:?}
+      KAFKA_USERNAME: auth
+      KAFKA_PASSWORD: ${KAFKA_AUTH_PASSWORD:?}
+      JWT_PRIVATE_KEY_B64: ${JWT_PRIVATE_KEY_B64:?}
+      PASSWORD_PEPPER_B64: ${PASSWORD_PEPPER_B64:?}
+      DEMO_USERS_PASSWORD: ${DEMO_USERS_PASSWORD:-}
+      LDAP_URL: ldap://ldap:389
+      LDAP_BIND_DN: cn=readonly,dc=spbstu,dc=local
+      LDAP_BIND_PASSWORD: ${LDAP_READONLY_PASSWORD:?}
+      NOTIFIER_SERVICE_TOKEN: ${NOTIFIER_SERVICE_TOKEN:?}
+      REFRESH_COOKIE_SECURE: "true"
+
+  applications-service:
+    <<: *java-service
+    build: { context: ., dockerfile: applications-service/Dockerfile }
+    depends_on:
+      liquibase: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+      kafka-init: { condition: service_completed_successfully }
+      ldap: { condition: service_healthy }
+      object-storage: { condition: service_healthy }
+    environment:
+      <<: *java-env
+      DB_URL: jdbc:postgresql://postgres:5432/scholarship
+      DB_USER: svc_applications
+      DB_PASSWORD: ${SVC_APPLICATIONS_DB_PASSWORD:?}
+      REDIS_USERNAME: applications
+      REDIS_PASSWORD: ${REDIS_APPLICATIONS_PASSWORD:?}
+      KAFKA_USERNAME: applications
+      KAFKA_PASSWORD: ${KAFKA_APPLICATIONS_PASSWORD:?}
+      LDAP_URL: ldap://ldap:389
+      LDAP_BIND_DN: cn=readonly,dc=spbstu,dc=local
+      LDAP_BIND_PASSWORD: ${LDAP_READONLY_PASSWORD:?}
+      S3_ENDPOINT: http://object-storage:8333
+      S3_BUCKET: applications-attachments
+      S3_ACCESS_KEY: ${S3_APPLICATIONS_ACCESS_KEY:?}
+      S3_SECRET_KEY: ${S3_APPLICATIONS_SECRET_KEY:?}
+
+  review-service:
+    <<: *java-service
+    build: { context: ., dockerfile: review-service/Dockerfile }
+    depends_on:
+      liquibase: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+      kafka-init: { condition: service_completed_successfully }
+    environment:
+      <<: *java-env
+      DB_URL: jdbc:postgresql://postgres:5432/scholarship
+      DB_USER: svc_review
+      DB_PASSWORD: ${SVC_REVIEW_DB_PASSWORD:?}
+      REDIS_USERNAME: review
+      REDIS_PASSWORD: ${REDIS_REVIEW_PASSWORD:?}
+      KAFKA_USERNAME: review
+      KAFKA_PASSWORD: ${KAFKA_REVIEW_PASSWORD:?}
+
+  notifier:
+    <<: *java-service
+    build: { context: ., dockerfile: notifier/Dockerfile }
+    depends_on:
+      kafka-init: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+      mailpit: { condition: service_started }
+      auth-service: { condition: service_healthy }
+    environment:
+      <<: *java-env
+      REDIS_USERNAME: notifier
+      REDIS_PASSWORD: ${REDIS_NOTIFIER_PASSWORD:?}
+      KAFKA_USERNAME: notifier
+      KAFKA_PASSWORD: ${KAFKA_NOTIFIER_PASSWORD:?}
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_USER: ${SMTP_USER:?}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:?}
+      AUTH_SERVICE_URL: http://auth-service:8080
+      NOTIFIER_SERVICE_TOKEN: ${NOTIFIER_SERVICE_TOKEN:?}
+      RESET_LINK_BASE: http://localhost:8080/#/reset
+      APPLICANT_WEB_URL: http://localhost:8080
+
+  # ------------------------------------------------------------------ брокер (TB-06)
+  kafka:
+    image: apache/kafka:3.9.1
+    restart: unless-stopped
+    networks: [backend]
+    volumes: [kafka-data:/var/lib/kafka/data]
+    environment:
+      CLUSTER_ID: "scholarship-kraft-cluster-01"
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      # SASL — единственный листенер, доступный другим контейнерам; BROKER и CONTROLLER
+      # привязаны к localhost внутри контейнера брокера
+      KAFKA_LISTENERS: SASL://:9092,BROKER://localhost:9091,CONTROLLER://localhost:9093
+      KAFKA_ADVERTISED_LISTENERS: SASL://kafka:9092,BROKER://localhost:9091
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: SASL:SASL_PLAINTEXT,BROKER:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: BROKER
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_SASL_ENABLED_MECHANISMS: PLAIN
+      KAFKA_LISTENER_NAME_SASL_PLAIN_SASL_JAAS_CONFIG: >-
+        org.apache.kafka.common.security.plain.PlainLoginModule required
+        user_admin="${KAFKA_ADMIN_PASSWORD:?}"
+        user_applications="${KAFKA_APPLICATIONS_PASSWORD:?}"
+        user_review="${KAFKA_REVIEW_PASSWORD:?}"
+        user_auth="${KAFKA_AUTH_PASSWORD:?}"
+        user_notifier="${KAFKA_NOTIFIER_PASSWORD:?}";
+      # авторизация по ACL; без явного разрешения доступ запрещён
+      KAFKA_AUTHORIZER_CLASS_NAME: org.apache.kafka.metadata.authorizer.StandardAuthorizer
+      KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "false"
+      KAFKA_SUPER_USERS: User:admin;User:ANONYMOUS
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_HEAP_OPTS: "-Xms256m -Xmx512m"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9091 >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 20s
+
+  # одноразовый контейнер: топики, DLT и ACL для учётных записей сервисов
+  kafka-init:
+    image: apache/kafka:3.9.1
+    networks: [backend]
+    depends_on:
+      kafka: { condition: service_healthy }
+    volumes: [./kafka/init-topics.sh:/init/init-topics.sh:ro]
+    entrypoint: ["sh", "/init/init-topics.sh"]
+    environment:
+      KAFKA_ADMIN_PASSWORD: ${KAFKA_ADMIN_PASSWORD:?}
+    restart: "no"
+
+  # веб-интерфейс для демонстрации сообщений в топиках (на защите)
+  kafka-ui:
+    image: provectuslabs/kafka-ui:v0.7.2
+    restart: unless-stopped
+    networks: [backend]
+    depends_on:
+      kafka-init: { condition: service_completed_successfully }
+    ports: ["127.0.0.1:8090:8080"]
+    environment:
+      KAFKA_CLUSTERS_0_NAME: scholarship
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: SASL_PLAINTEXT
+      KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM: PLAIN
+      KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG: >-
+        org.apache.kafka.common.security.plain.PlainLoginModule required
+        username="admin" password="${KAFKA_ADMIN_PASSWORD:?}";
+      DYNAMIC_CONFIG_ENABLED: "false"
+
+  # ------------------------------------------------------------------ хранилища (TB-03)
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    networks: [backend]
+    volumes: [pg-data:/var/lib/postgresql/data]
+    environment:
+      POSTGRES_DB: scholarship
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      TZ: Europe/Moscow
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d scholarship"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  # миграции Liquibase — отдельный одноразовый контейнер
+  liquibase:
+    image: liquibase/liquibase:4.31.1
+    networks: [backend]
+    depends_on:
+      postgres: { condition: service_healthy }
+    volumes: [./db:/liquibase/changelog:ro]
+    entrypoint: ["sh", "/liquibase/changelog/run-migrations.sh"]
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      SVC_AUTH_DB_PASSWORD: ${SVC_AUTH_DB_PASSWORD:?}
+      SVC_APPLICATIONS_DB_PASSWORD: ${SVC_APPLICATIONS_DB_PASSWORD:?}
+      SVC_REVIEW_DB_PASSWORD: ${SVC_REVIEW_DB_PASSWORD:?}
+      MIGRATION_CONTEXTS: demo
+    restart: "no"
+
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    networks: [backend]
+    volumes: [./redis/start.sh:/start.sh:ro]
+    entrypoint: ["sh", "/start.sh"]
+    environment:
+      REDIS_GATEWAY_PASSWORD: ${REDIS_GATEWAY_PASSWORD:?}
+      REDIS_AUTH_PASSWORD: ${REDIS_AUTH_PASSWORD:?}
+      REDIS_APPLICATIONS_PASSWORD: ${REDIS_APPLICATIONS_PASSWORD:?}
+      REDIS_REVIEW_PASSWORD: ${REDIS_REVIEW_PASSWORD:?}
+      REDIS_NOTIFIER_PASSWORD: ${REDIS_NOTIFIER_PASSWORD:?}
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli --no-auth-warning --user gateway --pass \"$$REDIS_GATEWAY_PASSWORD\" ping | grep -q PONG"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  # объектное хранилище вложений с S3 API (SeaweedFS вместо MinIO — см. журнал расхождений)
+  object-storage:
+    build: ./object-storage
+    restart: unless-stopped
+    # порт наружу не публикуется: браузер обращается к хранилищу через nginx своего веб-контейнера
+    networks: [backend, storage-edge]
+    volumes: [s3-data:/data]
+    environment:
+      S3_ADMIN_ACCESS_KEY: ${S3_ADMIN_ACCESS_KEY:?}
+      S3_ADMIN_SECRET_KEY: ${S3_ADMIN_SECRET_KEY:?}
+      S3_APPLICATIONS_ACCESS_KEY: ${S3_APPLICATIONS_ACCESS_KEY:?}
+      S3_APPLICATIONS_SECRET_KEY: ${S3_APPLICATIONS_SECRET_KEY:?}
+      S3_BUCKET: applications-attachments
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/bucket-ready"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 10s
+
+  # ------------------------------------------------------------------ заглушки внешних систем (TB-04)
+  # R-09: корпоративный каталог учётных записей
+  ldap:
+    image: osixia/openldap:1.5.0
+    restart: unless-stopped
+    networks: [backend]
+    command: --copy-service
+    volumes:
+      - ./ldap/50-people.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/50-people.ldif:ro
+    environment:
+      LDAP_ORGANISATION: "SPbPU"
+      LDAP_DOMAIN: "spbstu.local"
+      LDAP_ADMIN_PASSWORD: ${LDAP_ADMIN_PASSWORD:?}
+      LDAP_READONLY_USER: "true"
+      LDAP_READONLY_USER_USERNAME: readonly
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_PASSWORD:?}
+      LDAP_TLS: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "ldapsearch -x -H ldap://localhost -b dc=spbstu,dc=local -D cn=admin,dc=spbstu,dc=local -w \"$$LDAP_ADMIN_PASSWORD\" uid=stud001 | grep -q numEntries"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+
+  # R-08: почтовый сервис — локальная заглушка, письма видны в веб-интерфейсе
+  mailpit:
+    image: axllent/mailpit:v1.27
+    restart: unless-stopped
+    networks: [backend]
+    ports: ["127.0.0.1:8025:8025"]
+    environment:
+      MP_SMTP_AUTH: "${SMTP_USER:?}:${SMTP_PASSWORD:?}"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      MP_MAX_MESSAGES: 1000
+
+networks:
+  frontend:
+    ipam:
+      config: [{ subnet: 172.28.10.0/24 }]
+  backend: {}
+  # отдельная сеть только для пути «браузер → nginx → объектное хранилище»
+  storage-edge: {}
+
+volumes:
+  pg-data:
+  kafka-data:
+  s3-data:
