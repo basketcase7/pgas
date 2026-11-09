@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Главный changelog Liquibase. Порядок применения:
+    1. schema.sql              — DDL из ЛР № 2 без изменений (кроме вынесенного блока ролей);
+    2. changes/*.sql           — изменения схемы, каждое записано в журнал расхождений;
+    3. roles.sql               — роли сервисов и GRANT (пароли из окружения);
+    4. seed.sql                — тестовые данные (только контекст demo).
+  Liquibase ведёт таблицу databasechangelog: повторный docker compose up не применяет
+  уже выполненные изменения, а изменение уже применённого скрипта будет обнаружено по контрольной сумме.
+-->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd">
+
+    <changeSet id="000-schema-lr2" author="chikilev">
+        <comment>Схема данных из ЛР № 2, п. 4.2</comment>
+        <sqlFile path="schema.sql" relativeToChangelogFile="true" splitStatements="true" stripComments="false" encoding="UTF-8"/>
+    </changeSet>
+
+    <include file="changes/001-declared-grounds.sql" relativeToChangelogFile="true"/>
+    <include file="roles.sql" relativeToChangelogFile="true"/>
+    <include file="seed.sql" relativeToChangelogFile="true"/>
+</databaseChangeLog>
