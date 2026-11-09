@@ -1,0 +1,68 @@
+server:
+  port: 8080
+  error:
+    include-message: never
+    include-stacktrace: never
+    whitelabel.enabled: false
+
+spring:
+  application.name: notifier
+  main.banner-mode: off
+  data.redis:
+    host: ${REDIS_HOST:redis}
+    port: 6379
+    username: ${REDIS_USERNAME}
+    password: ${REDIS_PASSWORD}
+    timeout: 2s
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+    serialization.write-dates-as-timestamps: false
+  mail:
+    host: ${SMTP_HOST}
+    port: ${SMTP_PORT}
+    username: ${SMTP_USER}
+    password: ${SMTP_PASSWORD}
+    default-encoding: UTF-8
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:kafka:9092}
+    properties:
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_USERNAME}" password="${KAFKA_PASSWORD}";
+    consumer:
+      group-id: notifier
+      auto-offset-reset: earliest
+      # смещение фиксируется только после успешной обработки (ack-mode RECORD)
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 20
+    producer:
+      # продюсер нужен только для перекладывания сообщений в DLT
+      acks: all
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    listener:
+      ack-mode: record
+
+management:
+  server.port: 8079
+  endpoints.web.exposure.include: health
+  health:
+    redis.enabled: false
+    mail.enabled: false
+
+notifier:
+  auth-service-url: ${AUTH_SERVICE_URL}
+  service-token: ${NOTIFIER_SERVICE_TOKEN}
+  reset-link-base: ${RESET_LINK_BASE}
+  applicant-web-url: ${APPLICANT_WEB_URL}
+  from: "Стипендиальный сервис <no-reply@scholarship.local>"
+
+logging:
+  pattern.level: "%5p [event=%X{event_id:-}]"
