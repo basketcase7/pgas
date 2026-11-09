@@ -1,0 +1,119 @@
+### Ручные запросы (IntelliJ IDEA HTTP Client / VS Code REST Client).
+### Перед запуском подставьте пароль тестовых пользователей (DEMO_USERS_PASSWORD из .env).
+### Самоподписанный сертификат шлюза: добавьте secrets/gateway.crt в доверенные
+### или включите в клиенте доверие к сертификату для localhost.
+@api = https://localhost:8443/api/v1
+@password = PUT_DEMO_PASSWORD_HERE
+
+### OP-07 вход заявителя
+# @name loginStud
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{"login": "stud001", "password": "{{password}}"}
+
+> {% client.global.set("stud", response.body.access_token); %}
+
+### OP-07 вход сотрудника
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{"login": "emp001", "password": "{{password}}"}
+
+> {% client.global.set("emp", response.body.access_token); %}
+
+### OP-07 вход председателя комиссии
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{"login": "chair001", "password": "{{password}}"}
+
+> {% client.global.set("chair", response.body.access_token); %}
+
+### OP-01 своя заявка → 200 + ETag
+GET {{api}}/applications/e0000000-0000-4000-8000-000000000001?include=attachments
+Authorization: Bearer {{stud}}
+
+### ПРОВЕРКА 1 (7.2): чужая заявка с действительным токеном → 404
+GET {{api}}/applications/e0000000-0000-4000-8000-000000000002
+Authorization: Bearer {{stud}}
+
+### OP-04 список своих заявок (applicant_id игнорируется)
+GET {{api}}/applications?applicant_id=b0000000-0000-4000-8000-000000000002
+Authorization: Bearer {{stud}}
+
+### OP-17 кампании
+GET {{api}}/campaigns
+Authorization: Bearer {{stud}}
+
+### OP-02 создание заявки → 201 (повтор с тем же ключом → 200)
+POST {{api}}/applications
+Authorization: Bearer {{stud}}
+Idempotency-Key: 6f1c2a4e-1111-4b6c-9c55-000000000001
+Content-Type: application/json
+
+{"campaign_id": "c0000000-0000-4000-8000-000000000002", "type": "material_aid",
+ "statement": "Прошу материальную поддержку", "declared_grounds": ["low_income"]}
+
+### ПРОВЕРКА 2 (7.2): лишние поля status / applicant_id / role → 400
+POST {{api}}/applications
+Authorization: Bearer {{stud}}
+Idempotency-Key: 6f1c2a4e-1111-4b6c-9c55-000000000002
+Content-Type: application/json
+
+{"campaign_id": "c0000000-0000-4000-8000-000000000001", "type": "pgas", "statement": "x",
+ "declared_grounds": ["science"], "status": "approved",
+ "applicant_id": "b0000000-0000-4000-8000-000000000002", "role": "committee_chair"}
+
+### OP-03 проверка заявки (If-Match — ETag из OP-01)
+PATCH {{api}}/applications/e0000000-0000-4000-8000-000000000002/review
+Authorization: Bearer {{emp}}
+If-Match: "1"
+Content-Type: application/json
+
+{"status": "under_review"}
+
+### OP-12 рейтинг кампании
+GET {{api}}/campaigns/c0000000-0000-4000-8000-000000000003/ranking
+Authorization: Bearer {{emp}}
+
+### ПРОВЕРКА 3 (7.2): реестр выплат токеном заявителя → 403
+POST {{api}}/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry
+Authorization: Bearer {{stud}}
+Idempotency-Key: 6f1c2a4e-1111-4b6c-9c55-000000000003
+Content-Type: application/json
+
+{"protocol_number": "П-15", "protocol_date": "2026-11-09",
+ "entries": [{"application_id": "e0000000-0000-4000-8000-000000000004", "amount": 12000}]}
+
+### OP-16 повторный ввод пароля председателем
+POST {{api}}/auth/reauth
+Authorization: Bearer {{chair}}
+Content-Type: application/json
+
+{"password": "{{password}}"}
+
+### OP-05 реестр выплат → 201 (повтор с тем же ключом → 200, с новым → 409)
+POST {{api}}/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry
+Authorization: Bearer {{chair}}
+Idempotency-Key: 6f1c2a4e-1111-4b6c-9c55-000000000004
+Content-Type: application/json
+
+{"protocol_number": "П-15", "protocol_date": "2026-11-09",
+ "entries": [{"application_id": "e0000000-0000-4000-8000-000000000004", "amount": 12000},
+             {"application_id": "e0000000-0000-4000-8000-000000000005", "amount": 9000.50}]}
+
+### OP-06 проверка полноты → 501
+POST {{api}}/applications/e0000000-0000-4000-8000-000000000001/completeness-check
+Authorization: Bearer {{stud}}
+Idempotency-Key: 6f1c2a4e-1111-4b6c-9c55-000000000005
+
+### OP-09 восстановление доступа (ответ одинаковый для любого адреса)
+POST {{api}}/auth/password-reset
+Content-Type: application/json
+
+{"email": "stud003@example.edu"}
+
+### OP-15 выход; после него токен stud отклоняется (401)
+POST {{api}}/auth/logout
+Authorization: Bearer {{stud}}

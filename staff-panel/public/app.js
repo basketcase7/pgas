@@ -20,7 +20,7 @@ async function campaigns() {
 function renderNav() {
   if (!Api.user) { nav.replaceChildren(); return; }
   const roleRu = { reviewer: 'сотрудник', committee_chair: 'председатель комиссии', support: 'поддержка', applicant: 'заявитель' };
-  nav.replaceChildren(
+  nav.replaceChildren(...[
     (isReviewer() || isChair()) ? h('a', { onclick: () => go('#/list') }, 'Заявки') : null,
     (isReviewer() || isChair()) ? h('a', { onclick: () => go('#/ranking') }, 'Рейтинг') : null,
     isChair() ? h('a', { onclick: () => go('#/payout') }, 'Реестр выплат') : null,
@@ -28,7 +28,7 @@ function renderNav() {
     h('span', { style: 'color:#cfd8e6;margin-right:12px;font-size:13px' },
       `${Api.user.full_name} (${Api.user.roles.map(r => roleRu[r] || r).join(', ')})`),
     h('button', { onclick: async () => { await Api.logout(); campaignsCache = null; go('#/login'); } }, 'Выйти'),
-  );
+  ].filter(Boolean));
 }
 
 function loginPage() {
@@ -71,7 +71,7 @@ async function listPage() {
       const r = await Api.call('GET', '/api/v1/applications?' + q);
       for (const it of r.data.items) {
         tbody.append(h('tr', { class: 'clickable', onclick: () => go('#/app/' + it.id) },
-          h('td', {}, it.id.slice(0, 8)), h('td', {}, it.applicant_name || '—'), h('td', {}, TYPE_RU[it.type]),
+          h('td', {}, shortId(it.id)), h('td', {}, it.applicant_name || '—'), h('td', {}, TYPE_RU[it.type]),
           h('td', {}, h('span', { class: 'badge ' + it.status }, STATUS_RU[it.status]))));
       }
       if (!tbody.children.length) tbody.append(h('tr', {}, h('td', { colspan: '4', class: 'muted' }, 'Нет заявок')));
@@ -229,6 +229,12 @@ function findPage() {
 async function route() {
   const path = location.hash.slice(1);
   if (!Api.user && !(await Api.refresh())) { renderNav(); return loginPage(); }
+  if (!isReviewer() && !isChair() && !isSupport()) {
+    // удобство интерфейса; сервер всё равно ответит 403 на операции сотрудника
+    await Api.logout(); renderNav();
+    return view(h('div', { class: 'card' }, h('div', { class: 'error' }, 'У учётной записи нет ролей сотрудника. Заявителям — кабинет http://localhost:8080'),
+      h('button', { onclick: () => route() }, 'Войти другой учётной записью')));
+  }
   renderNav();
   if (path.startsWith('/app/')) return appPage(path.slice(5));
   if (path === '/ranking') return rankingPage();

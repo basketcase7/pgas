@@ -27,7 +27,7 @@ function loginPage(msg) {
     out.replaceChildren();
     try {
       await Api.login(login.value.trim(), pwd.value);
-      if (!Api.hasRole('applicant')) out.append(h('div', { class: 'error' }, 'Это кабинет заявителя. Сотрудникам — панель сотрудника (порт 8081).'));
+      if (!Api.hasRole('applicant')) out.append(h('div', { class: 'error' }, 'Это кабинет заявителя. Сотрудникам — панель сотрудника: http://127.0.0.1:8081'));
       else go('#/apps');
     } catch (err) { out.append(errorBox(err)); }
   };
@@ -120,7 +120,7 @@ async function appsPage() {
       const r = await Api.call('GET', '/api/v1/applications?' + q);
       for (const it of r.data.items) {
         tbody.append(h('tr', { class: 'clickable', onclick: () => go('#/app/' + it.id) },
-          h('td', {}, it.id.slice(0, 8)), h('td', {}, TYPE_RU[it.type] || it.type),
+          h('td', {}, shortId(it.id)), h('td', {}, TYPE_RU[it.type] || it.type),
           h('td', {}, h('span', { class: 'badge ' + it.status }, STATUS_RU[it.status] || it.status))));
       }
       if (!tbody.children.length) tbody.append(h('tr', {}, h('td', { colspan: '3', class: 'muted' }, 'Заявок нет')));
@@ -220,7 +220,7 @@ async function appPage(id) {
 
   view(
     h('div', { class: 'card' },
-      h('h2', {}, 'Заявка ' + a.id.slice(0, 8)),
+      h('h2', {}, 'Заявка ' + shortId(a.id)),
       h('div', { class: 'grid' },
         h('div', {}, 'Статус'), h('div', {}, h('span', { class: 'badge ' + a.status }, STATUS_RU[a.status] || a.status)),
         h('div', {}, 'Вид поддержки'), h('div', {}, TYPE_RU[a.type] || a.type),

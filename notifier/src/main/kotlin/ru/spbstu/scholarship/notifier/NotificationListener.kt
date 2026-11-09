@@ -54,7 +54,7 @@ class NotificationListener(
         val e = om.readValue(record.value(), ApplicationEvent::class.java)
         process(e.eventId, record) {
             val contact = contact(e.recipientId) ?: return@process
-            val number = e.applicationId.toString().take(8)
+            val number = e.applicationId.toString().takeLast(12)
             // B-14: в письме нет сведений об основаниях и сумм — только факт смены статуса
             val text = when (e.type) {
                 "application.submitted" -> "Заявка № $number подана и принята к рассмотрению."

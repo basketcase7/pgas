@@ -128,3 +128,6 @@ function errorBox(e) {
   const msg = e instanceof Api.ApiError ? `${e.status}: ${e.message}` : String(e.message || e);
   return h('div', { class: 'error' }, msg);
 }
+
+/** Короткий номер заявки для интерфейса (последние 12 символов UUID). */
+function shortId(id) { return '…' + String(id).slice(-12); }
