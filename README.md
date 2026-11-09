@@ -51,6 +51,17 @@ docker compose up -d --build
 
 PostgreSQL, Redis, Kafka, LDAP, хранилище и сами сервисы наружу не публикуются.
 
+### Подключение к БД из IDE (для отладки)
+
+По умолчанию порт PostgreSQL закрыт. Открыть его на 127.0.0.1:5432:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.db-access.yml up -d postgres
+```
+
+Параметры подключения: хост `localhost`, порт `5432`, база `scholarship`. Пользователь `postgres` (пароль `POSTGRES_PASSWORD` из `.env`) — полный доступ; `svc_applications` / `svc_review` / `svc_auth` (пароли `SVC_*_DB_PASSWORD`) — права сервисов. Закрыть порт: `docker compose up -d postgres`.
+Без открытия порта: `docker compose exec postgres psql -U postgres -d scholarship`.
+
 ## Тестовые учётные записи
 
 Пароль у всех — значение `DEMO_USERS_PASSWORD` из `.env`.

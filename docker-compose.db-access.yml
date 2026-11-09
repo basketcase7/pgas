@@ -1,0 +1,10 @@
+# Необязательное дополнение для отладки: публикует PostgreSQL на 127.0.0.1:5432,
+# чтобы подключиться из IDE (IntelliJ Database, DBeaver) или psql на хосте.
+# В обычном запуске база наружу не видна (граница TB-03) — этот файл подключается явно:
+#   docker compose -f docker-compose.yml -f docker-compose.db-access.yml up -d postgres
+# Вернуть как было:
+#   docker compose up -d postgres
+services:
+  postgres:
+    ports:
+      - "127.0.0.1:5432:5432"
