@@ -1,0 +1,57 @@
+flowchart TB
+  subgraph ZCL["TB-01 — недоверенная зона: браузер"]
+    BR["Браузер пользователя"]
+  end
+  subgraph ZWEB["Клиентские контейнеры (nginx)"]
+    WEB["applicant-web :8080"]
+    ADM["staff-panel :8081"]
+  end
+  subgraph ZGW["TB-02 — периметр шлюза"]
+    GW["api-gateway :8443 TLS"]
+  end
+  subgraph ZAPP["Доверенная зона приложения"]
+    AUTH["auth-service"]
+    APPS["applications-service"]
+    REV["review-service"]
+    NOTIF["notifier"]
+  end
+  subgraph ZMQ["TB-06 — брокер"]
+    MQ["Kafka (SASL+ACL) + DLT"]
+  end
+  subgraph ZDATA["TB-03 — хранилища"]
+    PG[("PostgreSQL")]
+    RDS[("Redis (ACL)")]
+    S3[("object-storage S3")]
+  end
+  subgraph ZEXT["TB-04 — заглушки внешних систем"]
+    LDAP["ldap (R-09)"]
+    MAIL["mailpit (R-08)"]
+  end
+  LB["liquibase (миграции)"] -->|SQL| PG
+
+  BR -->|HTTP localhost| WEB
+  BR -->|HTTP 127.0.0.1| ADM
+  WEB -->|B-01 HTTPS| GW
+  ADM -->|B-02 HTTPS| GW
+  WEB -->|B-03 presigned POST/GET| S3
+  ADM -->|B-03 presigned GET| S3
+  GW -->|B-04 HTTP| AUTH
+  GW -->|B-04 HTTP| APPS
+  GW -->|B-04 HTTP| REV
+  GW -->|счётчики лимитов| RDS
+  APPS -->|B-08 события| MQ
+  REV -->|B-08 события| MQ
+  AUTH -->|B-08 сброс пароля| MQ
+  MQ -->|B-09| NOTIF
+  NOTIF -->|контакт, сервисный токен| AUTH
+  NOTIF -->|B-14 SMTP| MAIL
+  NOTIF -->|идемпотентность| RDS
+  AUTH -->|B-06 сессии| RDS
+  APPS -->|чтение сессий| RDS
+  REV -->|чтение сессий| RDS
+  AUTH -->|B-05 SQL| PG
+  APPS -->|B-05 SQL| PG
+  REV -->|B-05 SQL| PG
+  APPS -->|B-07 S3 API| S3
+  AUTH -->|B-13 LDAP| LDAP
+  APPS -->|B-13 LDAP| LDAP
