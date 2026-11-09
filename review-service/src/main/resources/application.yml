@@ -1,0 +1,56 @@
+server:
+  port: 8080
+  error:
+    include-message: never
+    include-stacktrace: never
+    include-exception: false
+    whitelabel.enabled: false
+
+spring:
+  application.name: review-service
+  main.banner-mode: off
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari.maximum-pool-size: 10
+  data.redis:
+    host: ${REDIS_HOST:redis}
+    port: 6379
+    username: ${REDIS_USERNAME}
+    password: ${REDIS_PASSWORD}
+    timeout: 2s
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+    deserialization.fail-on-unknown-properties: true
+    serialization.write-dates-as-timestamps: false
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:kafka:9092}
+    properties:
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_USERNAME}" password="${KAFKA_PASSWORD}";
+    producer:
+      acks: all
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: true
+        max.block.ms: 5000
+        delivery.timeout.ms: 15000
+        request.timeout.ms: 5000
+
+management:
+  server.port: 8079
+  endpoints.web.exposure.include: health
+  health.redis.enabled: false
+
+security:
+  jwt.public-key-b64: ${JWT_PUBLIC_KEY_B64}
+  public-paths: ""
+
+
+
+logging:
+  pattern.level: "%5p [rid=%X{request_id:-}] [actor=%X{actor_id:-}]"
