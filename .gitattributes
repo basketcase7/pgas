@@ -3,3 +3,7 @@
 *.pdf binary
 *.docx binary
 *.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+gradlew text eol=lf
+gradle/wrapper/gradle-wrapper.jar binary
