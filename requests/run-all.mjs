@@ -267,7 +267,7 @@ await req('отклонение без причины → 400', 400, 'PATCH', `/
 const r2 = await req('одобрение с баллами', 200, 'PATCH', `/applications/${ID.e01}/review`, { token: T.emp001, body: { status: 'approved', scores: [{ criterion_id: ID.crScience, value: 35 }, { criterion_id: ID.crSports, value: 10 }] }, headers: { 'If-Match': v2 } });
 check('сумма баллов посчитана сервером', Number(r2.data?.total_score) === 45, String(r2.data?.total_score));
 await req('повтор того же PATCH со старой версией → 409', 409, 'PATCH', `/applications/${ID.e01}/review`, { token: T.emp001, body: { status: 'approved', scores: [{ criterion_id: ID.crScience, value: 35 }] }, headers: { 'If-Match': v2 } });
-await req('черновик проверять нельзя (недопустимый переход) → 400', 400, 'PATCH', `/applications/${ID.e03}/review`, { token: T.emp001, body: { status: 'under_review' }, headers: { 'If-Match': '"1"' } });
+await req('черновик для сотрудника не существует (ЛР5, V-M02) → 404', 404, 'PATCH', `/applications/${ID.e03}/review`, { token: T.emp001, body: { status: 'under_review' }, headers: { 'If-Match': '"1"' } });
 const audit = psql(`SELECT action || ' ' || result FROM audit_log WHERE object_id = '${ID.e01}' AND action = 'application.reviewed' ORDER BY id DESC LIMIT 1`);
 check('изменение записано в audit_log в той же транзакции', audit === 'application.reviewed success', audit);
 const mail2 = await mailTo('stud001@example.edu', 'одобрена');
