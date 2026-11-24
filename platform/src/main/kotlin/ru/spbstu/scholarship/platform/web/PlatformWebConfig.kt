@@ -3,6 +3,7 @@ package ru.spbstu.scholarship.platform.web
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer
 import org.springframework.boot.web.servlet.FilterRegistrationBean
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -35,6 +36,12 @@ class PlatformWebConfig(
 
     @Bean
     fun accessTokenVerifier() = AccessTokenVerifier(Pem.publicKeyFromEnvValue(publicKeyB64))
+
+    /** Строки JSON с U+0000 отклоняются при разборе (400), а не падают в PostgreSQL (500). */
+    @Bean
+    fun rejectNulInJsonStrings() = Jackson2ObjectMapperBuilderCustomizer {
+        it.deserializerByType(String::class.java, NulRejectingStringDeserializer())
+    }
 
     @Bean
     fun sessionLookup(redis: StringRedisTemplate): SessionLookup = RedisSessionLookup(redis)

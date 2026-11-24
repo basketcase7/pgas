@@ -210,6 +210,9 @@ section('E. Раскрытие информации в ошибках');
     ['E5', 'тело больше лимита (64 КБ)', () => api('POST', '/auth/login', { body: { login: 'x'.repeat(70000), password: 'y' } })],
     ['E6', 'несуществующий путь', () => api('GET', '/no-such-endpoint', { token: T.stud001 })],
     ['E7', 'некорректный UUID в пути', () => api('GET', '/applications/%27%20OR%201=1--', { token: T.stud001 })],
+    // найдено ZAP (прогон без аутентификации): NUL-байт в строке JSON доходил до PostgreSQL → 500
+    ['E8', 'NUL-байт в строке JSON (password-reset)', () => api('POST', '/auth/password-reset', { body: { email: 'a\u0000@example.edu' } })],
+    ['E9', 'NUL-байт в строке JSON (вход)', () => api('POST', '/auth/login', { body: { login: 'stud\u0000001', password: 'xxxxxxxxxx' } })],
   ];
   for (const [id, name, f] of cases) {
     const r = await f();
