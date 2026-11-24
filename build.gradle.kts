@@ -18,6 +18,11 @@ subprojects {
 
     repositories { mavenCentral() }
 
+    // ЛР5, V-C03: Boot 3.5.16 задаёт Jackson 2.21.4, а исправления CVE-2026-89407, -89425,
+    // -91776, -91777, -68497 вышли в 2.21.6+ той же ветки. Свойство BOM переопределяется так,
+    // чтобы действовало и для автоматического импорта BOM плагином Spring Boot.
+    extra["jackson-bom.version"] = "2.21.9"
+
     configure<DependencyManagementExtension> {
         imports {
             // ЛР5, V-C03: последние выпуски тех же веток (без смены мажорных версий API)
