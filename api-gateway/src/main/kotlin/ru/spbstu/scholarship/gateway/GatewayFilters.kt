@@ -138,6 +138,9 @@ class RateLimitFilter(private val redis: ReactiveStringRedisTemplate) : GlobalFi
         Rule("register", HttpMethod.POST, Regex("^/api/v1/auth/register$"), 5, Duration.ofHours(1), true),
         Rule("pwreset", HttpMethod.POST, Regex("^/api/v1/auth/password-reset(/confirm)?$"), 10, Duration.ofHours(1), true),
         Rule("refresh", HttpMethod.POST, Regex("^/api/v1/auth/refresh$"), 30, Duration.ofMinutes(1), true),
+        // ЛР5, V-M04: повторный ввод пароля (OP-16) проверяет пароль по токену доступа — без своего
+        // лимита это перебор пароля украденным токеном со скоростью общего правила (300/мин)
+        Rule("reauth", HttpMethod.POST, Regex("^/api/v1/auth/reauth$"), 5, Duration.ofMinutes(15), false),
         Rule("app-read", HttpMethod.GET, Regex("^/api/v1/applications/$uuid$"), 60, Duration.ofMinutes(1), false),      // OP-01
         Rule("app-create", HttpMethod.POST, Regex("^/api/v1/applications$"), 5, Duration.ofHours(1), false),            // OP-02
         Rule("app-review", HttpMethod.PATCH, Regex("^/api/v1/applications/$uuid/review$"), 120, Duration.ofMinutes(1), false), // OP-03
