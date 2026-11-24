@@ -15,14 +15,14 @@ ZAP="docker run --rm --network scholarship_frontend -v $W/$OUT/zap:/zap/wrk:rw -
 OPTS="-config scanner.threadPerHost=1 -config scanner.delayInMs=250 -config connection.timeoutInSecs=30"
 
 $ZAP ghcr.io/zaproxy/zaproxy:stable zap-api-scan.py -t /zap/wrk/openapi.scan.yaml -f openapi \
-  -r api-unauth.html -J api-unauth.json -x api-unauth.xml -T 40 -z "$OPTS" > "$OUT/zap/api-unauth.log" 2>&1 &
+  -r api-unauth.html -J api-unauth.json -x api-unauth.xml -T 40 -z "$OPTS" > "$OUT/zap/api-unauth.txt" 2>&1 &
 P1=$!
 $ZAP -e ZAP_USER=stud001 -e ZAP_PASSWORD="$PASS" -e ZAP_CA_FILE=/zap/ca/gateway.crt ghcr.io/zaproxy/zaproxy:stable \
   zap-api-scan.py -t /zap/wrk/openapi.scan.yaml -f openapi --hook=/zap/hooks/zap_auth_hook.py \
-  -r api-auth.html -J api-auth.json -x api-auth.xml -T 40 -z "$OPTS" > "$OUT/zap/api-auth.log" 2>&1 &
+  -r api-auth.html -J api-auth.json -x api-auth.xml -T 40 -z "$OPTS" > "$OUT/zap/api-auth.txt" 2>&1 &
 P2=$!
 [ "${SKIP_WEB:-}" = 1 ] || $ZAP ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://applicant-web:8080 -m 2 -T 20 \
-  -r web-full.html -J web-full.json -x web-full.xml -z "-config scanner.threadPerHost=2" > "$OUT/zap/web-full.log" 2>&1 &
+  -r web-full.html -J web-full.json -x web-full.xml -z "-config scanner.threadPerHost=2" > "$OUT/zap/web-full.txt" 2>&1 &
 P3=$!
 wait $P1 || true; wait $P2 || true; wait $P3 || true
 echo "ZAP: готово ($OUT/zap)"
