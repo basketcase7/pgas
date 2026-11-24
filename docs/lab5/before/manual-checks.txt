@@ -130,3 +130,5 @@
   - I5 OP-06 по чужой заявке → 404 (проверка владельца до ответа)
   - J1 Kafka UI требует входа (в топике auth.password-reset лежат коды восстановления)
   - J2 Mailpit (письма со ссылками восстановления) требует входа
+/api/v1/auth/password-reset 500 {"error":"internal_error","message":"Внутренняя ошибка сервиса","request_id":"babdfacf-d028-4aa9-a1c9-56b6fbe7da9f"}
+/api/v1/auth/login 500 {"error":"internal_error","message":"Внутренняя ошибка сервиса","request_id":"1b3c240b-da53-4916-ab4f-ac24a1e82d6b"}

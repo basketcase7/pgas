@@ -1,0 +1,1124 @@
+<?xml version="1.0"?>
+<OWASPZAPReport programName="ZAP" version="2.17.0" generated="Tue, 24 Nov 2026 23:01:23" created="2026-11-24T23:01:23.226321635Z">
+	
+		<site name="https://api-gateway:8443" host="api-gateway" port="8443" ssl="true">
+			<alerts>
+				
+					<alertitem>
+						<pluginid>100000</pluginid>
+						<alertRef>100000-2</alertRef>
+						<alert>A Server Error response code was returned by the server</alert>
+						<name>A Server Error response code was returned by the server</name>
+						<riskcode>1</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Low (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;A response code of 500 was returned by the server.&lt;/p&gt;&lt;p&gt;This may indicate that the application is failing to handle unexpected input correctly.&lt;/p&gt;&lt;p&gt;Raised by the &apos;Alert on HTTP Response Code Error&apos; script&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset ()({email})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>500</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>1</count>
+						<systemic>false</systemic>
+						<solution></solution>
+						<otherinfo></otherinfo>
+						<reference></reference>
+						<cweid>388</cweid>
+						<wascid>20</wascid>
+						<sourceid>3951</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>90004</pluginid>
+						<alertRef>90004-1</alertRef>
+						<alert>Cross-Origin-Resource-Policy Header Missing or Invalid</alert>
+						<name>Cross-Origin-Resource-Policy Header Missing or Invalid</name>
+						<riskcode>1</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Low (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset ()({email})</nodeName>
+									<method>POST</method>
+									<param>Cross-Origin-Resource-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>1</count>
+						<systemic>false</systemic>
+						<solution>&lt;p&gt;Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to &apos;same-origin&apos; for all web pages.&lt;/p&gt;&lt;p&gt;&apos;same-site&apos; is considered as less secured and should be avoided.&lt;/p&gt;&lt;p&gt;If resources must be shared, set the header to &apos;cross-origin&apos;.&lt;/p&gt;&lt;p&gt;If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>14</wascid>
+						<sourceid>10</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>100000</pluginid>
+						<alertRef>100000-1</alertRef>
+						<alert>A Client Error response code was returned by the server</alert>
+						<name>A Client Error response code was returned by the server</name>
+						<riskcode>0</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Informational (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;A response code of 401 was returned by the server.&lt;/p&gt;&lt;p&gt;This may indicate that the application is failing to handle unexpected input correctly.&lt;/p&gt;&lt;p&gt;Raised by the &apos;Alert on HTTP Response Code Error&apos; script&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/computeMetadata/v1/</uri>
+									<nodeName>https://api-gateway:8443/computeMetadata/v1/</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/latest/meta-data/</uri>
+									<nodeName>https://api-gateway:8443/latest/meta-data/</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/metadata/instance</uri>
+									<nodeName>https://api-gateway:8443/metadata/instance</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/metadata/v1</uri>
+									<nodeName>https://api-gateway:8443/metadata/v1</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/opc/v1/instance/</uri>
+									<nodeName>https://api-gateway:8443/opc/v1/instance/</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/opc/v2/instance/</uri>
+									<nodeName>https://api-gateway:8443/opc/v2/instance/</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/openstack/latest/meta_data.json</uri>
+									<nodeName>https://api-gateway:8443/openstack/latest/meta_data.json</nodeName>
+									<method>DELETE</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443</uri>
+									<nodeName>https://api-gateway:8443</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/</uri>
+									<nodeName>https://api-gateway:8443/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/3171592324870934166</uri>
+									<nodeName>https://api-gateway:8443/3171592324870934166</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api</uri>
+									<nodeName>https://api-gateway:8443/api</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/</uri>
+									<nodeName>https://api-gateway:8443/api/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/1241811384686872300</uri>
+									<nodeName>https://api-gateway:8443/api/1241811384686872300</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1</uri>
+									<nodeName>https://api-gateway:8443/api/v1</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/7840189138939794351</uri>
+									<nodeName>https://api-gateway:8443/api/v1/7840189138939794351</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications?campaign_id=c0000000-0000-4000-8000-000000000001&amp;status=submitted&amp;type=pgas&amp;sort=-created_at&amp;limit=20&amp;cursor=cursor</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications (campaign_id,cursor,limit,sort,status,type)</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/3262000537532540525</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/3262000537532540525</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/actuator/health</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/actuator/health</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001?include=attachments</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001 (include)</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/9140343587447838650</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/9140343587447838650</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/1209560631354763656</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/1209560631354763656</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>405</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset/6902853798573688664</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset/6902853798573688664</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/5285534254298994234</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/5285534254298994234</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/4181164258902382329</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/4181164258902382329</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>404</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/ranking</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/ranking</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/ranking/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/ranking/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review ()({status,reason,scores:[{criterion_id,value}]})</nodeName>
+									<method>PATCH</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review/ ()({status,reason,scores:[{criterion_id,value}]})</nodeName>
+									<method>PATCH</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications ()({campaign_id,type,statement,declared_grounds:[]})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/ ()({campaign_id,type,statement,declared_grounds:[]})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/attachments</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/attachments ()({doc_type,file_name,content_type,size_bytes,sha256})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/attachments/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/attachments/ ()({doc_type,file_name,content_type,size_bytes,sha256})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check/</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/submit</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/submit</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/submit/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/submit/</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/login</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/login ()({login,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>400</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/login</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/login ()({login,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/login</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/login ()({login,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>429</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/login/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/login/ ()({login,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/logout</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/logout</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/logout/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/logout/</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset ()({email})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>400</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset ()({email})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>429</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset/ ()({email})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset/confirm</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset/confirm ()({token,new_password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>400</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset/confirm</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset/confirm ()({token,new_password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>429</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset/confirm/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset/confirm/ ()({token,new_password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/reauth</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/reauth ()({password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/reauth/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/reauth/ ()({password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/refresh</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/refresh</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/refresh/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/refresh/</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/register</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/register ()({external_id,email,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>400</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/register</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/register ()({external_id,email,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>429</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/register/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/register/ ()({external_id,email,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry ()({protocol_number,protocol_date,entries:[{application_id,amount}]})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry/</uri>
+									<nodeName>https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry/ ()({protocol_number,protocol_date,entries:[{application_id,amount}]})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>401</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>74</count>
+						<systemic>false</systemic>
+						<solution></solution>
+						<otherinfo></otherinfo>
+						<reference></reference>
+						<cweid>388</cweid>
+						<wascid>20</wascid>
+						<sourceid>17</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10111</pluginid>
+						<alertRef>10111</alertRef>
+						<alert>Authentication Request Identified</alert>
+						<name>Authentication Request Identified</name>
+						<riskcode>0</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Informational (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;The given request has been identified as an authentication request. The &apos;Other Info&apos; field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to &quot;Auto-Detect&quot; then this rule will change the authentication to match the request identified.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/login</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/login ()({login,password})</nodeName>
+									<method>POST</method>
+									<param>login</param>
+									<attack></attack>
+									<evidence>password</evidence>
+									<otherinfo>userParam=login
+userValue=stud001
+passwordParam=password</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>1</count>
+						<systemic>false</systemic>
+						<solution>&lt;p&gt;This is an informational alert rather than a vulnerability and so there is nothing to fix.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;userParam=login&lt;/p&gt;&lt;p&gt;userValue=stud001&lt;/p&gt;&lt;p&gt;passwordParam=password&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/&lt;/p&gt;</reference>
+						<cweid>-1</cweid>
+						<wascid>-1</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10049</pluginid>
+						<alertRef>10049-1</alertRef>
+						<alert>Non-Storable Content</alert>
+						<name>Non-Storable Content</name>
+						<riskcode>0</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Informational (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/login</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/login ()({login,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>no-store</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/logout</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/logout</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>no-store</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/password-reset</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/password-reset ()({email})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>no-store</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/reauth</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/reauth ()({password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>no-store</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>https://api-gateway:8443/api/v1/auth/register</uri>
+									<nodeName>https://api-gateway:8443/api/v1/auth/register ()({external_id,email,password})</nodeName>
+									<method>POST</method>
+									<param></param>
+									<attack></attack>
+									<evidence>no-store</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;The content may be marked as storable by ensuring that the following conditions are satisfied:&lt;/p&gt;&lt;p&gt;The request method must be understood by the cache and defined as being cacheable (&quot;GET&quot;, &quot;HEAD&quot;, and &quot;POST&quot; are currently defined as cacheable)&lt;/p&gt;&lt;p&gt;The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)&lt;/p&gt;&lt;p&gt;The &quot;no-store&quot; cache directive must not appear in the request or response header fields&lt;/p&gt;&lt;p&gt;For caching by &quot;shared&quot; caches such as &quot;proxy&quot; caches, the &quot;private&quot; response directive must not appear in the response&lt;/p&gt;&lt;p&gt;For caching by &quot;shared&quot; caches such as &quot;proxy&quot; caches, the &quot;Authorization&quot; header field must not appear in the request, unless the response explicitly allows it (using one of the &quot;must-revalidate&quot;, &quot;public&quot;, or &quot;s-maxage&quot; Cache-Control response directives)&lt;/p&gt;&lt;p&gt;In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:&lt;/p&gt;&lt;p&gt;It must contain an &quot;Expires&quot; header field&lt;/p&gt;&lt;p&gt;It must contain a &quot;max-age&quot; response directive&lt;/p&gt;&lt;p&gt;For &quot;shared&quot; caches such as &quot;proxy&quot; caches, it must contain a &quot;s-maxage&quot; response directive&lt;/p&gt;&lt;p&gt;It must contain a &quot;Cache Control Extension&quot; that allows it to be cached&lt;/p&gt;&lt;p&gt;It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7234&lt;/p&gt;&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7231&lt;/p&gt;&lt;p&gt;https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&lt;/p&gt;</reference>
+						<cweid>524</cweid>
+						<wascid>13</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+			</alerts>
+		</site>
+	
+	
+		<insights>
+			
+				<insight>
+					<level>Medium</level>
+					<reason>Exceeded High</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.code.4xx</key>
+					<description>Percentage of responses with status code 4xx</description>
+					<statistic>99</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.code.2xx</key>
+					<description>Percentage of responses with status code 2xx</description>
+					<statistic>1</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.endpoint.ctype.application/json</key>
+					<description>Percentage of endpoints with content type application/json</description>
+					<statistic>100</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.endpoint.method.DELETE</key>
+					<description>Percentage of endpoints with method DELETE</description>
+					<statistic>13</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.endpoint.method.GET</key>
+					<description>Percentage of endpoints with method GET</description>
+					<statistic>48</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.endpoint.method.PATCH</key>
+					<description>Percentage of endpoints with method PATCH</description>
+					<statistic>2</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.endpoint.method.POST</key>
+					<description>Percentage of endpoints with method POST</description>
+					<statistic>35</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.endpoint.total</key>
+					<description>Count of total endpoints</description>
+					<statistic>68</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>https://api-gateway:8443</site>
+					<key>insight.response.slow</key>
+					<description>Percentage of slow responses</description>
+					<statistic>4</statistic>
+				</insight>
+			
+		</insights>
+	
+	
+	
+</OWASPZAPReport>
