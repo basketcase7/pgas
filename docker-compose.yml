@@ -219,9 +219,11 @@ services:
       KAFKA_ADMIN_PASSWORD: ${KAFKA_ADMIN_PASSWORD:?}
     restart: "no"
 
-  # веб-интерфейс для демонстрации сообщений в топиках (на защите)
+  # веб-интерфейс для демонстрации сообщений в топиках (на защите).
+  # ЛР5, V-D03: вход обязателен — в топике auth.password-reset лежат коды восстановления доступа;
+  # kafbat/kafka-ui — поддерживаемое продолжение provectuslabs/kafka-ui (0.7.2 не обновляется, 5 Critical)
   kafka-ui:
-    image: provectuslabs/kafka-ui:v0.7.2
+    image: kafbat/kafka-ui:v1.5.1
     restart: unless-stopped
     networks: [backend]
     depends_on:
@@ -236,6 +238,9 @@ services:
         org.apache.kafka.common.security.plain.PlainLoginModule required
         username="admin" password="${KAFKA_ADMIN_PASSWORD:?}";
       DYNAMIC_CONFIG_ENABLED: "false"
+      AUTH_TYPE: LOGIN_FORM
+      SPRING_SECURITY_USER_NAME: admin
+      SPRING_SECURITY_USER_PASSWORD: ${KAFKA_UI_PASSWORD:?}
 
   # ------------------------------------------------------------------ хранилища (TB-03)
   postgres:
