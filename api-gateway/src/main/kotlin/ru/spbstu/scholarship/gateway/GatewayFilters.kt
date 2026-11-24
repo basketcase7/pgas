@@ -59,6 +59,12 @@ class RequestHygieneFilter(@Value("\${gateway.trusted-proxies:}") trusted: Strin
             h.set("Strict-Transport-Security", "max-age=31536000")
             h.set("X-Content-Type-Options", "nosniff")
             h.set("X-Frame-Options", "DENY")
+            // ЛР5, V-D01: ответ API — данные, а не документ: если браузер всё же откроет его как
+            // страницу (прямой переход по ссылке), никакие скрипты/ресурсы не выполнятся и не
+            // загрузятся, а чужие сайты не смогут встроить ответ (Spectre, CORP)
+            h.set("Content-Security-Policy", "default-src 'none'; frame-ancestors 'none'; base-uri 'none'")
+            h.set("Cross-Origin-Resource-Policy", "same-origin")
+            h.set("Referrer-Policy", "no-referrer")
             if (!h.containsKey(HttpHeaders.CACHE_CONTROL)) h.set(HttpHeaders.CACHE_CONTROL, "no-store")
             Mono.empty()
         }
