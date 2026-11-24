@@ -101,11 +101,12 @@ async function appPage(id) {
     h('div', { class: 'grid' },
       h('div', {}, 'Статус'), h('div', {}, h('span', { class: 'badge ' + a.status }, STATUS_RU[a.status])),
       h('div', {}, 'Вид'), h('div', {}, TYPE_RU[a.type]),
-      h('div', {}, 'Заявитель (id)'), h('div', {}, a.applicant_id),
+      h('div', {}, 'Заявитель (id)'), h('div', {}, a.applicant_id ?? 'нет доступа'),
       h('div', {}, 'Кампания (id)'), h('div', {}, a.campaign_id),
-      h('div', {}, 'Основания'), h('div', {}, (a.declared_grounds || []).map(g => GROUND_RU[g] || g).join(', ')),
+      // служба поддержки (R-07) получает только статус: оснований и текста в ответе нет
+      h('div', {}, 'Основания'), h('div', {}, a.declared_grounds ? a.declared_grounds.map(g => GROUND_RU[g] || g).join(', ') : 'нет доступа'),
       h('div', {}, 'Подана'), h('div', {}, fmtDate(a.submitted_at)),
-      h('div', {}, 'Обоснование'), h('div', { style: 'white-space:pre-wrap' }, a.statement),
+      h('div', {}, 'Обоснование'), h('div', { style: 'white-space:pre-wrap' }, a.statement ?? 'нет доступа'),
       h('div', {}, 'Баллы'), h('div', {}, a.scores ? (a.scores.map(s => `${s.title}: ${s.value} из ${s.max_score}`).join('; ') || '—') : 'нет доступа'),
       h('div', {}, 'Вложения'), h('div', {}, a.attachments
         ? (a.attachments.length ? a.attachments.map(f => h('div', {}, h('a', { href: f.download_url, download: f.file_name }, `${DOC_RU[f.doc_type] || f.doc_type}: ${f.file_name}`))) : '—')

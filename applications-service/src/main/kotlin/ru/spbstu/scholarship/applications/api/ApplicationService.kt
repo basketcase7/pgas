@@ -72,15 +72,22 @@ class ApplicationService(
             // для R-03, R-04, R-07 фиксируется факт просмотра чужой заявки
             audit.write("application.view", "application", id, user.id)
         }
-        val canSeeScores = user.hasRole(Roles.REVIEWER) || user.hasRole(Roles.COMMITTEE_CHAIR) ||
-            (row.applicantId == user.id && row.resultsPublished)
+        val isOwner = row.applicantId == user.id
+        val isCaseworker = user.hasRole(Roles.REVIEWER) || user.hasRole(Roles.COMMITTEE_CHAIR)
+        val canSeeScores = isCaseworker || (isOwner && row.resultsPublished)
         // служба поддержки (R-07) не имеет доступа к вложениям (реестр ролей ЛР1)
-        val canSeeAttachments = includeAttachments && (row.applicantId == user.id ||
-            user.hasRole(Roles.REVIEWER) || user.hasRole(Roles.COMMITTEE_CHAIR))
+        val canSeeAttachments = includeAttachments && (isOwner || isCaseworker)
+        // ЛР5, V-M01: R-07 — «просмотр статуса заявки по обращению» (ЛР1). Текст обоснования,
+        // заявленные основания (в т.ч. инвалидность, малоимущность) и владелец — только
+        // заявителю и сотрудникам, которые рассматривают заявку. Поля не выдаются вовсе
+        // (а не маскируются), поэтому их нет в ответе при default-property-inclusion=non_null.
+        val canSeeContent = isOwner || isCaseworker
 
         val view = ApplicationView(
             id = row.id, campaignId = row.campaignId, type = row.type, status = row.status,
-            applicantId = row.applicantId, statement = row.statement, declaredGrounds = row.grounds,
+            applicantId = row.applicantId.takeIf { canSeeContent },
+            statement = row.statement.takeIf { canSeeContent },
+            declaredGrounds = row.grounds.takeIf { canSeeContent },
             submittedAt = row.submittedAt,
             attachments = if (canSeeAttachments) repo.attachmentsOf(id).map {
                 AttachmentView(it.id, it.docType, it.fileName, it.sizeBytes, it.uploadedAt, storage.presignDownload(it.objectKey))
@@ -294,8 +301,8 @@ data class AttachmentRequest(
 )
 
 data class ApplicationView(
-    val id: UUID, val campaignId: UUID, val type: String, val status: String, val applicantId: UUID,
-    val statement: String, val declaredGrounds: List<String>, val submittedAt: OffsetDateTime?,
+    val id: UUID, val campaignId: UUID, val type: String, val status: String, val applicantId: UUID?,
+    val statement: String?, val declaredGrounds: List<String>?, val submittedAt: OffsetDateTime?,
     val attachments: List<AttachmentView>?, val scores: List<Map<String, Any>>?,
 )
 data class AttachmentView(val id: UUID, val docType: String, val fileName: String, val sizeBytes: Long, val uploadedAt: OffsetDateTime, val downloadUrl: String)
