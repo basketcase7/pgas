@@ -29,6 +29,10 @@ const MAIL = process.env.MAILPIT || 'http://localhost:8025';
 const MAIL_AUTH = { headers: { Authorization: 'Basic ' + Buffer.from('admin:' + (env.MAILPIT_UI_PASSWORD || '')).toString('base64') } };
 const API = GW + '/api/v1';
 const PWD = env.DEMO_USERS_PASSWORD;
+// Пароли для регистрации и восстановления генерируются при каждом прогоне: в репозитории
+// нет учётных данных, которые где-то начнут действовать (ЛР5, V-S02, gitleaks generic-api-key).
+const genPwd = () => 'Pw-' + randomUUID();
+const PW = { reg: genPwd(), other: genPwd(), reset: genPwd(), reset2: genPwd() };
 
 const ID = {
   stud001: 'b0000000-0000-4000-8000-000000000001', stud002: 'b0000000-0000-4000-8000-000000000002',
@@ -339,9 +343,9 @@ await req('ПОСЛЕ ВЫХОДА токен отклоняется (отозв
 
 // =====================================================================
 section('OP-14 регистрация');
-await req('регистрация действующего обучающегося stud010', [201, 409], 'POST', '/auth/register', { body: { external_id: 'stud010', email: 'stud010@example.edu', password: 'Novikova-Pass-2026' } });
-await req('регистрация с чужим e-mail → 422', 422, 'POST', '/auth/register', { body: { external_id: 'stud003', email: 'hacker@example.com', password: 'Some-Strong-Pass-1' } });
-await req('лишнее поле role при регистрации → 400', 400, 'POST', '/auth/register', { body: { external_id: 'stud010', email: 'stud010@example.edu', password: 'Novikova-Pass-2026', role: 'admin' } });
+await req('регистрация действующего обучающегося stud010', [201, 409], 'POST', '/auth/register', { body: { external_id: 'stud010', email: 'stud010@example.edu', password: PW.reg } });
+await req('регистрация с чужим e-mail → 422', 422, 'POST', '/auth/register', { body: { external_id: 'stud003', email: 'hacker@example.com', password: PW.other } });
+await req('лишнее поле role при регистрации → 400', 400, 'POST', '/auth/register', { body: { external_id: 'stud010', email: 'stud010@example.edu', password: PW.reg, role: 'admin' } });
 check('пароль в БД — Argon2id с параметрами m=65536,t=3,p=4', psql(`SELECT password_hash FROM users WHERE external_id = 'stud010'`).startsWith('$argon2id$v=19$m=65536,t=3,p=4$'));
 
 // =====================================================================
@@ -353,11 +357,11 @@ const resetMail = await mailTo('stud003@example.edu', 'Восстановлен�
 const token = resetMail?.Text.match(/token=([A-Za-z0-9_-]+)/)?.[1];
 check('письмо с одноразовой ссылкой пришло', !!token);
 const t3old = await login('stud003');
-await req('смена пароля по коду', 204, 'POST', '/auth/password-reset/confirm', { body: { token, new_password: 'Sidorov-New-Pass-77' } });
-await req('код срабатывает один раз → 400', 400, 'POST', '/auth/password-reset/confirm', { body: { token, new_password: 'Sidorov-New-Pass-78' } });
+await req('смена пароля по коду', 204, 'POST', '/auth/password-reset/confirm', { body: { token, new_password: PW.reset } });
+await req('код срабатывает один раз → 400', 400, 'POST', '/auth/password-reset/confirm', { body: { token, new_password: PW.reset2 } });
 await req('старые сессии завершены после смены пароля → 401', 401, 'GET', '/applications', { token: t3old });
 await req('вход со старым паролем → 401', 401, 'POST', '/auth/login', { body: { login: 'stud003', password: PWD } });
-await login('stud003', 'Sidorov-New-Pass-77');
+await login('stud003', PW.reset);
 
 // =====================================================================
 section('Учётная запись приложения в БД (задание 2.2)');

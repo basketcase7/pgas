@@ -85,8 +85,8 @@ paths:
               additionalProperties: false
               required: [external_id, email, password]
               properties:
-                external_id: { type: string, example: stud010 }
-                email: { type: string, example: stud010@example.edu }
+                external_id: { type: string, example: scanner-probe }   # нет в каталоге → 422, учётная запись не создаётся
+                email: { type: string, example: scanner-probe@example.edu }
                 password: { type: string, example: Scanner-Pass-2026 }
       responses:
         '201': { description: Учётная запись создана }
