@@ -1,0 +1,572 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		review-service (spotbugsMain)</p>
+      <p>SpotBugs version: 4.9.6</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/EntryInput.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/RegistryRequest.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/RegistryView.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewController$registry$key$1.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewController.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewRequest.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewService$checksum$$inlined$sortedBy$1.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewService$Companion.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewService.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewView.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ScoreInput.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/CampaignForPayout.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/EntryCheck.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewRepository$ranking$1.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewRepository.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewRepositoryKt.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewTarget.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/ReviewApplication.class</li>
+         <li>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/ReviewApplicationKt.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>518 lines of code analyzed,
+	in 19 classes, 
+	in 3 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">15</td>
+            <td align="right">28.96</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Low Priority Warnings</td>
+            <td align="right">4</td>
+            <td align="right">7.72</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>19</b>
+            </td>
+            <td align="right">
+               <b>36.68</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">11</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">3</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">5</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>19</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e104');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.RegistryRequest.component3() may expose internal representation by returning RegistryRequest.entries</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e104" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.RegistryRequest<br/>In method ru.spbstu.scholarship.review.api.RegistryRequest.component3()<br/>Field ru.spbstu.scholarship.review.api.RegistryRequest.entries<br/>In ReviewService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e120');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.RegistryRequest.getEntries() may expose internal representation by returning RegistryRequest.entries</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e120" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.RegistryRequest<br/>In method ru.spbstu.scholarship.review.api.RegistryRequest.getEntries()<br/>Field ru.spbstu.scholarship.review.api.RegistryRequest.entries<br/>At ReviewService.kt:[line 218]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e190');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.ReviewRequest.component2() may expose internal representation by returning ReviewRequest.scores</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e190" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewRequest<br/>In method ru.spbstu.scholarship.review.api.ReviewRequest.component2()<br/>Field ru.spbstu.scholarship.review.api.ReviewRequest.scores<br/>In ReviewService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e206');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.ReviewRequest.getScores() may expose internal representation by returning ReviewRequest.scores</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e206" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewRequest<br/>In method ru.spbstu.scholarship.review.api.ReviewRequest.getScores()<br/>Field ru.spbstu.scholarship.review.api.ReviewRequest.scores<br/>At ReviewService.kt:[line 214]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e136');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.review.api.RegistryRequest(String, String, List) may expose internal representation by storing an externally mutable object into RegistryRequest.entries</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e136" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.RegistryRequest<br/>In method new ru.spbstu.scholarship.review.api.RegistryRequest(String, String, List)<br/>Field ru.spbstu.scholarship.review.api.RegistryRequest.entries<br/>Local variable named entries<br/>At ReviewService.kt:[line 218]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e222');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.review.api.ReviewRequest(String, List, String) may expose internal representation by storing an externally mutable object into ReviewRequest.scores</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e222" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewRequest<br/>In method new ru.spbstu.scholarship.review.api.ReviewRequest(String, List, String)<br/>Field ru.spbstu.scholarship.review.api.ReviewRequest.scores<br/>Local variable named scores<br/>At ReviewService.kt:[line 214]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e318');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper) may expose internal representation by storing an externally mutable object into ReviewService.audit</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e318" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper)<br/>Field ru.spbstu.scholarship.review.api.ReviewService.audit<br/>Local variable named audit<br/>At ReviewService.kt:[line 28]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e336');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper) may expose internal representation by storing an externally mutable object into ReviewService.om</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e336" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper)<br/>Field ru.spbstu.scholarship.review.api.ReviewService.om<br/>Local variable named om<br/>At ReviewService.kt:[line 32]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e354');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper) may expose internal representation by storing an externally mutable object into ReviewService.repo</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e354" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper)<br/>Field ru.spbstu.scholarship.review.api.ReviewService.repo<br/>Local variable named repo<br/>At ReviewService.kt:[line 27]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e417');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.review.repo.ReviewRepository(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into ReviewRepository.jdbc</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e417" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.repo.ReviewRepository<br/>In method new ru.spbstu.scholarship.review.repo.ReviewRepository(NamedParameterJdbcTemplate)<br/>Field ru.spbstu.scholarship.review.repo.ReviewRepository.jdbc<br/>Local variable named jdbc<br/>At ReviewRepository.kt:[line 22]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e401');">
+            <td>
+               <span class="priority-2">MS</span>
+            </td>
+            <td>Public static ru.spbstu.scholarship.review.api.ReviewService$Companion.getTRANSITIONS() may expose internal representation by returning ReviewService.TRANSITIONS</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e401" style="display: none;">
+                  <a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService$Companion<br/>In method ru.spbstu.scholarship.review.api.ReviewService$Companion.getTRANSITIONS()<br/>Field ru.spbstu.scholarship.review.api.ReviewService.TRANSITIONS<br/>At ReviewService.kt:[line 203]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e154');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.ReviewController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e154" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewController<br/>In method ru.spbstu.scholarship.review.api.ReviewController.ranking(AuthUser, UUID)<br/>At ReviewController.kt:[lines 61-62]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e166');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.ReviewController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e166" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewController<br/>In method ru.spbstu.scholarship.review.api.ReviewController.registry(AuthUser, UUID, String, RegistryRequest)<br/>At ReviewController.kt:[lines 52-55]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e178');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.review.api.ReviewController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e178" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewController<br/>In method ru.spbstu.scholarship.review.api.ReviewController.review(AuthUser, UUID, String, ReviewRequest)<br/>At ReviewController.kt:[lines 35-40]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e240');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e240" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ReviewService.kt:[line 244]<br/>Another occurrence at ReviewService.kt:[line 248]<br/>Another occurrence at ReviewService.kt:[line 252]<br/>Another occurrence at ReviewService.kt:[line 256]<br/>Another occurrence at ReviewService.kt:[line 274]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e272');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.review.api.ReviewService.ranking(AuthUser, UUID)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e272" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method ru.spbstu.scholarship.review.api.ReviewService.ranking(AuthUser, UUID)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ReviewService.kt:[line 282]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e294');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e294" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ReviewService.kt:[line 225]<br/>Another occurrence at ReviewService.kt:[line 229]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e372');">
+            <td>
+               <span class="priority-3">RCN</span>
+            </td>
+            <td>Redundant nullcheck of Object.toString(), which is known to be non-null in ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e372" style="display: none;">
+                  <a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)<br/>Return value of Object.toString() of type String<br/>Redundant null check at ReviewService.kt:[line 44]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e387');">
+            <td>
+               <span class="priority-2">SA</span>
+            </td>
+            <td>Self assignment of pid in ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e387" style="display: none;">
+                  <a href="#SA_LOCAL_SELF_ASSIGNMENT">Bug type SA_LOCAL_SELF_ASSIGNMENT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.review.api.ReviewService<br/>In method ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)<br/>Local variable named pid<br/>At ReviewService.kt:[line 166]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="BC_BAD_CAST_TO_ABSTRACT_COLLECTION">BC_BAD_CAST_TO_ABSTRACT_COLLECTION: Questionable cast to abstract collection</a>
+      </h2>
+
+<p>
+This code casts a Collection to an abstract collection
+(such as <code>List</code>, <code>Set</code>, or <code>Map</code>).
+Ensure that you are guaranteed that the object is of the type
+you are casting to. If all you need is to be able
+to iterate through a collection, you don't need to cast it to a Set or List.
+</p>
+<p>See <a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="MS_EXPOSE_REP">MS_EXPOSE_REP: Public static method may expose internal representation by returning a mutable object or array</a>
+      </h2>
+
+  <p> A public static method returns a reference to a mutable object or
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    <h2>
+         <a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE: Redundant nullcheck of value known to be non-null</a>
+      </h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    <h2>
+         <a name="SA_LOCAL_SELF_ASSIGNMENT">SA_LOCAL_SELF_ASSIGNMENT: Self assignment of local variable</a>
+      </h2>
+
+<p> This method contains a self assignment of a local variable; e.g.</p>
+<pre><code>public void foo() {
+    int x = 3;
+    x = x;
+}
+</code></pre>
+<p>
+Such assignments are useless, and may indicate a logic error or typo.
+</p>
+
+    <h2>
+         <a name="SPRING_ENDPOINT">SPRING_ENDPOINT: Found Spring endpoint</a>
+      </h2>
+            
+<p>This class is a Spring Controller. All methods annotated with <code>RequestMapping</code> (as well as its shortcut annotations <code>GetMapping</code>, <code>PostMapping</code>, <code>PutMapping</code>, <code>DeleteMapping</code>, and <code>PatchMapping</code>) are reachable remotely.
+This class should be analyzed to make sure that remotely exposed methods are safe to expose to potential attackers.</p>
+
+        </body>
+</html>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.9.6" sequence="0" timestamp="1795559664458" analysisTimestamp="1795559664458" release="">
+  <Project projectName="api-gateway (spotbugsMain)">
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/BodySizeFilter.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/GatewayApplication.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/GatewayApplicationKt.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/GatewayFiltersKt.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/JwtFilter.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/RateLimitFilter$Rule.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/RateLimitFilter.class</Jar>
+    <Jar>/src/api-gateway/build/classes/kotlin/main/ru/spbstu/scholarship/gateway/RequestHygieneFilter.class</Jar>
+    <AuxClasspathEntry>/src/platform/build/libs/platform-1.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-gateway-server-webflux/4.3.0/2c7614b286450618cf862090093ae6e66f3e50ca/spring-cloud-starter-gateway-server-webflux-4.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-webflux/3.5.6/c696603014c12d8e8f22378fa092e631cabbc939/spring-boot-starter-webflux-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.5.6/62143e29dbac1e72759da7dd85fb8f85a3d582f7/spring-boot-starter-json-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.19.2/a720d3946c3a1ab04b780f3b3163d62eee6948a0/jackson-datatype-jdk8-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.19.2/72e73f048b36d9df82aef146bf8b2ae63b2e28e2/jackson-datatype-jsr310-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.19.2/3c4ce467c11364c72ec4967c570fd5a2d1be1d0b/jackson-module-parameter-names-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.19.2/46509399d28f57ca32c6bb4b0d4e10e8f062051e/jackson-databind-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.19.2/c5381f11988ae3d424b197a26087d86067b6d7d/jackson-annotations-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.19.2/50f3b4bd59b9ff51a0ed493e7b5abaf5c39709bf/jackson-core-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.19.2/c052fdf35343bf6b4e132e75515243e0d497db64/jackson-module-kotlin-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/2.1.21/4929da533b3f04a101e4bb9ae0ee51a1d8107614/kotlin-reflect-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/97a0975aa19d925e109537af60eb46902920015c/kotlin-stdlib-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis-reactive/3.5.6/2823afc941f05c4e87879d543bd0c2305d2cff9f/spring-boot-starter-data-redis-reactive-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/3.5.6/3e00af7ce0236ea8644bf76284f538beba3e76c7/spring-boot-starter-actuator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor.kotlin/reactor-kotlin-extensions/1.2.4/352dd3ecefec700f2be2644855fd6657f3336e5/reactor-kotlin-extensions-1.2.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.nimbusds/nimbus-jose-jwt/10.3/5d7a2aed3502099fa8552e5c16726fd4c9a27e0c/nimbus-jose-jwt-10.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter/4.3.0/8e794c3b8438450bf8d7cfbb936bb05344a54397/spring-cloud-starter-4.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-gateway-server-webflux/4.3.0/7db76e06e7d4b16c8963886318bc62a9bc016990/spring-cloud-gateway-server-webflux-4.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-properties-migrator/3.5.6/7c03512abaf6d86d51c04a9619b0a34d25cf4f8d/spring-boot-properties-migrator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-gateway-server/4.3.0/a2a9990714dc9087d9054a38b2e62b828f0dd0e2/spring-cloud-gateway-server-4.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-validation/3.5.6/2ec647ae8e16b09a4aee4a17c0e7736f6214aacc/spring-boot-starter-validation-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.5.6/2a2de314809a7c4c9b7303063c1313e03fe31ad3/spring-boot-starter-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/6.6.0.RELEASE/8a9bb7a3291328f4a0156643dddd3f1194bd26f3/lettuce-core-6.6.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/6.2.11/d5c8f97c7714881c278489fc8e3cfc942a0a2349/spring-webflux-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor.addons/reactor-extra/3.5.3/13c17f9f17b82f466d83645ddfc36908424844c5/reactor-extra-3.5.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/3.5.6/73d0f60e1ae8879af234508f17d80f0b0c0e6edb/spring-boot-starter-reactor-netty-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor.netty/reactor-netty-http/1.2.10/e60ff32fe2e13c0be741378b85d810e99e49c80e/reactor-netty-http-1.2.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor.netty/reactor-netty-core/1.2.10/a2c808ca5468f4b48f6baa1b2d6bc1f6b3637074/reactor-netty-core-1.2.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.7.11/8ac8ee9da2424c81c029f8c361e34838f77a1b78/reactor-core-3.7.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/3.5.4/519115a1fc8adf97adb1367419065b589733a12f/spring-data-redis-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/3.5.6/7b7f4245c6ea91cb28edf73368998748d318b603/spring-boot-actuator-autoconfigure-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-jakarta9/1.15.4/639673a45d74ddeeaab885b0251687644059d88f/micrometer-jakarta9-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.2.11/e590ac3e1aaea2d34a5ccb5c25ad84acbada8468/spring-web-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.15.4/603fe6d384d9b58ab709f4ca17baa9ca17ce7a4/micrometer-core-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.5.6/6b8fc2519774de4e82b0dbb5651093ce2ca20836/spring-boot-autoconfigure-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/3.5.6/cf67879f31058782b4a04a4c19978f30c5cb477c/spring-boot-actuator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.5.6/a02f486ab700dad1f81e54cb37651d92a3f9d700/spring-boot-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/3.5.4/8140e2fd2950886f8b4f165ef0f0df37d1085607/spring-data-keyvalue-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.2.11/b092cbb9c21eab6fbbbf57b21eaef8da6d3a96a6/spring-context-support-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.2.11/bbfb4d55385b2b65ecaf04937d209cf467eaba2f/spring-context-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.15.4/8cd0aed0ff098a7937f2f8f81705840f2d60a432/micrometer-observation-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-context/4.3.0/831b237375831042b7838570db74df44bdea5aa6/spring-cloud-context-4.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-commons/4.3.0/e939caa4370105f53b1213520692615bed7605f3/spring-cloud-commons-4.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.80/e22100b41042decf09cab914a5af8d2c57b5ac4a/bcprov-jdk18on-1.80.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.5.6/61717f15cb53d2a0cce6428b29adbdc2ed5f2f25/spring-boot-starter-logging-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.2.11/f2b8bef65f6682019002c12a628886637e596261/spring-tx-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/6.2.11/1a57a7ba5e5be04e03fd45001e137e35714517f5/spring-oxm-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.2.11/1e970383810700506d646c2fa8943725f123f000/spring-aop-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.5.4/b61f6528cb8b39b471775a4b27f0437f6646f1e6/spring-data-commons-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.2.11/8d92eb837b70094d7316f6a07770eefd360bc53c/spring-beans-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.2.11/7190c1c69576516efef1a061d956dccf17cb0b86/spring-expression-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.2.11/f4860eb6ea92abb8ae6c5e82e2e7efc395cef8d/spring-core-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/2.4/e0666b825b796f85521f02360e77f4c92c5a7a07/snakeyaml-2.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/redis.clients.authentication/redis-authx-core/0.1.1-beta2/4037345ff29fb22c737bab2ed116a34262718ae5/redis-authx-core-0.1.1-beta2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.127.Final/39cf7a8790047fecda2c1fe87ee54d2f32aefb45/netty-codec-http2-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.127.Final/85cfd39769b7f12ae56b7e46ed506a9ac0daeef4/netty-handler-proxy-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.127.Final/c4c3fa12be76064a7a96631959641bcd600e6556/netty-codec-http-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-native-macos/4.1.127.Final/310929708225c05f4dd99015523eccabf1493bc2/netty-resolver-dns-native-macos-4.1.127.Final-osx-x86_64.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-classes-macos/4.1.127.Final/21c93bc3a412afeac8deb10874d6dc7cfb961ea0/netty-resolver-dns-classes-macos-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.127.Final/568ff6c6a899ffc64d4a7a461059291dcc502062/netty-resolver-dns-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.127.Final/5e9ee8931666a12b52340309f92d51d0b49611de/netty-handler-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.127.Final/9a4657cd5fa3b7ac19698727b0891353c3ea1ce3/netty-transport-native-epoll-4.1.127.Final-linux-x86_64.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.127.Final/3e1f9af9f34817b9cf613eedbaf87dfcdd3ccd9/netty-transport-classes-epoll-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.127.Final/9cc0512d2ddfe9ae76c6db796e1980a8bdbadae1/netty-transport-native-unix-common-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.127.Final/bcb5a439fc94dacaf98bac2426e40f21376a8e1a/netty-codec-dns-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.127.Final/c664f38b0f004e6b4ecf64f826939e24a56cbe9c/netty-codec-socks-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.127.Final/b05d16b459b6c6042197a1f3aef671cf535767c3/netty-codec-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.127.Final/9925d9d6be72436b661ba6a71cc8d2897fe83cf0/netty-transport-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.127.Final/2b34a14b6ec23761d6d2300a1c261914401f2553/netty-resolver-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.127.Final/356b4f2e759d36fec774cd17e583a7609d8ec15d/netty-buffer-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.127.Final/ada4ab671678f956e1cd5067ba94bc340af1d8bf/netty-common-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.5.18/fc371f3fc97a639de2d67947cffb7518ec5e3d40/logback-classic-1.5.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.24.3/da1143e2a2531ee1c2d90baa98eb50a28a39d5a7/log4j-to-slf4j-2.24.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/2.0.17/524cb6ccc2b68a57604750e1ab8b13b5a786a6aa/jul-to-slf4j-2.0.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.17/d9e58ac9c7779ba3bf8142aff6c830617a7fe60f/slf4j-api-2.0.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.15.4/f73f10deeee5700b15c2f0f41ae79e2689b39613/micrometer-commons-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/6.5.5/83f9ebdd4706d23d697a7012aa946b64b54476f6/spring-security-crypto-6.5.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.2.11/819fc7e968ac07d4b042be7cfb8d99c267142ac7/spring-jcl-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.46/e1fc6986d030e791415535e28fd21c0be11810de/tomcat-embed-el-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/8.0.3.Final/4425f554297a1c5ba03a3f30e559a9fd91048cf8/hibernate-validator-8.0.3.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.5.18/6c0375624f6f36b4e089e2488ba21334a11ef13f/logback-core-1.5.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/b02c125db8b6d295adf72ae6e71af5d83bce2370/log4j-api-2.24.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/3.0.2/92b6631659ba35ca09e44874d3eb936edfeee532/jakarta.validation-api-3.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.6.1.Final/886afbb445b4016a37c8960a7aef6ebd769ce7e5/jboss-logging-3.6.1.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.7.0/e98374da1f2143ac8e6e0a95036994bb19137a3/classmate-1.7.0.jar</AuxClasspathEntry>
+    <SrcDir>/src/api-gateway/src/main/resources</SrcDir>
+    <SrcDir>/src/api-gateway/src/main/java</SrcDir>
+    <SrcDir>/src/api-gateway/src/main/kotlin</SrcDir>
+    <Plugin id="com.h3xstream.findsecbugs" enabled="true"/>
+  </Project>
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="3" rank="15" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="99d80e3dd599350399562592c55f19a6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+    <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
+    <LongMessage>This use of org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.JwtFilter" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.JwtFilter" start="97" end="118" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[lines 97-118]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.JwtFilter</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.JwtFilter" name="filter" signature="(Lorg/springframework/web/server/ServerWebExchange;Lorg/springframework/cloud/gateway/filter/GatewayFilterChain;)Lreactor/core/publisher/Mono;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.JwtFilter" start="106" end="112" startBytecode="0" endBytecode="477" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method ru.spbstu.scholarship.gateway.JwtFilter.filter(ServerWebExchange, GatewayFilterChain)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.JwtFilter" primary="true" start="117" end="117" startBytecode="236" endBytecode="236" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 117]</Message>
+    </SourceLine>
+    <String value="org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;)V" role="Sink method">
+      <Message>Sink method org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;)V</Message>
+    </String>
+    <String value="0" role="Sink parameter">
+      <Message>Sink parameter 0</Message>
+    </String>
+    <String value="ru/spbstu/scholarship/platform/token/InvalidTokenException.getMessage()Ljava/lang/String;" role="Unknown source">
+      <Message>Unknown source ru/spbstu/scholarship/platform/token/InvalidTokenException.getMessage()Ljava/lang/String;</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="SA_LOCAL_SELF_ASSIGNMENT" priority="3" rank="20" abbrev="SA" category="STYLE" instanceHash="f49c446473dc5a1d4ea0f0226c97ae3d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Self assignment of local variable</ShortMessage>
+    <LongMessage>Self assignment of $L5 in ru.spbstu.scholarship.gateway.JwtFilter.filter(ServerWebExchange, GatewayFilterChain)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.JwtFilter" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.JwtFilter" start="97" end="118" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[lines 97-118]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.JwtFilter</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.JwtFilter" name="filter" signature="(Lorg/springframework/web/server/ServerWebExchange;Lorg/springframework/cloud/gateway/filter/GatewayFilterChain;)Lreactor/core/publisher/Mono;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.JwtFilter" start="106" end="112" startBytecode="0" endBytecode="477" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method ru.spbstu.scholarship.gateway.JwtFilter.filter(ServerWebExchange, GatewayFilterChain)</Message>
+    </Method>
+    <LocalVariable name="?" register="5" pc="218" role="LOCAL_VARIABLE_UNKNOWN">
+      <Message>Local variable stored in JVM register 5</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.JwtFilter" primary="true" start="114" end="114" startBytecode="218" endBytecode="218" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 114]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="3" rank="15" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="53cb966f1ab59dcb3b3a23e8c29612" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+    <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
+    <LongMessage>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RateLimitFilter" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="129" end="182" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[lines 129-182]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RateLimitFilter</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RateLimitFilter" name="filter$lambda$4" signature="(Lru/spbstu/scholarship/gateway/RateLimitFilter$Rule;JJJLru/spbstu/scholarship/gateway/RateLimitFilter;Ljava/lang/String;Lorg/springframework/web/server/ServerWebExchange;Lorg/springframework/cloud/gateway/filter/GatewayFilterChain;Ljava/lang/Long;)Lreactor/core/publisher/Mono;" isStatic="true" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="164" end="169" startBytecode="0" endBytecode="253" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method ru.spbstu.scholarship.gateway.RateLimitFilter.filter$lambda$4(RateLimitFilter$Rule, long, long, long, RateLimitFilter, String, ServerWebExchange, GatewayFilterChain, Long)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" primary="true" start="166" end="166" startBytecode="37" endBytecode="37" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 166]</Message>
+    </SourceLine>
+    <String value="org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V" role="Sink method">
+      <Message>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V</Message>
+    </String>
+    <String value="0" role="Sink parameter">
+      <Message>Sink parameter 0</Message>
+    </String>
+    <String value="ru/spbstu/scholarship/gateway/RateLimitFilter.filter$lambda$4(Lru/spbstu/scholarship/gateway/RateLimitFilter$Rule;JJJLru/spbstu/scholarship/gateway/RateLimitFilter;Ljava/lang/String;Lorg/springframework/web/server/ServerWebExchange;Lorg/springframework/cloud/gateway/filter/GatewayFilterChain;Ljava/lang/Long;)Lreactor/core/publisher/Mono; parameter 3" role="Unknown source">
+      <Message>Unknown source ru/spbstu/scholarship/gateway/RateLimitFilter.filter$lambda$4(Lru/spbstu/scholarship/gateway/RateLimitFilter$Rule;JJJLru/spbstu/scholarship/gateway/RateLimitFilter;Ljava/lang/String;Lorg/springframework/web/server/ServerWebExchange;Lorg/springframework/cloud/gateway/filter/GatewayFilterChain;Ljava/lang/Long;)Lreactor/core/publisher/Mono; parameter 3</Message>
+    </String>
+    <String value="not detected" role="Method usage">
+      <Message>Method usage not detected</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="208e0a6573add1c1802618495480955f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.gateway.RateLimitFilter(ReactiveStringRedisTemplate) may expose internal representation by storing an externally mutable object into RateLimitFilter.redis</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RateLimitFilter" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="129" end="182" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[lines 129-182]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RateLimitFilter</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RateLimitFilter" name="&lt;init&gt;" signature="(Lorg/springframework/data/redis/core/ReactiveStringRedisTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="129" end="129" startBytecode="0" endBytecode="649" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method new ru.spbstu.scholarship.gateway.RateLimitFilter(ReactiveStringRedisTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.gateway.RateLimitFilter" name="redis" signature="Lorg/springframework/data/redis/core/ReactiveStringRedisTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>In GatewayFilters.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.gateway.RateLimitFilter.redis</Message>
+    </Field>
+    <LocalVariable name="redis" register="1" pc="12" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named redis</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" primary="true" start="129" end="129" startBytecode="12" endBytecode="12" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 129]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_PARAM_DEREF" priority="3" rank="11" abbrev="NP" category="CORRECTNESS" instanceHash="5d5257f37576153ec486bad52144b4c5" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Method call passes null for non-null parameter</ShortMessage>
+    <LongMessage>Null passed for non-null parameter of reactor.core.publisher.Mono.thenReturn(Object) in ru.spbstu.scholarship.gateway.RateLimitFilter.filter$lambda$2(RateLimitFilter, String, RateLimitFilter$Rule, Long)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RateLimitFilter" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="129" end="182" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[lines 129-182]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RateLimitFilter</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RateLimitFilter" name="filter$lambda$2" signature="(Lru/spbstu/scholarship/gateway/RateLimitFilter;Ljava/lang/String;Lru/spbstu/scholarship/gateway/RateLimitFilter$Rule;Ljava/lang/Long;)Lreactor/core/publisher/Mono;" isStatic="true" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="162" end="162" startBytecode="0" endBytecode="161" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method ru.spbstu.scholarship.gateway.RateLimitFilter.filter$lambda$2(RateLimitFilter, String, RateLimitFilter$Rule, Long)</Message>
+    </Method>
+    <Method classname="reactor.core.publisher.Mono" name="thenReturn" signature="(Ljava/lang/Object;)Lreactor/core/publisher/Mono;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="reactor.core.publisher.Mono" start="4895" end="4895" startBytecode="0" endBytecode="88" sourcefile="Mono.java" sourcepath="reactor/core/publisher/Mono.java"/>
+      <Message>Called method reactor.core.publisher.Mono.thenReturn(Object)</Message>
+    </Method>
+    <Int value="1" role="INT_MAYBE_NULL_ARG">
+      <Message>Argument 1 might be null but must not be null</Message>
+    </Int>
+    <LocalVariable name="n" register="3" pc="49" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from n</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" primary="true" start="162" end="162" startBytecode="50" endBytecode="50" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt" role="SOURCE_LINE_INVOKED">
+      <Message>Method invoked at GatewayFilters.kt:[line 162]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter" start="162" end="162" startBytecode="8" endBytecode="8" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at GatewayFilters.kt:[line 162]</Message>
+    </SourceLine>
+    <Property name="edu.umd.cs.findbugs.props.GeneralWarningProperty.IN_UNCALLABLE_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="b537fc6f9643b75b8790ae3f5b956a4b" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.component3() may expose internal representation by returning RateLimitFilter$Rule.path</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" start="133" end="133" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[line 133]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RateLimitFilter$Rule</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" name="component3" signature="()Lkotlin/text/Regex;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.component3()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" name="path" signature="Lkotlin/text/Regex;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>In GatewayFilters.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.path</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" startBytecode="4" endBytecode="4" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>In GatewayFilters.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="e36325ad158b6c163c711da8ebb8ecac" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.getPath() may expose internal representation by returning RateLimitFilter$Rule.path</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" start="133" end="133" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[line 133]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RateLimitFilter$Rule</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" name="getPath" signature="()Lkotlin/text/Regex;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" start="133" end="133" startBytecode="0" endBytecode="46" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.getPath()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" name="path" signature="Lkotlin/text/Regex;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>In GatewayFilters.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.path</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" primary="true" start="133" end="133" startBytecode="4" endBytecode="4" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 133]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="bb5722df8844103a29a6147d946f2bdd" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.gateway.RateLimitFilter$Rule(String, HttpMethod, Regex, long, Duration, boolean) may expose internal representation by storing an externally mutable object into RateLimitFilter$Rule.path</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" start="133" end="133" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[line 133]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RateLimitFilter$Rule</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" name="&lt;init&gt;" signature="(Ljava/lang/String;Lorg/springframework/http/HttpMethod;Lkotlin/text/Regex;JLjava/time/Duration;Z)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" start="133" end="133" startBytecode="0" endBytecode="158" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method new ru.spbstu.scholarship.gateway.RateLimitFilter$Rule(String, HttpMethod, Regex, long, Duration, boolean)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" name="path" signature="Lkotlin/text/Regex;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>In GatewayFilters.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.gateway.RateLimitFilter$Rule.path</Message>
+    </Field>
+    <LocalVariable name="path" register="3" pc="35" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named path</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RateLimitFilter$Rule" primary="true" start="133" end="133" startBytecode="35" endBytecode="35" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 133]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="554f9397946b261254e89574ca343503" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in new ru.spbstu.scholarship.gateway.RequestHygieneFilter(String)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.gateway.RequestHygieneFilter" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RequestHygieneFilter" start="42" end="188" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+        <Message>At GatewayFilters.kt:[lines 42-188]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.gateway.RequestHygieneFilter</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.gateway.RequestHygieneFilter" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.gateway.RequestHygieneFilter" start="42" end="42" startBytecode="0" endBytecode="119" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt"/>
+      <Message>In method new ru.spbstu.scholarship.gateway.RequestHygieneFilter(String)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="5" pc="131" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RequestHygieneFilter" primary="true" start="183" end="183" startBytecode="133" endBytecode="133" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt">
+      <Message>At GatewayFilters.kt:[line 183]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.gateway.RequestHygieneFilter" start="186" end="186" startBytecode="241" endBytecode="241" sourcefile="GatewayFilters.kt" sourcepath="ru/spbstu/scholarship/gateway/GatewayFilters.kt" relSourcepath="kotlin/ru/spbstu/scholarship/gateway/GatewayFilters.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at GatewayFilters.kt:[line 186]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="CORRECTNESS">
+    <Description>Correctness</Description>
+  </BugCategory>
+  <BugCategory category="SECURITY">
+    <Description>Security</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugPattern type="CRLF_INJECTION_LOGS" abbrev="SECCRLFLOG" category="SECURITY" cweid="117">
+    <ShortDescription>Potential CRLF Injection for logs</ShortDescription>
+    <Details><![CDATA[
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_NULL_PARAM_DEREF" abbrev="NP" category="CORRECTNESS">
+    <ShortDescription>Method call passes null for non-null parameter</ShortDescription>
+    <Details><![CDATA[
+      
+      <p>
+      This method call passes a null value for a non-null method parameter.
+    Either the parameter is annotated as a parameter that should
+    always be non-null, or analysis has shown that it will always be
+    dereferenced.
+      </p>
+      
+   ]]></Details>
+  </BugPattern>
+  <BugPattern type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" abbrev="BC" category="STYLE" cweid="704">
+    <ShortDescription>Questionable cast to abstract collection</ShortDescription>
+    <Details><![CDATA[
+
+<p>
+This code casts a Collection to an abstract collection
+(such as <code>List</code>, <code>Set</code>, or <code>Map</code>).
+Ensure that you are guaranteed that the object is of the type
+you are casting to. If all you need is to be able
+to iterate through a collection, you don't need to cast it to a Set or List.
+</p>
+<p>See <a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SA_LOCAL_SELF_ASSIGNMENT" abbrev="SA" category="STYLE">
+    <ShortDescription>Self assignment of local variable</ShortDescription>
+    <Details><![CDATA[
+
+<p> This method contains a self assignment of a local variable; e.g.</p>
+<pre><code>public void foo() {
+    int x = 3;
+    x = x;
+}
+</code></pre>
+<p>
+Such assignments are useless, and may indicate a logic error or typo.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="BC">
+    <Description>Bad casts of object references</Description>
+  </BugCode>
+  <BugCode abbrev="NP" cweid="476">
+    <Description>Null pointer dereference</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method may expose internal representation</Description>
+  </BugCode>
+  <BugCode abbrev="SECCRLFLOG">
+    <Description>CRLF Injection for logs</Description>
+  </BugCode>
+  <BugCode abbrev="SA">
+    <Description>Useless self-operation</Description>
+  </BugCode>
+  <BugCode abbrev="EI2">
+    <Description>Storing reference to mutable object</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 24 Nov 2026 22:34:24 +0000" total_classes="0" referenced_classes="0" total_bugs="9" total_size="0" num_packages="1" java_version="21.0.9" vm_version="21.0.9+10-LTS" cpu_seconds="21.80" clock_seconds="12.82" peak_mbytes="217.54" alloc_mbytes="1976.00" gc_seconds="0.29" priority_3="4" priority_2="5">
+    <FileStats path="ru/spbstu/scholarship/gateway/GatewayFilters.kt" bugCount="9" size="0" bugHash="369cafcbf68ffc6eb0dc0cfc46a4502f"/>
+    <FindBugsProfile></FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,358 @@
+openapi: 3.0.3
+info:
+  title: Сервис заявок на материальную поддержку и ПГАС — API (api-gateway)
+  version: "1.0"
+  description: |
+    Внешний контракт API (операции OP-01…OP-18 из ЛР № 2 и журнала расхождений ЛР № 3).
+    Спецификация составлена в ЛР № 5 для передачи всех эндпоинтов DAST-сканеру (OWASP ZAP).
+    Примеры значений — идентификаторы из тестовых данных db/seed.sql, чтобы сканер
+    обращался к существующим объектам, а не получал только 404.
+servers:
+  - url: https://localhost:8443/api/v1
+    description: api-gateway (TLS, самоподписанный сертификат secrets/gateway.crt)
+security:
+  - bearer: []
+tags:
+  - name: auth
+  - name: applications
+  - name: review
+
+paths:
+  # --------------------------------------------------------------- auth-service
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: OP-07 вход
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LoginRequest' }
+      responses:
+        '200': { description: Токен доступа в теле, refresh — в cookie HttpOnly }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '429': { $ref: '#/components/responses/Error' }
+  /auth/refresh:
+    post:
+      tags: [auth]
+      summary: OP-08 обновление токена (refresh из cookie, ротация)
+      security: []
+      parameters:
+        - in: header
+          name: X-Requested-With
+          required: true
+          schema: { type: string, example: fetch }
+      responses:
+        '200': { description: Новый токен доступа }
+        '401': { $ref: '#/components/responses/Error' }
+  /auth/logout:
+    post:
+      tags: [auth]
+      summary: OP-15 выход (сессия удаляется из Redis)
+      responses:
+        '204': { description: Сессия завершена }
+        '401': { $ref: '#/components/responses/Error' }
+  /auth/reauth:
+    post:
+      tags: [auth]
+      summary: OP-16 повторный ввод пароля перед OP-05
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [password]
+              properties:
+                password: { type: string, example: wrong-password-1 }
+      responses:
+        '204': { description: Подтверждено на 5 минут }
+        '403': { $ref: '#/components/responses/Error' }
+  /auth/register:
+    post:
+      tags: [auth]
+      summary: OP-14 регистрация обучающегося из каталога
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [external_id, email, password]
+              properties:
+                external_id: { type: string, example: stud010 }
+                email: { type: string, example: stud010@example.edu }
+                password: { type: string, example: Scanner-Pass-2026 }
+      responses:
+        '201': { description: Учётная запись создана }
+        '400': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /auth/password-reset:
+    post:
+      tags: [auth]
+      summary: OP-09 запрос восстановления (ответ всегда 202)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [email]
+              properties:
+                email: { type: string, example: nobody@example.edu }
+      responses:
+        '202': { description: Принято }
+  /auth/password-reset/confirm:
+    post:
+      tags: [auth]
+      summary: OP-09 смена пароля по одноразовому коду
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [token, new_password]
+              properties:
+                token: { type: string, example: invalid-reset-token }
+                new_password: { type: string, example: Scanner-Pass-2026 }
+      responses:
+        '204': { description: Пароль изменён }
+        '400': { $ref: '#/components/responses/Error' }
+
+  # --------------------------------------------------------------- applications-service
+  /applications:
+    get:
+      tags: [applications]
+      summary: OP-04 список заявок (область выборки задаёт сервер)
+      parameters:
+        - { in: query, name: campaign_id, schema: { type: string, format: uuid, example: c0000000-0000-4000-8000-000000000001 } }
+        - { in: query, name: status, schema: { type: string, example: submitted } }
+        - { in: query, name: type, schema: { type: string, example: pgas } }
+        - { in: query, name: sort, schema: { type: string, example: -created_at } }
+        - { in: query, name: limit, schema: { type: string, example: "20" } }
+        - { in: query, name: cursor, schema: { type: string } }
+      responses:
+        '200': { description: Страница списка }
+        '400': { $ref: '#/components/responses/Error' }
+    post:
+      tags: [applications]
+      summary: OP-02 создание заявки (Idempotency-Key обязателен)
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CreateApplication' }
+      responses:
+        '201': { description: Создана }
+        '200': { description: Повтор с тем же ключом }
+        '409': { $ref: '#/components/responses/Error' }
+  /applications/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ApplicationId'
+    get:
+      tags: [applications]
+      summary: OP-01 заявка по идентификатору
+      parameters:
+        - { in: query, name: include, schema: { type: string, example: attachments } }
+      responses:
+        '200': { description: Заявка, ETag — версия }
+        '404': { $ref: '#/components/responses/Error' }
+    delete:
+      tags: [applications]
+      summary: OP-13 отзыв своей заявки
+      responses:
+        '204': { description: Отозвана }
+        '404': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+  /applications/{id}/submit:
+    parameters:
+      - $ref: '#/components/parameters/ApplicationId'
+    post:
+      tags: [applications]
+      summary: OP-18 подача черновика
+      responses:
+        '200': { description: Подана }
+        '404': { $ref: '#/components/responses/Error' }
+  /applications/{id}/attachments:
+    parameters:
+      - $ref: '#/components/parameters/ApplicationId'
+    post:
+      tags: [applications]
+      summary: OP-10 ссылка на загрузку вложения (presigned POST)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [doc_type, file_name, content_type, size_bytes, sha256]
+              properties:
+                doc_type: { type: string, example: income_certificate }
+                file_name: { type: string, example: spravka.pdf }
+                content_type: { type: string, example: application/pdf }
+                size_bytes: { type: integer, example: 1024 }
+                sha256: { type: string, example: 0000000000000000000000000000000000000000000000000000000000000000 }
+      responses:
+        '201': { description: Форма загрузки }
+        '404': { $ref: '#/components/responses/Error' }
+  /applications/{id}/completeness-check:
+    parameters:
+      - $ref: '#/components/parameters/ApplicationId'
+    post:
+      tags: [applications]
+      summary: OP-06 проверка полноты (заглушка 501)
+      responses:
+        '501': { description: Не реализовано }
+    get:
+      tags: [applications]
+      summary: OP-11 результат проверки полноты (заглушка 501)
+      responses:
+        '501': { description: Не реализовано }
+  /campaigns:
+    get:
+      tags: [applications]
+      summary: OP-17 кампании и критерии
+      responses:
+        '200': { description: Список кампаний }
+
+  # --------------------------------------------------------------- review-service
+  /applications/{id}/review:
+    parameters:
+      - $ref: '#/components/parameters/ApplicationId'
+    patch:
+      tags: [review]
+      summary: OP-03 решение по заявке (If-Match обязателен)
+      parameters:
+        - in: header
+          name: If-Match
+          required: true
+          schema: { type: string, example: '"1"' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [status]
+              properties:
+                status: { type: string, example: under_review }
+                reason: { type: string, example: Недостаточно документов }
+                scores:
+                  type: array
+                  items:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      criterion_id: { type: string, format: uuid, example: d0000000-0000-4000-8000-000000000101 }
+                      value: { type: number, example: 10 }
+      responses:
+        '200': { description: Решение сохранено }
+        '403': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+  /campaigns/{id}/payout-registry:
+    parameters:
+      - $ref: '#/components/parameters/CampaignId'
+    post:
+      tags: [review]
+      summary: OP-05 реестр выплат (committee_chair, повторный ввод пароля, Idempotency-Key)
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [protocol_number, protocol_date, entries]
+              properties:
+                protocol_number: { type: string, example: П-15 }
+                protocol_date: { type: string, example: '2026-11-20' }
+                entries:
+                  type: array
+                  items:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      application_id: { type: string, format: uuid, example: e0000000-0000-4000-8000-000000000004 }
+                      amount: { type: number, example: 12000 }
+      responses:
+        '201': { description: Реестр сформирован }
+        '403': { $ref: '#/components/responses/Error' }
+  /campaigns/{id}/ranking:
+    parameters:
+      - $ref: '#/components/parameters/CampaignId'
+    get:
+      tags: [review]
+      summary: OP-12 ранжированный список кампании
+      responses:
+        '200': { description: Рейтинг }
+        '403': { $ref: '#/components/responses/Error' }
+
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    ApplicationId:
+      in: path
+      name: id
+      required: true
+      schema: { type: string, format: uuid, example: e0000000-0000-4000-8000-000000000001 }
+    CampaignId:
+      in: path
+      name: id
+      required: true
+      schema: { type: string, format: uuid, example: c0000000-0000-4000-8000-000000000003 }
+    IdempotencyKey:
+      in: header
+      name: Idempotency-Key
+      required: true
+      schema: { type: string, format: uuid, example: 5f3a1d2e-0000-4000-8000-00000000abcd }
+  responses:
+    Error:
+      description: Ошибка в едином формате
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error: { type: string }
+              message: { type: string }
+              request_id: { type: string }
+  schemas:
+    LoginRequest:
+      type: object
+      additionalProperties: false
+      required: [login, password]
+      properties:
+        login: { type: string, example: stud001 }
+        password: { type: string, example: wrong-password-1 }
+    CreateApplication:
+      type: object
+      additionalProperties: false
+      required: [campaign_id, type, statement, declared_grounds]
+      properties:
+        campaign_id: { type: string, format: uuid, example: c0000000-0000-4000-8000-000000000002 }
+        type: { type: string, example: material_aid }
+        statement: { type: string, example: Прошу оказать материальную поддержку }
+        declared_grounds:
+          type: array
+          items: { type: string, example: low_income }

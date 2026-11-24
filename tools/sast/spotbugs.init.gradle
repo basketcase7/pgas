@@ -1,0 +1,34 @@
+// SAST для Kotlin/JVM: SpotBugs + FindSecBugs подключаются init-скриптом, без изменения сборки проекта.
+// Запуск (в Docker, локально JDK не нужен):
+//   docker run --rm -v "$PWD:/src" -w /src gradle:8.14.3-jdk21 \
+//     gradle --no-daemon -q -I tools/sast/spotbugs.init.gradle spotbugsMain
+initscript {
+    repositories { gradlePluginPortal() }
+    dependencies { classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.4.2' }
+}
+
+allprojects {
+    pluginManager.withPlugin('org.jetbrains.kotlin.jvm') {
+        apply plugin: com.github.spotbugs.snom.SpotBugsPlugin
+        dependencies {
+            spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.14.0'
+            // minio тянет старые spotbugs-annotations; анализатору нужна своя версия
+            spotbugs 'com.github.spotbugs:spotbugs:4.9.6'
+            spotbugs 'com.github.spotbugs:spotbugs-annotations:4.9.6'
+        }
+        spotbugs {
+            ignoreFailures = true
+            effort = com.github.spotbugs.snom.Effort.valueOf('MAX')
+            reportLevel = com.github.spotbugs.snom.Confidence.valueOf('LOW')
+            // только код проекта, без сгенерированных Kotlin-классов стандартной библиотеки
+            onlyAnalyze = ['ru.spbstu.scholarship.-']
+        }
+        tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
+            reports {
+                sarif { required = true }
+                html { required = true }
+                xml { required = true }
+            }
+        }
+    }
+}
