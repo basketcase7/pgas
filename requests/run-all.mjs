@@ -25,6 +25,8 @@ if (!process.env.NODE_EXTRA_CA_CERTS) {
 const GW = process.env.GATEWAY || 'https://localhost:8443';
 const WEB = process.env.WEB || 'http://localhost:8080';
 const MAIL = process.env.MAILPIT || 'http://localhost:8025';
+// API Mailpit закрыт паролем (ЛР5, V-D04)
+const MAIL_AUTH = { headers: { Authorization: 'Basic ' + Buffer.from('admin:' + (env.MAILPIT_UI_PASSWORD || '')).toString('base64') } };
 const API = GW + '/api/v1';
 const PWD = env.DEMO_USERS_PASSWORD;
 
@@ -97,9 +99,9 @@ function forgeToken({ expired = false, wrongKey = false, sub = ID.stud001 } = {}
 
 async function mailTo(address, subjectPart, tries = 20) {
   for (let i = 0; i < tries; i++) {
-    const r = await fetch(`${MAIL}/api/v1/search?query=${encodeURIComponent('to:' + address)}`).then(x => x.json());
+    const r = await fetch(`${MAIL}/api/v1/search?query=${encodeURIComponent('to:' + address)}`, MAIL_AUTH).then(x => x.json());
     const m = r.messages.find(x => x.Subject.includes(subjectPart));
-    if (m) return fetch(`${MAIL}/api/v1/message/${m.ID}`).then(x => x.json());
+    if (m) return fetch(`${MAIL}/api/v1/message/${m.ID}`, MAIL_AUTH).then(x => x.json());
     await new Promise(res => setTimeout(res, 1000));
   }
   return null;

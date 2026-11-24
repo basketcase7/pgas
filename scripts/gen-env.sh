@@ -64,9 +64,11 @@ S3_APPLICATIONS_ACCESS_KEY=apps$(rnd 6)
 S3_APPLICATIONS_SECRET_KEY=$(rnd)
 SMTP_USER=notifier
 SMTP_PASSWORD=$(rnd)
+MAILPIT_UI_PASSWORD=$(rnd 12)
 NOTIFIER_SERVICE_TOKEN=$(rnd 32)
 EOF
 
 rm -rf "$tmp"
 echo "Готово: .env и secrets/ созданы."
 echo "Пароль тестовых пользователей: $DEMO"
+echo "Kafka UI и Mailpit: пользователь admin, пароли KAFKA_UI_PASSWORD и MAILPIT_UI_PASSWORD в .env"
