@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.9.6" sequence="0" timestamp="1795559671952" analysisTimestamp="1795559671952" release="">
+  <Project projectName="applications-service (spotbugsMain)">
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationsController$create$key$1.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationsController.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService$create$$inlined$sortedBy$1.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService$WhenMappings.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationView.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/AttachmentRequest.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/AttachmentView.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/CreateApplicationRequest.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/CreatedView.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ListItem.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ListView.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/Outcome.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/SubmittedView.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/UploadView.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/ApplicationsApplication.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/ApplicationsApplicationKt.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationStatus$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationStatus.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationType$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationType.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ContentHash.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/DocType$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/DocType.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/Ground$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/Ground.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ListSort$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ListSort.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$AttachmentRow.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$campaigns$criteria$2.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$scoresOf$1.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$WhenMappings.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepositoryKt.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRow.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/CampaignRow.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ListFilter.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ListRow.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/OwnApplication.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/storage/ObjectStorage$Companion.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/storage/ObjectStorage.class</Jar>
+    <Jar>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/storage/UploadForm.class</Jar>
+    <AuxClasspathEntry>/src/platform/build/libs/platform-1.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.minio/minio/8.5.17/f93c9b595c490456ce685eeaf4ae62ab0e8bc90e/minio-8.5.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.5.6/83d6174983b3d6649525a272222af212728a9892/spring-boot-starter-web-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.5.6/62143e29dbac1e72759da7dd85fb8f85a3d582f7/spring-boot-starter-json-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.19.2/a720d3946c3a1ab04b780f3b3163d62eee6948a0/jackson-datatype-jdk8-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.19.2/72e73f048b36d9df82aef146bf8b2ae63b2e28e2/jackson-datatype-jsr310-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.19.2/3c4ce467c11364c72ec4967c570fd5a2d1be1d0b/jackson-module-parameter-names-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.19.2/46509399d28f57ca32c6bb4b0d4e10e8f062051e/jackson-databind-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.19.2/c5381f11988ae3d424b197a26087d86067b6d7d/jackson-annotations-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.19.2/50f3b4bd59b9ff51a0ed493e7b5abaf5c39709bf/jackson-core-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.19.2/c052fdf35343bf6b4e132e75515243e0d497db64/jackson-module-kotlin-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/2.1.21/4929da533b3f04a101e4bb9ae0ee51a1d8107614/kotlin-reflect-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/4.12.0/2f4525d4a200e97e1b87449c2cd9bd2e25b7e8cd/okhttp-4.12.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.6.0/5600569133b7bdefe1daf9ec7f4abeb6d13e1786/okio-jvm-3.6.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/2.1.21/fb62497994f5cfa4ad41fcff05020c35976307c6/kotlin-stdlib-jdk8-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/2.1.21/f5e72fe5f9501e0d27ec633beb3996c29641b877/kotlin-stdlib-jdk7-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/97a0975aa19d925e109537af60eb46902920015c/kotlin-stdlib-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/3.5.6/812d2dc9a662d9ab640bea01b383e82d881fc586/spring-boot-starter-jdbc-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/3.5.6/cd8b9c7e3d4139528b58e74d65b708d12d5d612d/spring-boot-starter-data-redis-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/3.5.6/3e00af7ce0236ea8644bf76284f538beba3e76c7/spring-boot-starter-actuator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/3.3.10/83828f352490c0eaf7dcfb0e4947fec83edd506f/spring-kafka-3.3.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.nimbusds/nimbus-jose-jwt/10.3/5d7a2aed3502099fa8552e5c16726fd4c9a27e0c/nimbus-jose-jwt-10.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.5.6/2a2de314809a7c4c9b7303063c1313e03fe31ad3/spring-boot-starter-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.5.6/9384211e92c82344e23b00a580cc769724ea9a0c/spring-boot-starter-tomcat-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.2.11/3313fe95e06c1d3c94d00301cbed56ed1a9d2a86/spring-webmvc-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.2.11/e590ac3e1aaea2d34a5ccb5c25ad84acbada8468/spring-web-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/6.3.3/7c5aec1e47a97ff40977e0193018865304ea9585/HikariCP-6.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/6.2.11/8aadfc8bed1630563c65bb5628e2175ecd508998/spring-jdbc-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/6.6.0.RELEASE/8a9bb7a3291328f4a0156643dddd3f1194bd26f3/lettuce-core-6.6.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/3.5.4/519115a1fc8adf97adb1367419065b589733a12f/spring-data-redis-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/3.5.6/7b7f4245c6ea91cb28edf73368998748d318b603/spring-boot-actuator-autoconfigure-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-jakarta9/1.15.4/639673a45d74ddeeaab885b0251687644059d88f/micrometer-jakarta9-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.5.6/6b8fc2519774de4e82b0dbb5651093ce2ca20836/spring-boot-autoconfigure-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/3.5.6/cf67879f31058782b4a04a4c19978f30c5cb477c/spring-boot-actuator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.5.6/a02f486ab700dad1f81e54cb37651d92a3f9d700/spring-boot-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/3.5.4/8140e2fd2950886f8b4f165ef0f0df37d1085607/spring-data-keyvalue-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.2.11/b092cbb9c21eab6fbbbf57b21eaef8da6d3a96a6/spring-context-support-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.2.11/bbfb4d55385b2b65ecaf04937d209cf467eaba2f/spring-context-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.15.4/603fe6d384d9b58ab709f4ca17baa9ca17ce7a4/micrometer-core-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.15.4/8cd0aed0ff098a7937f2f8f81705840f2d60a432/micrometer-observation-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/6.2.11/74df574d43104cdb0e9bf60bb6bef787ec05c8b6/spring-messaging-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.2.11/f2b8bef65f6682019002c12a628886637e596261/spring-tx-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.retry/spring-retry/2.0.12/62a14736086ffd6f382f0df3bf066a5a34f174fa/spring-retry-2.0.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/3.9.1/86ca079953ed5606257ff298c24666b26da6985b/kafka-clients-3.9.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.carrotsearch.thirdparty/simple-xml-safe/2.7.1/45fda5ac6087bc82a209d8cdb73f8d0dbdcfc7b/simple-xml-safe-2.7.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.3.1-jre/852f8b363da0111e819460021ca693cacca3e8db/guava-33.3.1-jre.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.78.1/39e9e45359e20998eb79c1828751f94a818d25f8/bcprov-jdk18on-1.78.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.27.1/a19151084758e2fbb6b41eddaa88e7b8ff4e6599/commons-compress-1.27.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.18.0/ee45d1cf6ec2cc2b809ff04b4dc7aec858e0df8f/commons-codec-1.18.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.10.7/3049f95640f4625a945cfab85715f603fa4c8f80/snappy-java-1.1.10.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.5.6/61717f15cb53d2a0cce6428b29adbdc2ed5f2f25/spring-boot-starter-logging-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.2.11/1e970383810700506d646c2fa8943725f123f000/spring-aop-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/6.2.11/1a57a7ba5e5be04e03fd45001e137e35714517f5/spring-oxm-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.5.4/b61f6528cb8b39b471775a4b27f0437f6646f1e6/spring-data-commons-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.2.11/8d92eb837b70094d7316f6a07770eefd360bc53c/spring-beans-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.2.11/7190c1c69576516efef1a061d956dccf17cb0b86/spring-expression-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.2.11/f4860eb6ea92abb8ae6c5e82e2e7efc395cef8d/spring-core-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/2.4/e0666b825b796f85521f02360e77f4c92c5a7a07/snakeyaml-2.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.46/e98da6e2f659ec02062d2c84a07b7262e82d8b74/tomcat-embed-websocket-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.46/64d4eee6e42eb61492a7b84d458327bfb1c1d957/tomcat-embed-core-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.46/e1fc6986d030e791415535e28fd21c0be11810de/tomcat-embed-el-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/redis.clients.authentication/redis-authx-core/0.1.1-beta2/4037345ff29fb22c737bab2ed116a34262718ae5/redis-authx-core-0.1.1-beta2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.5.18/fc371f3fc97a639de2d67947cffb7518ec5e3d40/logback-classic-1.5.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.24.3/da1143e2a2531ee1c2d90baa98eb50a28a39d5a7/log4j-to-slf4j-2.24.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/2.0.17/524cb6ccc2b68a57604750e1ab8b13b5a786a6aa/jul-to-slf4j-2.0.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.17/d9e58ac9c7779ba3bf8142aff6c830617a7fe60f/slf4j-api-2.0.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.127.Final/5e9ee8931666a12b52340309f92d51d0b49611de/netty-handler-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.127.Final/9cc0512d2ddfe9ae76c6db796e1980a8bdbadae1/netty-transport-native-unix-common-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.127.Final/b05d16b459b6c6042197a1f3aef671cf535767c3/netty-codec-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.127.Final/9925d9d6be72436b661ba6a71cc8d2897fe83cf0/netty-transport-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.127.Final/2b34a14b6ec23761d6d2300a1c261914401f2553/netty-resolver-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.127.Final/356b4f2e759d36fec774cd17e583a7609d8ec15d/netty-buffer-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.127.Final/ada4ab671678f956e1cd5067ba94bc340af1d8bf/netty-common-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.7.11/8ac8ee9da2424c81c029f8c361e34838f77a1b78/reactor-core-3.7.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.15.4/f73f10deeee5700b15c2f0f41ae79e2689b39613/micrometer-commons-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/c4a06a64e650562f30b7bf9aaec1bfed43aca12b/failureaccess-1.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.43.0/9425eee39e56b116d2b998b7c2cebcbd11a3c98b/checker-qual-3.43.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.28.0/59fc00087ce372de42e394d2c789295dff2d19f0/error_prone_annotations-2.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/3.0.0/7399e65dd7e9ff3404f4535b2f017093bdb134c7/j2objc-annotations-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.16.1/377d592e740dc77124e0901291dbfaa6810a200e/commons-io-2.16.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.17.0/b17d2136f0460dcc0d2016ceefca8723bdf4ee70/commons-lang3-3.17.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.2.11/819fc7e968ac07d4b042be7cfb8d99c267142ac7/spring-jcl-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.5.18/6c0375624f6f36b4e089e2488ba21334a11ef13f/logback-core-1.5.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/b02c125db8b6d295adf72ae6e71af5d83bce2370/log4j-api-2.24.3.jar</AuxClasspathEntry>
+    <SrcDir>/src/applications-service/src/main/resources</SrcDir>
+    <SrcDir>/src/applications-service/src/main/java</SrcDir>
+    <SrcDir>/src/applications-service/src/main/kotlin</SrcDir>
+    <Plugin id="com.h3xstream.findsecbugs" enabled="true"/>
+  </Project>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="553c1a884b4e2929405d5704cbab6415" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.api.ApplicationService.create(AuthUser, UUID, CreateApplicationRequest)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="create" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Lru/spbstu/scholarship/applications/api/CreateApplicationRequest;)Lru/spbstu/scholarship/applications/api/Outcome;" isStatic="false" primary="true" classAnnotationNames="org.springframework.transaction.annotation.Transactional,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="111" end="155" startBytecode="0" endBytecode="567" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationService.create(AuthUser, UUID, CreateApplicationRequest)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="12" pc="378" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="317" end="317" startBytecode="380" endBytecode="380" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 317]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="322" end="322" startBytecode="557" endBytecode="557" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ApplicationService.kt:[line 322]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="326" end="326" startBytecode="1043" endBytecode="1043" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ApplicationService.kt:[line 326]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="29d7702c2929331bb05e3a2a33e88059" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.api.ApplicationService.get(AuthUser, UUID, boolean)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="get" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Z)Lkotlin/Pair;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="61" end="90" startBytecode="0" endBytecode="253" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationService.get(AuthUser, UUID, boolean)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="14" pc="436" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="312" end="312" startBytecode="438" endBytecode="438" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 312]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="91f31432fcae0052695790f63dae31ed" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.api.ApplicationService.list(AuthUser, String, String, String, String, String, String)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="list" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lru/spbstu/scholarship/applications/api/ListView;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="160" end="182" startBytecode="0" endBytecode="390" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationService.list(AuthUser, String, String, String, String, String, String)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="16" pc="800" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="330" end="330" startBytecode="802" endBytecode="802" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 330]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="3" rank="15" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="554c8aa5a11936db53b742c7a9c021e0" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+    <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
+    <LongMessage>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="countNotFound" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="95" end="105" startBytecode="0" endBytecode="473" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationService.countNotFound(AuthUser)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="100" end="100" startBytecode="95" endBytecode="95" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 100]</Message>
+    </SourceLine>
+    <String value="org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;)V" role="Sink method">
+      <Message>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;)V</Message>
+    </String>
+    <String value="0" role="Sink parameter">
+      <Message>Sink parameter 0</Message>
+    </String>
+    <String value="ru/spbstu/scholarship/platform/security/AuthUser.getId()Ljava/util/UUID;" role="Unknown source">
+      <Message>Unknown source ru/spbstu/scholarship/platform/security/AuthUser.getId()Ljava/util/UUID;</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="15e40ba2a94a8d239ccae7d4829e09e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.audit</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/applications/repo/ApplicationRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/applications/storage/ObjectStorage;Lorg/springframework/data/redis/core/StringRedisTemplate;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="41" startBytecode="0" endBytecode="273" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="audit" signature="Lru/spbstu/scholarship/platform/audit/AuditLog;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationService.audit</Message>
+    </Field>
+    <LocalVariable name="audit" register="2" pc="64" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named audit</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="43" end="43" startBytecode="64" endBytecode="64" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 43]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="1658578fa00764c09889cedff57d722d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.om</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/applications/repo/ApplicationRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/applications/storage/ObjectStorage;Lorg/springframework/data/redis/core/StringRedisTemplate;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="41" startBytecode="0" endBytecode="273" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="om" signature="Lcom/fasterxml/jackson/databind/ObjectMapper;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationService.om</Message>
+    </Field>
+    <LocalVariable name="om" register="8" pc="99" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named om</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="49" end="49" startBytecode="99" endBytecode="99" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 49]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="5b2c892cf9d0b881715ca9e283ba9698" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.redis</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/applications/repo/ApplicationRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/applications/storage/ObjectStorage;Lorg/springframework/data/redis/core/StringRedisTemplate;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="41" startBytecode="0" endBytecode="273" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="redis" signature="Lorg/springframework/data/redis/core/StringRedisTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationService.redis</Message>
+    </Field>
+    <LocalVariable name="redis" register="7" pc="93" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named redis</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="48" end="48" startBytecode="93" endBytecode="93" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 48]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="c3a8958df099c6e3cec550cc01988a68" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.repo</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/applications/repo/ApplicationRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/applications/storage/ObjectStorage;Lorg/springframework/data/redis/core/StringRedisTemplate;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="41" startBytecode="0" endBytecode="273" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="repo" signature="Lru/spbstu/scholarship/applications/repo/ApplicationRepository;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationService.repo</Message>
+    </Field>
+    <LocalVariable name="repo" register="1" pc="59" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named repo</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="42" end="42" startBytecode="59" endBytecode="59" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 42]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="9335dfc600175e33dd6e447fc39b7bb6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.storage</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="334" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 41-334]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/applications/repo/ApplicationRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/applications/storage/ObjectStorage;Lorg/springframework/data/redis/core/StringRedisTemplate;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" start="41" end="41" startBytecode="0" endBytecode="273" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationService" name="storage" signature="Lru/spbstu/scholarship/applications/storage/ObjectStorage;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationService.storage</Message>
+    </Field>
+    <LocalVariable name="storage" register="6" pc="87" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named storage</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationService" primary="true" start="47" end="47" startBytecode="87" endBytecode="87" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 47]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="fb367ad164055abc02773969358ccb44" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationView.component10() may expose internal representation by returning ApplicationView.scores</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="component10" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationView.component10()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="scores" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.scores</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>In ApplicationService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="38dcaeefdb8309985de4f7e15114cd12" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationView.component7() may expose internal representation by returning ApplicationView.declaredGrounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="component7" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationView.component7()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="declaredGrounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.declaredGrounds</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>In ApplicationService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="6b409a1e2603e83e90abc68f54ee5aa4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationView.component9() may expose internal representation by returning ApplicationView.attachments</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="component9" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationView.component9()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="attachments" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.attachments</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>In ApplicationService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="adf4300eb85a7afe2d68637e6dc17deb" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationView.getAttachments() may expose internal representation by returning ApplicationView.attachments</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="getAttachments" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="299" end="299" startBytecode="0" endBytecode="46" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationView.getAttachments()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="attachments" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.attachments</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" start="299" end="299" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 299]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="f330fcae8a96cacac99111f4f08ee2d4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationView.getDeclaredGrounds() may expose internal representation by returning ApplicationView.declaredGrounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="getDeclaredGrounds" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="298" end="298" startBytecode="0" endBytecode="46" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationView.getDeclaredGrounds()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="declaredGrounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.declaredGrounds</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" start="298" end="298" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 298]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="f82a5d1371fe0790ddb1e0887d6bff78" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationView.getScores() may expose internal representation by returning ApplicationView.scores</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="getScores" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="299" end="299" startBytecode="0" endBytecode="46" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationView.getScores()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="scores" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.scores</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" start="299" end="299" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 299]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="105d795c9621d215765fe1df53ad99f9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List) may expose internal representation by storing an externally mutable object into ApplicationView.attachments</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="&lt;init&gt;" signature="(Ljava/util/UUID;Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/util/UUID;Ljava/lang/String;Ljava/util/List;Ljava/time/OffsetDateTime;Ljava/util/List;Ljava/util/List;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="296" startBytecode="0" endBytecode="265" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="attachments" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.attachments</Message>
+    </Field>
+    <LocalVariable name="attachments" register="9" pc="98" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named attachments</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" start="299" end="299" startBytecode="98" endBytecode="98" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 299]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="bed4c43ba74d943322da74e34acb199d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List) may expose internal representation by storing an externally mutable object into ApplicationView.declaredGrounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="&lt;init&gt;" signature="(Ljava/util/UUID;Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/util/UUID;Ljava/lang/String;Ljava/util/List;Ljava/time/OffsetDateTime;Ljava/util/List;Ljava/util/List;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="296" startBytecode="0" endBytecode="265" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="declaredGrounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.declaredGrounds</Message>
+    </Field>
+    <LocalVariable name="declaredGrounds" register="7" pc="86" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named declaredGrounds</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" start="298" end="298" startBytecode="86" endBytecode="86" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 298]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="e75af94956f033ccdfa445ad3cf37780" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List) may expose internal representation by storing an externally mutable object into ApplicationView.scores</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="299" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 296-299]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="&lt;init&gt;" signature="(Ljava/util/UUID;Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/util/UUID;Ljava/lang/String;Ljava/util/List;Ljava/time/OffsetDateTime;Ljava/util/List;Ljava/util/List;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" start="296" end="296" startBytecode="0" endBytecode="265" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationView" name="scores" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationView.scores</Message>
+    </Field>
+    <LocalVariable name="scores" register="10" pc="104" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named scores</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationView" primary="true" start="299" end="299" startBytecode="104" endBytecode="104" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 299]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="a7a475843719c15385e3755cc8b99fa2" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ApplicationsController(ApplicationService, ApplicationRepository) may expose internal representation by storing an externally mutable object into ApplicationsController.repo</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/applications/api/ApplicationService;Lru/spbstu/scholarship/applications/repo/ApplicationRepository;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="31" startBytecode="0" endBytecode="100" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ApplicationsController(ApplicationService, ApplicationRepository)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="repo" signature="Lru/spbstu/scholarship/applications/repo/ApplicationRepository;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>In ApplicationsController.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ApplicationsController.repo</Message>
+    </Field>
+    <LocalVariable name="repo" register="2" pc="23" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named repo</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" start="33" end="33" startBytecode="23" endBytecode="23" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+      <Message>At ApplicationsController.kt:[line 33]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING" priority="1" rank="10" abbrev="SECSPRCSRFURM" category="SECURITY" instanceHash="1b839817fc02598eae603b7cf9428943" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="352">
+    <ShortMessage>Spring CSRF unrestricted RequestMapping</ShortMessage>
+    <LongMessage>Unrestricted Spring&apos;s RequestMapping makes the method vulnerable to CSRF attacks</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="completeness" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RequestMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="109" end="110" startBytecode="0" endBytecode="155" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.completeness(AuthUser, UUID)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="109" end="110" startBytecode="0" endBytecode="155" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 109-110]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="7dabc4beaa2f12ba247cf828d5efc82f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="attachment" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Lru/spbstu/scholarship/applications/api/AttachmentRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="99" end="100" startBytecode="0" endBytecode="132" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.attachment(AuthUser, UUID, AttachmentRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="99" end="100" startBytecode="0" endBytecode="132" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 99-100]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="2087eb00dc774ebb549e517aee6bd6bb" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="campaigns" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;)Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.GetMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="118" end="119" startBytecode="0" endBytecode="94" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.campaigns(AuthUser)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="118" end="119" startBytecode="0" endBytecode="94" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 118-119]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="3443643eac707718a5f39490142edf23" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="completeness" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RequestMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="109" end="110" startBytecode="0" endBytecode="155" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.completeness(AuthUser, UUID)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="109" end="110" startBytecode="0" endBytecode="155" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 109-110]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="ab4b399bf0caf0ae596185ee14831c7" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="create" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/lang/String;Lru/spbstu/scholarship/applications/api/CreateApplicationRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="59" end="62" startBytecode="0" endBytecode="203" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.create(AuthUser, String, CreateApplicationRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="59" end="62" startBytecode="0" endBytecode="203" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 59-62]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="b34d499fd4a9d655344baf0aca0d835a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="get" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.GetMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="46" end="49" startBytecode="0" endBytecode="215" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.get(AuthUser, UUID, String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="46" end="49" startBytecode="0" endBytecode="215" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 46-49]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="59a8ad14a5577058c220521d9f24e8ba" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="list" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.GetMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="76" end="77" startBytecode="0" endBytecode="194" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.list(AuthUser, String, String, String, String, String, String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="76" end="77" startBytecode="0" endBytecode="194" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 76-77]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="b6b4469a60820c126138727ab82e2e25" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="submit" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;)Lru/spbstu/scholarship/applications/api/SubmittedView;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="84" end="85" startBytecode="0" endBytecode="95" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.submit(AuthUser, UUID)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="84" end="85" startBytecode="0" endBytecode="95" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 84-85]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="a40030bc1b9f43a0998869bf3214cb17" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ApplicationsController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="31" end="119" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt">
+        <Message>At ApplicationsController.kt:[lines 31-119]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ApplicationsController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ApplicationsController" name="withdraw" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.DeleteMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="91" end="93" startBytecode="0" endBytecode="114" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ApplicationsController.withdraw(AuthUser, UUID)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ApplicationsController" start="91" end="93" startBytecode="0" endBytecode="114" sourcefile="ApplicationsController.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationsController.kt" synthetic="true">
+      <Message>At ApplicationsController.kt:[lines 91-93]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="19e65158a06dd4a06bd2f5ac11d4ee5a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.CreateApplicationRequest.component4() may expose internal representation by returning CreateApplicationRequest.declaredGrounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" start="289" end="290" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 289-290]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.CreateApplicationRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" name="component4" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.CreateApplicationRequest.component4()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" name="declaredGrounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.CreateApplicationRequest.declaredGrounds</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>In ApplicationService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="aadf6770d8f4a3ae051b16009bd7d353" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.CreateApplicationRequest.getDeclaredGrounds() may expose internal representation by returning CreateApplicationRequest.declaredGrounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" start="289" end="290" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 289-290]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.CreateApplicationRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" name="getDeclaredGrounds" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" start="290" end="290" startBytecode="0" endBytecode="46" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.CreateApplicationRequest.getDeclaredGrounds()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" name="declaredGrounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.CreateApplicationRequest.declaredGrounds</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" primary="true" start="290" end="290" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 290]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="b14cf65ee400204e26aacb8d670ef261" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.CreateApplicationRequest(String, String, String, List) may expose internal representation by storing an externally mutable object into CreateApplicationRequest.declaredGrounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" start="289" end="290" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[lines 289-290]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.CreateApplicationRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" start="289" end="289" startBytecode="0" endBytecode="115" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.CreateApplicationRequest(String, String, String, List)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" name="declaredGrounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.CreateApplicationRequest.declaredGrounds</Message>
+    </Field>
+    <LocalVariable name="declaredGrounds" register="4" pc="22" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named declaredGrounds</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.CreateApplicationRequest" primary="true" start="290" end="290" startBytecode="22" endBytecode="22" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 290]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="a6c98adc66042c9c7e92efa42ffdecfd" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ListView.component1() may expose internal representation by returning ListView.items</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ListView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" start="305" end="305" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[line 305]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ListView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ListView" name="component1" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ListView.component1()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ListView" name="items" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ListView.items</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>In ApplicationService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="100c4dc7c90da1f8ef51155b9575fd9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.ListView.getItems() may expose internal representation by returning ListView.items</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ListView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" start="305" end="305" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[line 305]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ListView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ListView" name="getItems" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" start="305" end="305" startBytecode="0" endBytecode="46" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.ListView.getItems()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ListView" name="items" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ListView.items</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" primary="true" start="305" end="305" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 305]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="840ee5d13faa3fb63893ac1f0505ffa2" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.ListView(List, String) may expose internal representation by storing an externally mutable object into ListView.items</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.ListView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" start="305" end="305" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[line 305]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.ListView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.ListView" name="&lt;init&gt;" signature="(Ljava/util/List;Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" start="305" end="305" startBytecode="0" endBytecode="82" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.ListView(List, String)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.ListView" name="items" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.ListView.items</Message>
+    </Field>
+    <LocalVariable name="items" register="1" pc="12" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named items</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.ListView" primary="true" start="305" end="305" startBytecode="12" endBytecode="12" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 305]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="4b970cce373009f76a3bf9983bc58962" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.UploadView.component4() may expose internal representation by returning UploadView.formFields</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.UploadView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" start="306" end="306" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[line 306]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.UploadView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.UploadView" name="component4" signature="()Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.UploadView.component4()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.UploadView" name="formFields" signature="Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.UploadView.formFields</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>In ApplicationService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="cc712869196838cdd963192007e4426a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.api.UploadView.getFormFields() may expose internal representation by returning UploadView.formFields</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.UploadView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" start="306" end="306" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[line 306]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.UploadView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.UploadView" name="getFormFields" signature="()Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" start="306" end="306" startBytecode="0" endBytecode="46" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.api.UploadView.getFormFields()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.UploadView" name="formFields" signature="Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.UploadView.formFields</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" primary="true" start="306" end="306" startBytecode="4" endBytecode="4" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 306]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="b9b4aad7624400993c4d46c37ee0f705" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.api.UploadView(UUID, String, String, Map, OffsetDateTime) may expose internal representation by storing an externally mutable object into UploadView.formFields</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.api.UploadView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" start="306" end="306" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>At ApplicationService.kt:[line 306]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.api.UploadView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.api.UploadView" name="&lt;init&gt;" signature="(Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/time/OffsetDateTime;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" start="306" end="306" startBytecode="0" endBytecode="155" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.api.UploadView(UUID, String, String, Map, OffsetDateTime)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.api.UploadView" name="formFields" signature="Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+        <Message>In ApplicationService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.api.UploadView.formFields</Message>
+    </Field>
+    <LocalVariable name="formFields" register="4" pc="54" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named formFields</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.api.UploadView" primary="true" start="306" end="306" startBytecode="54" endBytecode="54" sourcefile="ApplicationService.kt" sourcepath="ru/spbstu/scholarship/applications/api/ApplicationService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/api/ApplicationService.kt">
+      <Message>At ApplicationService.kt:[line 306]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="2c1518fdd272744a6fc387741c797f1c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.domain.ContentHash.of(ApplicationType, Collection, String)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.domain.ContentHash" primary="true" classAnnotationNames="kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.domain.ContentHash" start="57" end="65" sourcefile="Domain.kt" sourcepath="ru/spbstu/scholarship/applications/domain/Domain.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/domain/Domain.kt">
+        <Message>At Domain.kt:[lines 57-65]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.domain.ContentHash</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.domain.ContentHash" name="of" signature="(Lru/spbstu/scholarship/applications/domain/ApplicationType;Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.domain.ContentHash" start="59" end="59" startBytecode="0" endBytecode="77" sourcefile="Domain.kt" sourcepath="ru/spbstu/scholarship/applications/domain/Domain.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/domain/Domain.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.domain.ContentHash.of(ApplicationType, Collection, String)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="7" pc="123" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.domain.ContentHash" primary="true" start="65" end="65" startBytecode="125" endBytecode="125" sourcefile="Domain.kt" sourcepath="ru/spbstu/scholarship/applications/domain/Domain.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/domain/Domain.kt">
+      <Message>At Domain.kt:[line 65]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="6b52356bd5022dfa6010472a4869430c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.repo.ApplicationRepository.campaigns(UUID, boolean)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" primary="true" classAnnotationNames="org.springframework.stereotype.Repository,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" start="41" end="279" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>At ApplicationRepository.kt:[lines 41-279]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.repo.ApplicationRepository</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" name="campaigns" signature="(Ljava/util/UUID;Z)Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" start="220" end="250" startBytecode="0" endBytecode="223" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.repo.ApplicationRepository.campaigns(UUID, boolean)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="9" pc="176" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" primary="true" start="259" end="259" startBytecode="178" endBytecode="178" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+      <Message>At ApplicationRepository.kt:[line 259]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="b57a110a960dce1a833fcf1c22459ca9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.repo.ApplicationRepository.findVisible$lambda$1(ResultSet, int)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" primary="true" classAnnotationNames="org.springframework.stereotype.Repository,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" start="41" end="279" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>At ApplicationRepository.kt:[lines 41-279]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.repo.ApplicationRepository</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" name="findVisible$lambda$1" signature="(Ljava/sql/ResultSet;I)Lru/spbstu/scholarship/applications/repo/ApplicationRow;" isStatic="true" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" start="62" end="68" startBytecode="0" endBytecode="129" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.repo.ApplicationRepository.findVisible$lambda$1(ResultSet, int)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="5" pc="184" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" primary="true" start="279" end="279" startBytecode="186" endBytecode="186" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+      <Message>At ApplicationRepository.kt:[line 279]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="10e3c5ee897b577aa60f15351f5d4ab4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.repo.ApplicationRepository(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into ApplicationRepository.jdbc</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" primary="true" classAnnotationNames="org.springframework.stereotype.Repository,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" start="41" end="279" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>At ApplicationRepository.kt:[lines 41-279]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.repo.ApplicationRepository</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" name="&lt;init&gt;" signature="(Lorg/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" start="41" end="41" startBytecode="0" endBytecode="67" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.repo.ApplicationRepository(NamedParameterJdbcTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" name="jdbc" signature="Lorg/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>In ApplicationRepository.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.repo.ApplicationRepository.jdbc</Message>
+    </Field>
+    <LocalVariable name="jdbc" register="1" pc="12" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named jdbc</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRepository" primary="true" start="41" end="41" startBytecode="12" endBytecode="12" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+      <Message>At ApplicationRepository.kt:[line 41]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="2713e0294fd8fcd9cc996874613d9b65" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.repo.ApplicationRow.component7() may expose internal representation by returning ApplicationRow.grounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" start="12" end="15" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>At ApplicationRepository.kt:[lines 12-15]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.repo.ApplicationRow</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" name="component7" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.repo.ApplicationRow.component7()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" name="grounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>In ApplicationRepository.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.repo.ApplicationRow.grounds</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" startBytecode="4" endBytecode="4" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+      <Message>In ApplicationRepository.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="23df46443af8670168270c0a64cbc3a2" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.repo.ApplicationRow.getGrounds() may expose internal representation by returning ApplicationRow.grounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" start="12" end="15" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>At ApplicationRepository.kt:[lines 12-15]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.repo.ApplicationRow</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" name="getGrounds" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" start="14" end="14" startBytecode="0" endBytecode="46" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.repo.ApplicationRow.getGrounds()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" name="grounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>In ApplicationRepository.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.repo.ApplicationRow.grounds</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" primary="true" start="14" end="14" startBytecode="4" endBytecode="4" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+      <Message>At ApplicationRepository.kt:[line 14]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="cbbee66347ffe7b31da6ec4a98936172" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.repo.ApplicationRow(UUID, UUID, UUID, String, String, String, List, OffsetDateTime, int, boolean) may expose internal representation by storing an externally mutable object into ApplicationRow.grounds</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" start="12" end="15" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>At ApplicationRepository.kt:[lines 12-15]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.repo.ApplicationRow</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" name="&lt;init&gt;" signature="(Ljava/util/UUID;Ljava/util/UUID;Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/time/OffsetDateTime;IZ)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" start="12" end="12" startBytecode="0" endBytecode="265" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.repo.ApplicationRow(UUID, UUID, UUID, String, String, String, List, OffsetDateTime, int, boolean)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" name="grounds" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+        <Message>In ApplicationRepository.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.repo.ApplicationRow.grounds</Message>
+    </Field>
+    <LocalVariable name="grounds" register="7" pc="86" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named grounds</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.repo.ApplicationRow" primary="true" start="14" end="14" startBytecode="86" endBytecode="86" sourcefile="ApplicationRepository.kt" sourcepath="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt">
+      <Message>At ApplicationRepository.kt:[line 14]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="3" rank="15" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="782043079c1d913d4d9b367f89695134" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+    <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
+    <LongMessage>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" start="27" end="79" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>At ObjectStorage.kt:[lines 27-79]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.storage.ObjectStorage</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" name="deleteQuietly" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" start="66" end="68" startBytecode="0" endBytecode="303" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.storage.ObjectStorage.deleteQuietly(String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" primary="true" start="67" end="67" startBytecode="106" endBytecode="106" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+      <Message>At ObjectStorage.kt:[line 67]</Message>
+    </SourceLine>
+    <String value="org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V" role="Sink method">
+      <Message>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V</Message>
+    </String>
+    <String value="0" role="Sink parameter">
+      <Message>Sink parameter 0</Message>
+    </String>
+    <String value="kotlin/Result.exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;" role="Unknown source">
+      <Message>Unknown source kotlin/Result.exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" instanceHash="4d80c0a0cb9d0e4413d77a0857294385" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="493">
+    <ShortMessage>Public static method may expose internal representation by returning a mutable object or array</ShortMessage>
+    <LongMessage>Public static ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion.getALLOWED_TYPES() may expose internal representation by returning ObjectStorage.ALLOWED_TYPES</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion" start="70" end="75" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>At ObjectStorage.kt:[lines 70-75]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion" name="getALLOWED_TYPES" signature="()Ljava/util/Set;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion" start="75" end="75" startBytecode="0" endBytecode="45" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion.getALLOWED_TYPES()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" name="ALLOWED_TYPES" signature="Ljava/util/Set;" isStatic="true" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>In ObjectStorage.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.storage.ObjectStorage.ALLOWED_TYPES</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion" primary="true" start="75" end="75" startBytecode="0" endBytecode="45" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+      <Message>At ObjectStorage.kt:[line 75]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="f30c45332a9c45f3b70de4ded1a8e7d2" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.storage.UploadForm.component2() may expose internal representation by returning UploadForm.fields</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.storage.UploadForm" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" start="16" end="16" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>At ObjectStorage.kt:[line 16]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.storage.UploadForm</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.storage.UploadForm" name="component2" signature="()Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.storage.UploadForm.component2()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.storage.UploadForm" name="fields" signature="Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>In ObjectStorage.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.storage.UploadForm.fields</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" startBytecode="4" endBytecode="4" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+      <Message>In ObjectStorage.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="6356e2e838b1fd878ef7e861f3507ed5" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.applications.storage.UploadForm.getFields() may expose internal representation by returning UploadForm.fields</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.storage.UploadForm" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" start="16" end="16" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>At ObjectStorage.kt:[line 16]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.storage.UploadForm</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.storage.UploadForm" name="getFields" signature="()Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" start="16" end="16" startBytecode="0" endBytecode="46" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt"/>
+      <Message>In method ru.spbstu.scholarship.applications.storage.UploadForm.getFields()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.storage.UploadForm" name="fields" signature="Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>In ObjectStorage.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.storage.UploadForm.fields</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" primary="true" start="16" end="16" startBytecode="4" endBytecode="4" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+      <Message>At ObjectStorage.kt:[line 16]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="3ceeeef00e98147e27e91dd9b55d07e8" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.applications.storage.UploadForm(String, Map, ZonedDateTime) may expose internal representation by storing an externally mutable object into UploadForm.fields</LongMessage>
+    <Class classname="ru.spbstu.scholarship.applications.storage.UploadForm" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" start="16" end="16" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>At ObjectStorage.kt:[line 16]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.applications.storage.UploadForm</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.applications.storage.UploadForm" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/util/Map;Ljava/time/ZonedDateTime;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" start="16" end="16" startBytecode="0" endBytecode="109" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt"/>
+      <Message>In method new ru.spbstu.scholarship.applications.storage.UploadForm(String, Map, ZonedDateTime)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.applications.storage.UploadForm" name="fields" signature="Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+        <Message>In ObjectStorage.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.applications.storage.UploadForm.fields</Message>
+    </Field>
+    <LocalVariable name="fields" register="2" pc="29" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named fields</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.applications.storage.UploadForm" primary="true" start="16" end="16" startBytecode="29" endBytecode="29" sourcefile="ObjectStorage.kt" sourcepath="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" relSourcepath="kotlin/ru/spbstu/scholarship/applications/storage/ObjectStorage.kt">
+      <Message>At ObjectStorage.kt:[line 16]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugCategory category="SECURITY">
+    <Description>Security</Description>
+  </BugCategory>
+  <BugPattern type="CRLF_INJECTION_LOGS" abbrev="SECCRLFLOG" category="SECURITY" cweid="117">
+    <ShortDescription>Potential CRLF Injection for logs</ShortDescription>
+    <Details><![CDATA[
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" abbrev="BC" category="STYLE" cweid="704">
+    <ShortDescription>Questionable cast to abstract collection</ShortDescription>
+    <Details><![CDATA[
+
+<p>
+This code casts a Collection to an abstract collection
+(such as <code>List</code>, <code>Set</code>, or <code>Map</code>).
+Ensure that you are guaranteed that the object is of the type
+you are casting to. If all you need is to be able
+to iterate through a collection, you don't need to cast it to a Set or List.
+</p>
+<p>See <a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SPRING_ENDPOINT" abbrev="SECSC" category="SECURITY">
+    <ShortDescription>Found Spring endpoint</ShortDescription>
+    <Details><![CDATA[
+            
+<p>This class is a Spring Controller. All methods annotated with <code>RequestMapping</code> (as well as its shortcut annotations <code>GetMapping</code>, <code>PostMapping</code>, <code>PutMapping</code>, <code>DeleteMapping</code>, and <code>PatchMapping</code>) are reachable remotely.
+This class should be analyzed to make sure that remotely exposed methods are safe to expose to potential attackers.</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="MS_EXPOSE_REP" abbrev="MS" category="MALICIOUS_CODE">
+    <ShortDescription>Public static method may expose internal representation by returning a mutable object or array</ShortDescription>
+    <Details><![CDATA[
+
+  <p> A public static method returns a reference to a mutable object or
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING" abbrev="SECSPRCSRFURM" category="SECURITY" cweid="352">
+    <ShortDescription>Spring CSRF unrestricted RequestMapping</ShortDescription>
+    <Details><![CDATA[
+            
+<p>Methods annotated with <code>RequestMapping</code> are by default mapped to all the HTTP request methods.
+However, Spring Security's CSRF protection is not enabled by default
+for the HTTP request methods <code>GET</code>, <code>HEAD</code>, <code>TRACE</code>, and <code>OPTIONS</code>
+(as this could cause the tokens to be leaked).
+Therefore, state-changing methods annotated with <code>RequestMapping</code> and not narrowing the mapping
+to the HTTP request methods <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, or <code>PATCH</code>
+are vulnerable to CSRF attacks.</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@Controller
+public class UnsafeController {
+
+    @RequestMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Spring Framework 4.3 and later):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use @GetMapping.
+     */
+    @GetMapping("/path")
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either @PostMapping, @PutMapping, @DeleteMapping, or @PatchMapping.
+     */
+    @PostMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Before Spring Framework 4.3):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use either
+     * RequestMethod.GET, RequestMethod.HEAD, RequestMethod.TRACE, or RequestMethod.OPTIONS.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.GET)
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either
+     * RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, or RequestMethod.PATCH.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.POST)
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html#csrf-use-proper-verbs">Spring Security Official Documentation: Use proper HTTP verbs (CSRF protection)</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">OWASP: Cross-Site Request Forgery</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet">OWASP: CSRF Prevention Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>
+</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="BC">
+    <Description>Bad casts of object references</Description>
+  </BugCode>
+  <BugCode abbrev="SECSC">
+    <Description>Spring Endpoint</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method may expose internal representation</Description>
+  </BugCode>
+  <BugCode abbrev="SECCRLFLOG">
+    <Description>CRLF Injection for logs</Description>
+  </BugCode>
+  <BugCode abbrev="MS" cweid="493">
+    <Description>Mutable static field</Description>
+  </BugCode>
+  <BugCode abbrev="SECSPRCSRFURM">
+    <Description>Spring CSRF Unrestricted RequestMapping</Description>
+  </BugCode>
+  <BugCode abbrev="EI2">
+    <Description>Storing reference to mutable object</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 24 Nov 2026 22:34:31 +0000" total_classes="0" referenced_classes="0" total_bugs="49" total_size="0" num_packages="4" java_version="21.0.9" vm_version="21.0.9+10-LTS" cpu_seconds="30.71" clock_seconds="23.80" peak_mbytes="312.28" alloc_mbytes="1976.00" gc_seconds="0.42" priority_3="10" priority_2="38" priority_1="1">
+    <FileStats path="ru/spbstu/scholarship/applications/api/ApplicationService.kt" bugCount="27" size="0" bugHash="67b35a35bd86f6bc28783a5a23c95ce8"/>
+    <FileStats path="ru/spbstu/scholarship/applications/api/ApplicationsController.kt" bugCount="10" size="0" bugHash="4f80a15d59e339b86f0c2d9236781b46"/>
+    <FileStats path="ru/spbstu/scholarship/applications/domain/Domain.kt" bugCount="1" size="0" bugHash="66639d8a70978490bd9f4568c94eb8de"/>
+    <FileStats path="ru/spbstu/scholarship/applications/repo/ApplicationRepository.kt" bugCount="6" size="0" bugHash="d9009cd9bc77b2f986659840e45b1db0"/>
+    <FileStats path="ru/spbstu/scholarship/applications/storage/ObjectStorage.kt" bugCount="5" size="0" bugHash="b4ddea445666fa4cf84338ece4823cb6"/>
+    <FindBugsProfile></FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

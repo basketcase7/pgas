@@ -1,0 +1,13 @@
+# gitleaks: правила по умолчанию + исключения, разобранные в ЛР5 (раздел SAST, проверка секретов).
+title = "scholarship"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Сырые отчёты сканеров ЛР5: generic-api-key срабатывает на URL api-gateway:8443/api/... и публичные контрольные суммы образов (ZULU_KEY_SHA256) — это не секреты"
+paths = ['''docs/lab5/(before|after)/(zap|trivy|sbom)/''']
+
+[[allowlists]]
+description = "Шаблон окружения: значения пустые; generic-api-key принимает имя следующей переменной за значение предыдущей"
+paths = ['''(^|/)\.env\.example$''']

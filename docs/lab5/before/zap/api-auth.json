@@ -1,0 +1,1079 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.17.0",
+	"@generated": "Tue, 24 Nov 2026 23:02:07",
+	"created": "2026-11-24T23:02:07.927196594Z",
+	"insights":[
+		{
+			"level": "Medium",
+			"reason": "Exceeded High",
+			"site": "https://api-gateway:8443",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "95"
+		},
+		{
+			"level": "Low",
+			"reason": "Warning",
+			"site": "",
+			"key": "insight.log.warn",
+			"description": "ZAP warnings logged - see the zap.log file for details",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.code.2xx",
+			"description": "Percentage of responses with status code 2xx",
+			"statistic": "4"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.code.5xx",
+			"description": "Percentage of responses with status code 5xx",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.endpoint.ctype.application/json",
+			"description": "Percentage of endpoints with content type application/json",
+			"statistic": "100"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.endpoint.method.DELETE",
+			"description": "Percentage of endpoints with method DELETE",
+			"statistic": "13"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.endpoint.method.GET",
+			"description": "Percentage of endpoints with method GET",
+			"statistic": "48"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.endpoint.method.PATCH",
+			"description": "Percentage of endpoints with method PATCH",
+			"statistic": "3"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.endpoint.method.POST",
+			"description": "Percentage of endpoints with method POST",
+			"statistic": "34"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://api-gateway:8443",
+			"key": "insight.endpoint.total",
+			"description": "Count of total endpoints",
+			"statistic": "66"
+		},
+		{
+			"level": "Info",
+			"reason": "Exceeded Low",
+			"site": "https://api-gateway:8443",
+			"key": "insight.response.slow",
+			"description": "Percentage of slow responses",
+			"statistic": "7"
+		}
+	],
+	"site":[ 
+		{
+			"@name": "https://api-gateway:8443",
+			"@host": "api-gateway",
+			"@port": "8443",
+			"@ssl": "true",
+			"alerts": [ 
+				{
+					"pluginid": "100000",
+					"alertRef": "100000-2",
+					"alert": "A Server Error response code was returned by the server",
+					"name": "A Server Error response code was returned by the server",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>A response code of 501 was returned by the server.</p><p>This may indicate that the application is failing to handle unexpected input correctly.</p><p>Raised by the 'Alert on HTTP Response Code Error' script</p>",
+					"instances":[ 
+						{
+							"id": "11",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/completeness-check",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "501",
+							"otherinfo": ""
+						},
+						{
+							"id": "14",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/completeness-check",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "501",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "388",
+					"wascid": "20",
+					"sourceid": "21"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-1",
+					"alert": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+					"instances":[ 
+						{
+							"id": "27",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001?include=attachments",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001 (include)",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "46",
+							"uri": "https://api-gateway:8443/api/v1/campaigns",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "18",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset ()({email})",
+							"method": "POST",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "15"
+				},
+				{
+					"pluginid": "100000",
+					"alertRef": "100000-1",
+					"alert": "A Client Error response code was returned by the server",
+					"name": "A Client Error response code was returned by the server",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>A response code of 409 was returned by the server.</p><p>This may indicate that the application is failing to handle unexpected input correctly.</p><p>Raised by the 'Alert on HTTP Response Code Error' script</p>",
+					"instances":[ 
+						{
+							"id": "8",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "409",
+							"otherinfo": ""
+						},
+						{
+							"id": "3360",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2505",
+							"uri": "https://api-gateway:8443/computeMetadata/v1/",
+							"nodeName": "https:\/\/api-gateway:8443\/computeMetadata\/v1\/",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2503",
+							"uri": "https://api-gateway:8443/latest/meta-data/",
+							"nodeName": "https:\/\/api-gateway:8443\/latest\/meta-data\/",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2513",
+							"uri": "https://api-gateway:8443/metadata/instance",
+							"nodeName": "https:\/\/api-gateway:8443\/metadata\/instance",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2514",
+							"uri": "https://api-gateway:8443/metadata/v1",
+							"nodeName": "https:\/\/api-gateway:8443\/metadata\/v1",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2507",
+							"uri": "https://api-gateway:8443/opc/v1/instance/",
+							"nodeName": "https:\/\/api-gateway:8443\/opc\/v1\/instance\/",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2509",
+							"uri": "https://api-gateway:8443/opc/v2/instance/",
+							"nodeName": "https:\/\/api-gateway:8443\/opc\/v2\/instance\/",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2515",
+							"uri": "https://api-gateway:8443/openstack/latest/meta_data.json",
+							"nodeName": "https:\/\/api-gateway:8443\/openstack\/latest\/meta_data.json",
+							"method": "DELETE",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "263",
+							"uri": "https://api-gateway:8443",
+							"nodeName": "https:\/\/api-gateway:8443",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3375",
+							"uri": "https://api-gateway:8443/",
+							"nodeName": "https:\/\/api-gateway:8443\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "30",
+							"uri": "https://api-gateway:8443/1726567515095721193",
+							"nodeName": "https:\/\/api-gateway:8443\/1726567515095721193",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "304",
+							"uri": "https://api-gateway:8443/api",
+							"nodeName": "https:\/\/api-gateway:8443\/api",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3377",
+							"uri": "https://api-gateway:8443/api/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "31",
+							"uri": "https://api-gateway:8443/api/8775499350656514892",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/8775499350656514892",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "305",
+							"uri": "https://api-gateway:8443/api/v1",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3378",
+							"uri": "https://api-gateway:8443/api/v1/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "32",
+							"uri": "https://api-gateway:8443/api/v1/8217162423361244067",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/8217162423361244067",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2474",
+							"uri": "https://api-gateway:8443/api/v1/applications",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "6",
+							"uri": "https://api-gateway:8443/api/v1/applications?campaign_id=c0000000-0000-4000-8000-000000000001&status=submitted&type=pgas&sort=-created_at&limit=20&cursor=cursor",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications (campaign_id,cursor,limit,sort,status,type)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "366",
+							"uri": "https://api-gateway:8443/api/v1/applications?campaign_id=c0000000-0000-4000-8000-000000000001&status=submitted&type=pgas&sort=-created_at&limit=20&cursor=www.google.com%3A80%2Fsearch%3Fq%3DZAP",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications (campaign_id,cursor,limit,sort,status,type)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3379",
+							"uri": "https://api-gateway:8443/api/v1/applications/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "33",
+							"uri": "https://api-gateway:8443/api/v1/applications/4672533695832051573",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/4672533695832051573",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3800",
+							"uri": "https://api-gateway:8443/api/v1/applications/actuator/health",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/actuator\/health",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3380",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "34",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/8178739590309223850",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/8178739590309223850",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3381",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/completeness-check\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "306",
+							"uri": "https://api-gateway:8443/api/v1/auth",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3386",
+							"uri": "https://api-gateway:8443/api/v1/auth/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "35",
+							"uri": "https://api-gateway:8443/api/v1/auth/8753592195413139322",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/8753592195413139322",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "367",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "405",
+							"otherinfo": ""
+						},
+						{
+							"id": "3387",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "36",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset/182966784847760081",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset\/182966784847760081",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3389",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "37",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/1506158338688371459",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/1506158338688371459",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "368",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3390",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "38",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/7384782175995424100",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/7384782175995424100",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "29",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/ranking",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/ranking",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "3391",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/ranking/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/ranking\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "123",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/review ()({status,reason,scores:[{criterion_id,value}]})",
+							"method": "PATCH",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "23",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/review ()({status,reason,scores:[{criterion_id,value}]})",
+							"method": "PATCH",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "3363",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/review/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/review\/ ()({status,reason,scores:[{criterion_id,value}]})",
+							"method": "PATCH",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3595",
+							"uri": "https://api-gateway:8443/api/v1/applications",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications ()({campaign_id,type,statement,declared_grounds:[]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "7",
+							"uri": "https://api-gateway:8443/api/v1/applications",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications ()({campaign_id,type,statement,declared_grounds:[]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3365",
+							"uri": "https://api-gateway:8443/api/v1/applications/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/ ()({campaign_id,type,statement,declared_grounds:[]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "10",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/attachments",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/attachments ()({doc_type,file_name,content_type,size_bytes,sha256})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "3361",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/attachments/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/attachments\/ ()({doc_type,file_name,content_type,size_bytes,sha256})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3362",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/completeness-check/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/completeness-check\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "9",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/submit",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/submit",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "409",
+							"otherinfo": ""
+						},
+						{
+							"id": "3364",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001/submit/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001\/submit\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3139",
+							"uri": "https://api-gateway:8443/api/v1/auth/login",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/login ()({login,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "0",
+							"uri": "https://api-gateway:8443/api/v1/auth/login",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/login ()({login,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "191",
+							"uri": "https://api-gateway:8443/api/v1/auth/login",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/login ()({login,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3366",
+							"uri": "https://api-gateway:8443/api/v1/auth/login/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/login\/ ()({login,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "2",
+							"uri": "https://api-gateway:8443/api/v1/auth/logout",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/logout",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "213",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset ()({email})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3368",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset\/ ()({email})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "5",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset/confirm",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset\/confirm ()({token,new_password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "199",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset/confirm",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset\/confirm ()({token,new_password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3367",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset/confirm/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset\/confirm\/ ()({token,new_password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "3187",
+							"uri": "https://api-gateway:8443/api/v1/auth/reauth",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/reauth ()({password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "https://api-gateway:8443/api/v1/auth/reauth",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/reauth ()({password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "3369",
+							"uri": "https://api-gateway:8443/api/v1/auth/reauth/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/reauth\/ ()({password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "1",
+							"uri": "https://api-gateway:8443/api/v1/auth/refresh",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/refresh",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "3370",
+							"uri": "https://api-gateway:8443/api/v1/auth/refresh/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/refresh\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "4",
+							"uri": "https://api-gateway:8443/api/v1/auth/register",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/register ()({external_id,email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "400",
+							"otherinfo": ""
+						},
+						{
+							"id": "236",
+							"uri": "https://api-gateway:8443/api/v1/auth/register",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/register ()({external_id,email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3371",
+							"uri": "https://api-gateway:8443/api/v1/auth/register/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/register\/ ()({external_id,email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/payout-registry ()({protocol_number,protocol_date,entries:[{application_id,amount}]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "266",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/payout-registry ()({protocol_number,protocol_date,entries:[{application_id,amount}]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "429",
+							"otherinfo": ""
+						},
+						{
+							"id": "3373",
+							"uri": "https://api-gateway:8443/api/v1/campaigns/c0000000-0000-4000-8000-000000000003/payout-registry/",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns\/c0000000-0000-4000-8000-000000000003\/payout-registry\/ ()({protocol_number,protocol_date,entries:[{application_id,amount}]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						}
+					],
+					"count": "72",
+					"systemic": false,
+					"solution": "",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "388",
+					"wascid": "20",
+					"sourceid": "17"
+				},
+				{
+					"pluginid": "10111",
+					"alertRef": "10111",
+					"alert": "Authentication Request Identified",
+					"name": "Authentication Request Identified",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
+					"instances":[ 
+						{
+							"id": "12",
+							"uri": "https://api-gateway:8443/api/v1/auth/login",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/login ()({login,password})",
+							"method": "POST",
+							"param": "login",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=login\nuserValue=stud001\npasswordParam=password"
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p>userParam=login</p><p>userValue=stud001</p><p>passwordParam=password</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049-1",
+					"alert": "Non-Storable Content",
+					"name": "Non-Storable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
+					"instances":[ 
+						{
+							"id": "15",
+							"uri": "https://api-gateway:8443/api/v1/auth/login",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/login ()({login,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "13",
+							"uri": "https://api-gateway:8443/api/v1/auth/logout",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/logout",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "16",
+							"uri": "https://api-gateway:8443/api/v1/auth/password-reset",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/password-reset ()({email})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "17",
+							"uri": "https://api-gateway:8443/api/v1/auth/reauth",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/reauth ()({password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "19",
+							"uri": "https://api-gateway:8443/api/v1/auth/refresh",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/auth\/refresh",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10015",
+					"alertRef": "10015",
+					"alert": "Re-examine Cache-control Directives",
+					"name": "Re-examine Cache-control Directives",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+					"instances":[ 
+						{
+							"id": "25",
+							"uri": "https://api-gateway:8443/api/v1/applications/e0000000-0000-4000-8000-000000000001?include=attachments",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/applications\/e0000000-0000-4000-8000-000000000001 (include)",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "45",
+							"uri": "https://api-gateway:8443/api/v1/campaigns",
+							"nodeName": "https:\/\/api-gateway:8443\/api\/v1\/campaigns",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
+					"cweid": "525",
+					"wascid": "13",
+					"sourceid": "15"
+				}
+			]
+		}
+	],
+	"sequences":[
+	]
+
+}

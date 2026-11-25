@@ -24,6 +24,7 @@ class ReviewRepository(private val jdbc: NamedParameterJdbcTemplate) {
     /**
      * OP-03: заявка ищется сразу с условием «кампания закреплена за подразделением сотрудника»
      * (campaigns.unit_id = users.unit_id). Строка блокируется до конца транзакции.
+     * Черновик для сотрудника не существует (404, а не 400 «draft → …») — ЛР5, V-M02.
      */
     fun lockForReview(id: UUID, reviewer: UUID): ReviewTarget? = jdbc.query(
         """
@@ -31,7 +32,8 @@ class ReviewRepository(private val jdbc: NamedParameterJdbcTemplate) {
                EXISTS (SELECT 1 FROM protocols p WHERE p.campaign_id = a.campaign_id) AS campaign_closed
         FROM applications a
         JOIN campaigns c ON c.id = a.campaign_id
-        WHERE a.id = :id AND c.unit_id = (SELECT u.unit_id FROM users u WHERE u.id = :sub)
+        WHERE a.id = :id AND a.status <> 'draft'
+          AND c.unit_id = (SELECT u.unit_id FROM users u WHERE u.id = :sub)
         FOR UPDATE OF a
         """.trimIndent(), MapSqlParameterSource().addValue("id", id).addValue("sub", reviewer),
     ) { rs, _ ->

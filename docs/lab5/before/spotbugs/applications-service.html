@@ -1,0 +1,1134 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		applications-service (spotbugsMain)</p>
+      <p>SpotBugs version: 4.9.6</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationsController$create$key$1.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationsController.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService$create$$inlined$sortedBy$1.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService$WhenMappings.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationService.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ApplicationView.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/AttachmentRequest.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/AttachmentView.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/CreateApplicationRequest.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/CreatedView.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ListItem.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/ListView.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/Outcome.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/SubmittedView.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/api/UploadView.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/ApplicationsApplication.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/ApplicationsApplicationKt.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationStatus$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationStatus.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationType$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ApplicationType.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ContentHash.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/DocType$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/DocType.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/Ground$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/Ground.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ListSort$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/domain/ListSort.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$AttachmentRow.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$campaigns$criteria$2.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$scoresOf$1.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository$WhenMappings.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepository.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRepositoryKt.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ApplicationRow.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/CampaignRow.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ListFilter.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/ListRow.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/repo/OwnApplication.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/storage/ObjectStorage$Companion.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/storage/ObjectStorage.class</li>
+         <li>/src/applications-service/build/classes/kotlin/main/ru/spbstu/scholarship/applications/storage/UploadForm.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>1112 lines of code analyzed,
+	in 43 classes, 
+	in 5 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">1</td>
+            <td align="right">0.90</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">38</td>
+            <td align="right">34.17</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Low Priority Warnings</td>
+            <td align="right">10</td>
+            <td align="right">8.99</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>49</b>
+            </td>
+            <td align="right">
+               <b>44.06</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">32</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">11</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">6</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>49</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e329');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationView.component10() may expose internal representation by returning ApplicationView.scores</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e329" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method ru.spbstu.scholarship.applications.api.ApplicationView.component10()<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.scores<br/>In ApplicationService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e346');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationView.component7() may expose internal representation by returning ApplicationView.declaredGrounds</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e346" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method ru.spbstu.scholarship.applications.api.ApplicationView.component7()<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.declaredGrounds<br/>In ApplicationService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e362');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationView.component9() may expose internal representation by returning ApplicationView.attachments</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e362" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method ru.spbstu.scholarship.applications.api.ApplicationView.component9()<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.attachments<br/>In ApplicationService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e378');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationView.getAttachments() may expose internal representation by returning ApplicationView.attachments</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e378" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method ru.spbstu.scholarship.applications.api.ApplicationView.getAttachments()<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.attachments<br/>At ApplicationService.kt:[line 299]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e394');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationView.getDeclaredGrounds() may expose internal representation by returning ApplicationView.declaredGrounds</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e394" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method ru.spbstu.scholarship.applications.api.ApplicationView.getDeclaredGrounds()<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.declaredGrounds<br/>At ApplicationService.kt:[line 298]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e410');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationView.getScores() may expose internal representation by returning ApplicationView.scores</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e410" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method ru.spbstu.scholarship.applications.api.ApplicationView.getScores()<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.scores<br/>At ApplicationService.kt:[line 299]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e607');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.CreateApplicationRequest.component4() may expose internal representation by returning CreateApplicationRequest.declaredGrounds</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e607" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.CreateApplicationRequest<br/>In method ru.spbstu.scholarship.applications.api.CreateApplicationRequest.component4()<br/>Field ru.spbstu.scholarship.applications.api.CreateApplicationRequest.declaredGrounds<br/>In ApplicationService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e623');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.CreateApplicationRequest.getDeclaredGrounds() may expose internal representation by returning CreateApplicationRequest.declaredGrounds</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e623" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.CreateApplicationRequest<br/>In method ru.spbstu.scholarship.applications.api.CreateApplicationRequest.getDeclaredGrounds()<br/>Field ru.spbstu.scholarship.applications.api.CreateApplicationRequest.declaredGrounds<br/>At ApplicationService.kt:[line 290]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e657');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ListView.component1() may expose internal representation by returning ListView.items</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e657" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ListView<br/>In method ru.spbstu.scholarship.applications.api.ListView.component1()<br/>Field ru.spbstu.scholarship.applications.api.ListView.items<br/>In ApplicationService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e674');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ListView.getItems() may expose internal representation by returning ListView.items</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e674" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ListView<br/>In method ru.spbstu.scholarship.applications.api.ListView.getItems()<br/>Field ru.spbstu.scholarship.applications.api.ListView.items<br/>At ApplicationService.kt:[line 305]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e708');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.UploadView.component4() may expose internal representation by returning UploadView.formFields</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e708" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.UploadView<br/>In method ru.spbstu.scholarship.applications.api.UploadView.component4()<br/>Field ru.spbstu.scholarship.applications.api.UploadView.formFields<br/>In ApplicationService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e724');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.UploadView.getFormFields() may expose internal representation by returning UploadView.formFields</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e724" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.UploadView<br/>In method ru.spbstu.scholarship.applications.api.UploadView.getFormFields()<br/>Field ru.spbstu.scholarship.applications.api.UploadView.formFields<br/>At ApplicationService.kt:[line 306]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e842');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.repo.ApplicationRow.component7() may expose internal representation by returning ApplicationRow.grounds</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e842" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.repo.ApplicationRow<br/>In method ru.spbstu.scholarship.applications.repo.ApplicationRow.component7()<br/>Field ru.spbstu.scholarship.applications.repo.ApplicationRow.grounds<br/>In ApplicationRepository.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e858');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.repo.ApplicationRow.getGrounds() may expose internal representation by returning ApplicationRow.grounds</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e858" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.repo.ApplicationRow<br/>In method ru.spbstu.scholarship.applications.repo.ApplicationRow.getGrounds()<br/>Field ru.spbstu.scholarship.applications.repo.ApplicationRow.grounds<br/>At ApplicationRepository.kt:[line 14]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e927');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.storage.UploadForm.component2() may expose internal representation by returning UploadForm.fields</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e927" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.storage.UploadForm<br/>In method ru.spbstu.scholarship.applications.storage.UploadForm.component2()<br/>Field ru.spbstu.scholarship.applications.storage.UploadForm.fields<br/>In ObjectStorage.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e943');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.storage.UploadForm.getFields() may expose internal representation by returning UploadForm.fields</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e943" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.storage.UploadForm<br/>In method ru.spbstu.scholarship.applications.storage.UploadForm.getFields()<br/>Field ru.spbstu.scholarship.applications.storage.UploadForm.fields<br/>At ObjectStorage.kt:[line 16]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e239');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.audit</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e239" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationService.audit<br/>Local variable named audit<br/>At ApplicationService.kt:[line 43]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e257');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.om</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e257" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationService.om<br/>Local variable named om<br/>At ApplicationService.kt:[line 49]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e275');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.redis</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e275" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationService.redis<br/>Local variable named redis<br/>At ApplicationService.kt:[line 48]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e293');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.repo</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e293" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationService.repo<br/>Local variable named repo<br/>At ApplicationService.kt:[line 42]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e311');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into ApplicationService.storage</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e311" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationService(ApplicationRepository, AuditLog, IdempotencyStore, EventPublisher, LdapCatalog, ObjectStorage, StringRedisTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationService.storage<br/>Local variable named storage<br/>At ApplicationService.kt:[line 47]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e426');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List) may expose internal representation by storing an externally mutable object into ApplicationView.attachments</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e426" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.attachments<br/>Local variable named attachments<br/>At ApplicationService.kt:[line 299]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e444');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List) may expose internal representation by storing an externally mutable object into ApplicationView.declaredGrounds</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e444" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.declaredGrounds<br/>Local variable named declaredGrounds<br/>At ApplicationService.kt:[line 298]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e462');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List) may expose internal representation by storing an externally mutable object into ApplicationView.scores</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e462" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationView<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationView(UUID, UUID, String, String, UUID, String, List, OffsetDateTime, List, List)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationView.scores<br/>Local variable named scores<br/>At ApplicationService.kt:[line 299]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e480');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ApplicationsController(ApplicationService, ApplicationRepository) may expose internal representation by storing an externally mutable object into ApplicationsController.repo</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e480" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method new ru.spbstu.scholarship.applications.api.ApplicationsController(ApplicationService, ApplicationRepository)<br/>Field ru.spbstu.scholarship.applications.api.ApplicationsController.repo<br/>Local variable named repo<br/>At ApplicationsController.kt:[line 33]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e639');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.CreateApplicationRequest(String, String, String, List) may expose internal representation by storing an externally mutable object into CreateApplicationRequest.declaredGrounds</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e639" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.CreateApplicationRequest<br/>In method new ru.spbstu.scholarship.applications.api.CreateApplicationRequest(String, String, String, List)<br/>Field ru.spbstu.scholarship.applications.api.CreateApplicationRequest.declaredGrounds<br/>Local variable named declaredGrounds<br/>At ApplicationService.kt:[line 290]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e690');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.ListView(List, String) may expose internal representation by storing an externally mutable object into ListView.items</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e690" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ListView<br/>In method new ru.spbstu.scholarship.applications.api.ListView(List, String)<br/>Field ru.spbstu.scholarship.applications.api.ListView.items<br/>Local variable named items<br/>At ApplicationService.kt:[line 305]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e740');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.api.UploadView(UUID, String, String, Map, OffsetDateTime) may expose internal representation by storing an externally mutable object into UploadView.formFields</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e740" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.UploadView<br/>In method new ru.spbstu.scholarship.applications.api.UploadView(UUID, String, String, Map, OffsetDateTime)<br/>Field ru.spbstu.scholarship.applications.api.UploadView.formFields<br/>Local variable named formFields<br/>At ApplicationService.kt:[line 306]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e824');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.repo.ApplicationRepository(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into ApplicationRepository.jdbc</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e824" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.repo.ApplicationRepository<br/>In method new ru.spbstu.scholarship.applications.repo.ApplicationRepository(NamedParameterJdbcTemplate)<br/>Field ru.spbstu.scholarship.applications.repo.ApplicationRepository.jdbc<br/>Local variable named jdbc<br/>At ApplicationRepository.kt:[line 41]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e875');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.repo.ApplicationRow(UUID, UUID, UUID, String, String, String, List, OffsetDateTime, int, boolean) may expose internal representation by storing an externally mutable object into ApplicationRow.grounds</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e875" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.repo.ApplicationRow<br/>In method new ru.spbstu.scholarship.applications.repo.ApplicationRow(UUID, UUID, UUID, String, String, String, List, OffsetDateTime, int, boolean)<br/>Field ru.spbstu.scholarship.applications.repo.ApplicationRow.grounds<br/>Local variable named grounds<br/>At ApplicationRepository.kt:[line 14]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e959');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.applications.storage.UploadForm(String, Map, ZonedDateTime) may expose internal representation by storing an externally mutable object into UploadForm.fields</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e959" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.storage.UploadForm<br/>In method new ru.spbstu.scholarship.applications.storage.UploadForm(String, Map, ZonedDateTime)<br/>Field ru.spbstu.scholarship.applications.storage.UploadForm.fields<br/>Local variable named fields<br/>At ObjectStorage.kt:[line 16]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e911');">
+            <td>
+               <span class="priority-2">MS</span>
+            </td>
+            <td>Public static ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion.getALLOWED_TYPES() may expose internal representation by returning ObjectStorage.ALLOWED_TYPES</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e911" style="display: none;">
+                  <a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion<br/>In method ru.spbstu.scholarship.applications.storage.ObjectStorage$Companion.getALLOWED_TYPES()<br/>Field ru.spbstu.scholarship.applications.storage.ObjectStorage.ALLOWED_TYPES<br/>At ObjectStorage.kt:[line 75]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e221');">
+            <td>
+               <span class="priority-3">SECCRLFLOG</span>
+            </td>
+            <td>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e221" style="display: none;">
+                  <a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method ru.spbstu.scholarship.applications.api.ApplicationService.countNotFound(AuthUser)<br/>At ApplicationService.kt:[line 100]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ru/spbstu/scholarship/platform/security/AuthUser.getId()Ljava/util/UUID;</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e893');">
+            <td>
+               <span class="priority-3">SECCRLFLOG</span>
+            </td>
+            <td>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e893" style="display: none;">
+                  <a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.storage.ObjectStorage<br/>In method ru.spbstu.scholarship.applications.storage.ObjectStorage.deleteQuietly(String)<br/>At ObjectStorage.kt:[line 67]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source kotlin/Result.exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e510');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e510" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.attachment(AuthUser, UUID, AttachmentRequest)<br/>At ApplicationsController.kt:[lines 99-100]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e523');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e523" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.campaigns(AuthUser)<br/>At ApplicationsController.kt:[lines 118-119]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e535');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e535" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.completeness(AuthUser, UUID)<br/>At ApplicationsController.kt:[lines 109-110]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e547');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e547" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.create(AuthUser, String, CreateApplicationRequest)<br/>At ApplicationsController.kt:[lines 59-62]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e559');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e559" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.get(AuthUser, UUID, String)<br/>At ApplicationsController.kt:[lines 46-49]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e571');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e571" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.list(AuthUser, String, String, String, String, String, String)<br/>At ApplicationsController.kt:[lines 76-77]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e583');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e583" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.submit(AuthUser, UUID)<br/>At ApplicationsController.kt:[lines 84-85]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e595');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.applications.api.ApplicationsController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e595" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.withdraw(AuthUser, UUID)<br/>At ApplicationsController.kt:[lines 91-93]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e498');">
+            <td>
+               <span class="priority-1">SECSPRCSRFURM</span>
+            </td>
+            <td>Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e498" style="display: none;">
+                  <a href="#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">Bug type SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationsController<br/>In method ru.spbstu.scholarship.applications.api.ApplicationsController.completeness(AuthUser, UUID)<br/>At ApplicationsController.kt:[lines 109-110]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e151');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.api.ApplicationService.create(AuthUser, UUID, CreateApplicationRequest)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e151" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method ru.spbstu.scholarship.applications.api.ApplicationService.create(AuthUser, UUID, CreateApplicationRequest)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ApplicationService.kt:[line 317]<br/>Another occurrence at ApplicationService.kt:[line 322]<br/>Another occurrence at ApplicationService.kt:[line 326]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e177');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.api.ApplicationService.get(AuthUser, UUID, boolean)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e177" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method ru.spbstu.scholarship.applications.api.ApplicationService.get(AuthUser, UUID, boolean)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ApplicationService.kt:[line 312]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e199');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.api.ApplicationService.list(AuthUser, String, String, String, String, String, String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e199" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.api.ApplicationService<br/>In method ru.spbstu.scholarship.applications.api.ApplicationService.list(AuthUser, String, String, String, String, String, String)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ApplicationService.kt:[line 330]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e758');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.domain.ContentHash.of(ApplicationType, Collection, String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e758" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.domain.ContentHash<br/>In method ru.spbstu.scholarship.applications.domain.ContentHash.of(ApplicationType, Collection, String)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At Domain.kt:[line 65]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e780');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.repo.ApplicationRepository.campaigns(UUID, boolean)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e780" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.repo.ApplicationRepository<br/>In method ru.spbstu.scholarship.applications.repo.ApplicationRepository.campaigns(UUID, boolean)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ApplicationRepository.kt:[line 259]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e802');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.applications.repo.ApplicationRepository.findVisible$lambda$1(ResultSet, int)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e802" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.applications.repo.ApplicationRepository<br/>In method ru.spbstu.scholarship.applications.repo.ApplicationRepository.findVisible$lambda$1(ResultSet, int)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At ApplicationRepository.kt:[line 279]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="BC_BAD_CAST_TO_ABSTRACT_COLLECTION">BC_BAD_CAST_TO_ABSTRACT_COLLECTION: Questionable cast to abstract collection</a>
+      </h2>
+
+<p>
+This code casts a Collection to an abstract collection
+(such as <code>List</code>, <code>Set</code>, or <code>Map</code>).
+Ensure that you are guaranteed that the object is of the type
+you are casting to. If all you need is to be able
+to iterate through a collection, you don't need to cast it to a Set or List.
+</p>
+<p>See <a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="MS_EXPOSE_REP">MS_EXPOSE_REP: Public static method may expose internal representation by returning a mutable object or array</a>
+      </h2>
+
+  <p> A public static method returns a reference to a mutable object or
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    <h2>
+         <a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+      </h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        <h2>
+         <a name="SPRING_ENDPOINT">SPRING_ENDPOINT: Found Spring endpoint</a>
+      </h2>
+            
+<p>This class is a Spring Controller. All methods annotated with <code>RequestMapping</code> (as well as its shortcut annotations <code>GetMapping</code>, <code>PostMapping</code>, <code>PutMapping</code>, <code>DeleteMapping</code>, and <code>PatchMapping</code>) are reachable remotely.
+This class should be analyzed to make sure that remotely exposed methods are safe to expose to potential attackers.</p>
+
+        <h2>
+         <a name="SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING: Spring CSRF unrestricted RequestMapping</a>
+      </h2>
+            
+<p>Methods annotated with <code>RequestMapping</code> are by default mapped to all the HTTP request methods.
+However, Spring Security's CSRF protection is not enabled by default
+for the HTTP request methods <code>GET</code>, <code>HEAD</code>, <code>TRACE</code>, and <code>OPTIONS</code>
+(as this could cause the tokens to be leaked).
+Therefore, state-changing methods annotated with <code>RequestMapping</code> and not narrowing the mapping
+to the HTTP request methods <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, or <code>PATCH</code>
+are vulnerable to CSRF attacks.</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@Controller
+public class UnsafeController {
+
+    @RequestMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Spring Framework 4.3 and later):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use @GetMapping.
+     */
+    @GetMapping("/path")
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either @PostMapping, @PutMapping, @DeleteMapping, or @PatchMapping.
+     */
+    @PostMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Before Spring Framework 4.3):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use either
+     * RequestMethod.GET, RequestMethod.HEAD, RequestMethod.TRACE, or RequestMethod.OPTIONS.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.GET)
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either
+     * RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, or RequestMethod.PATCH.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.POST)
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html#csrf-use-proper-verbs">Spring Security Official Documentation: Use proper HTTP verbs (CSRF protection)</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">OWASP: Cross-Site Request Forgery</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet">OWASP: CSRF Prevention Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>
+</p>
+
+        </body>
+</html>

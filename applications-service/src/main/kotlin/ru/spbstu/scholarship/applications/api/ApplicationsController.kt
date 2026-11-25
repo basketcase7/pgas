@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import ru.spbstu.scholarship.applications.repo.ApplicationRepository
@@ -103,10 +102,19 @@ class ApplicationsController(
     /**
      * OP-06 / OP-11 — проверка полноты языковой моделью. По условию ЛР3 интеграция с моделью
      * не реализуется: эндпоинт оставлен заглушкой 501 (контейнер llm-orchestrator не развёрнут).
+     * ЛР5, V-M03: права на объект проверяются ДО ответа (чужая/несуществующая заявка → 404),
+     * как в OP-01, — иначе обработчик отвечал 501 на любой id. Методы разделены: GET не
+     * должен попадать в обработчик изменяющей операции (FindSecBugs SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING).
      */
-    @RequestMapping("/applications/{id}/completeness-check", method = [RequestMethod.POST, RequestMethod.GET])
-    fun completeness(user: AuthUser, @PathVariable id: UUID): ResponseEntity<Map<String, String>> {
+    @PostMapping("/applications/{id}/completeness-check")
+    fun requestCompleteness(user: AuthUser, @PathVariable id: UUID) = completenessStub(user, id)
+
+    @GetMapping("/applications/{id}/completeness-check")
+    fun completenessReport(user: AuthUser, @PathVariable id: UUID) = completenessStub(user, id)
+
+    private fun completenessStub(user: AuthUser, id: UUID): ResponseEntity<Map<String, String>> {
         require(user, Permission.COMPLETENESS_REQUEST)
+        repo.findVisible(id, user.id, user.isApplicant(), user.isUnitScoped()) ?: throw Errors.notFound()
         return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).body(mapOf(
             "error" to "not_implemented",
             "message" to "Проверка полноты языковой моделью в этой версии не реализована"))

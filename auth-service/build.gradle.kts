@@ -9,7 +9,7 @@ dependencies {
     implementation("org.springframework.kafka:spring-kafka")
     // Argon2id: реализация Bouncy Castle через Argon2PasswordEncoder из spring-security-crypto
     implementation("org.springframework.security:spring-security-crypto")
-    implementation("org.bouncycastle:bcprov-jdk18on:1.81")
+    implementation("org.bouncycastle:bcprov-jdk18on") // версия — в корневом build.gradle.kts
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("org.postgresql:postgresql")
 }

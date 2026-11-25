@@ -46,8 +46,8 @@ docker compose up -d --build
 | Кабинет заявителя (applicant-web) | http://localhost:8080 |
 | Панель сотрудника (staff-panel) | http://127.0.0.1:8081 — именно 127.0.0.1: cookie не различают порты, другой хост разделяет сессии двух приложений |
 | API (api-gateway, HTTPS, самоподписанный сертификат `secrets/gateway.crt`) | https://localhost:8443/api/v1 |
-| Почта (Mailpit): письма уведомлений и восстановления доступа | http://localhost:8025 |
-| Kafka UI: топики, сообщения, группы потребителей | http://localhost:8090 |
+| Почта (Mailpit): письма уведомлений и восстановления доступа (вход: admin / `MAILPIT_UI_PASSWORD` из `.env`) | http://localhost:8025 |
+| Kafka UI: топики, сообщения, группы потребителей (вход: admin / `KAFKA_UI_PASSWORD` из `.env`) | http://localhost:8090 |
 
 PostgreSQL, Redis, Kafka, LDAP, хранилище и сами сервисы наружу не публикуются.
 

@@ -1,0 +1,615 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		auth-service (spotbugsMain)</p>
+      <p>SpotBugs version: 4.9.6</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthController$Companion.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthController.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthService$Companion.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthService.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/InternalController.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/IssuedTokens.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/LoginRequest.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/PasswordPolicy.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/ReauthRequest.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/RegisterRequest.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/ResetConfirmRequest.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/ResetRequest.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/TokenResponse.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/UserView.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/AuthApplication.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/AuthApplicationKt.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/crypto/PasswordHasher.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult$Invalid.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult$Ok.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult$Reused.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$Session.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/token/TokenIssuer.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/user/UserRecord.class</li>
+         <li>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/user/UserRepository.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>644 lines of code analyzed,
+	in 27 classes, 
+	in 7 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">12</td>
+            <td align="right">18.63</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Low Priority Warnings</td>
+            <td align="right">9</td>
+            <td align="right">13.98</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>21</b>
+            </td>
+            <td align="right">
+               <b>32.61</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">9</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">9</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>21</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e346');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class ru.spbstu.scholarship.auth.crypto.PasswordHasher at new ru.spbstu.scholarship.auth.crypto.PasswordHasher(String) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e346" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.crypto.PasswordHasher<br/>In method new ru.spbstu.scholarship.auth.crypto.PasswordHasher(String)<br/>At PasswordHasher.kt:[line 22]<br/>At PasswordHasher.kt:[line 22]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e278');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.UserView.component3() may expose internal representation by returning UserView.roles</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e278" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.UserView<br/>In method ru.spbstu.scholarship.auth.api.UserView.component3()<br/>Field ru.spbstu.scholarship.auth.api.UserView.roles<br/>In AuthService.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e294');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.UserView.getRoles() may expose internal representation by returning UserView.roles</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e294" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.UserView<br/>In method ru.spbstu.scholarship.auth.api.UserView.getRoles()<br/>Field ru.spbstu.scholarship.auth.api.UserView.roles<br/>At AuthService.kt:[line 28]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e211');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate) may expose internal representation by storing an externally mutable object into AuthService.audit</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e211" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthService<br/>In method new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate)<br/>Field ru.spbstu.scholarship.auth.api.AuthService.audit<br/>Local variable named audit<br/>At AuthService.kt:[line 37]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e229');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate) may expose internal representation by storing an externally mutable object into AuthService.redis</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e229" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthService<br/>In method new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate)<br/>Field ru.spbstu.scholarship.auth.api.AuthService.redis<br/>Local variable named redis<br/>At AuthService.kt:[line 39]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e248');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate) may expose internal representation by storing an externally mutable object into AuthService.users</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e248" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthService<br/>In method new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate)<br/>Field ru.spbstu.scholarship.auth.api.AuthService.users<br/>Local variable named users<br/>At AuthService.kt:[line 32]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e310');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.api.UserView(UUID, String, List, UUID) may expose internal representation by storing an externally mutable object into UserView.roles</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e310" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.UserView<br/>In method new ru.spbstu.scholarship.auth.api.UserView(UUID, String, List, UUID)<br/>Field ru.spbstu.scholarship.auth.api.UserView.roles<br/>Local variable named roles<br/>At AuthService.kt:[line 28]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e328');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap(UserRepository, PasswordHasher, String) may expose internal representation by storing an externally mutable object into DemoPasswordBootstrap.users</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e328" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap<br/>In method new ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap(UserRepository, PasswordHasher, String)<br/>Field ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap.users<br/>Local variable named users<br/>At DemoPasswordBootstrap.kt:[line 20]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e360');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.session.SessionStore(StringRedisTemplate, Duration) may expose internal representation by storing an externally mutable object into SessionStore.redis</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e360" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.session.SessionStore<br/>In method new ru.spbstu.scholarship.auth.session.SessionStore(StringRedisTemplate, Duration)<br/>Field ru.spbstu.scholarship.auth.session.SessionStore.redis<br/>Local variable named redis<br/>At SessionStore.kt:[line 21]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e410');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.auth.user.UserRepository(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into UserRepository.jdbc</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e410" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.user.UserRepository<br/>In method new ru.spbstu.scholarship.auth.user.UserRepository(NamedParameterJdbcTemplate)<br/>Field ru.spbstu.scholarship.auth.user.UserRepository.jdbc<br/>Local variable named jdbc<br/>At UserRepository.kt:[line 20]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e115');">
+            <td>
+               <span class="priority-3">SECCU</span>
+            </td>
+            <td>Sensitive data may be stored by the application in a cookie</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e115" style="display: none;">
+                  <a href="#COOKIE_USAGE">Bug type COOKIE_USAGE (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.refresh(HttpServletRequest, String)<br/>At AuthController.kt:[line 56]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e127');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e127" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.login(LoginRequest)<br/>At AuthController.kt:[lines 40-45]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e139');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e139" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.logout(AuthUser)<br/>At AuthController.kt:[lines 64-65]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e151');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e151" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.reauth(AuthUser, ReauthRequest)<br/>At AuthController.kt:[lines 71-74]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e163');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e163" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.refresh(HttpServletRequest, String)<br/>At AuthController.kt:[lines 55-58]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e175');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e175" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.register(RegisterRequest)<br/>At AuthController.kt:[lines 80-86]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e187');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e187" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.resetConfirm(ResetConfirmRequest)<br/>At AuthController.kt:[lines 102-106]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e199');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e199" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.AuthController<br/>In method ru.spbstu.scholarship.auth.api.AuthController.resetRequest(ResetRequest)<br/>At AuthController.kt:[lines 92-95]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e266');">
+            <td>
+               <span class="priority-3">SECSC</span>
+            </td>
+            <td>ru.spbstu.scholarship.auth.api.InternalController is a Spring endpoint (Controller)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e266" style="display: none;">
+                  <a href="#SPRING_ENDPOINT">Bug type SPRING_ENDPOINT (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.api.InternalController<br/>In method ru.spbstu.scholarship.auth.api.InternalController.contact(UUID, String)<br/>At AuthController.kt:[lines 134-137]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e378');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in ru.spbstu.scholarship.auth.session.SessionStore.remainingTtl(String) due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e378" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.session.SessionStore<br/>In method ru.spbstu.scholarship.auth.session.SessionStore.remainingTtl(String)<br/>Value loaded from ?<br/>Dereferenced at SessionStore.kt:[line 68]<br/>Known null at SessionStore.kt:[line 68]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e394');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in ru.spbstu.scholarship.auth.session.SessionStore.rotate(String, String) due to return value of called method</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e394" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.auth.session.SessionStore<br/>In method ru.spbstu.scholarship.auth.session.SessionStore.rotate(String, String)<br/>Value loaded from ?<br/>Dereferenced at SessionStore.kt:[line 59]<br/>Known null at SessionStore.kt:[line 59]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="CT_CONSTRUCTOR_THROW">CT_CONSTRUCTOR_THROW: Be wary of letting constructors throw exceptions.</a>
+      </h2>
+      
+            <p>Classes that throw exceptions in their constructors are vulnerable to Finalizer attacks</p>
+
+            <p>A finalizer attack can be prevented, by declaring the class final, using an empty finalizer declared as final, or by a clever use of a private constructor.</p>
+
+            <p>See <a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ11-J.+Be+wary+of+letting+constructors+throw+exceptions"><code>SEI CERT Rule OBJ-11</code></a>
+            for more information.
+            </p>
+            
+    <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
+      </h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   <h2>
+         <a name="COOKIE_USAGE">COOKIE_USAGE: Potentially sensitive data in a cookie</a>
+      </h2>
+            
+<p>The information stored in a custom cookie should not be sensitive or related to the session. In most cases, sensitive data should only be stored in session
+and referenced by the user's session cookie. See HttpSession (<code>HttpServletRequest.getSession()</code>)</p>
+<p>Custom cookies can be used for information that needs to live longer than and is independent of a specific session.</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315: Cleartext Storage of Sensitive Information in a Cookie</a>
+</p>
+
+        <h2>
+         <a name="SPRING_ENDPOINT">SPRING_ENDPOINT: Found Spring endpoint</a>
+      </h2>
+            
+<p>This class is a Spring Controller. All methods annotated with <code>RequestMapping</code> (as well as its shortcut annotations <code>GetMapping</code>, <code>PostMapping</code>, <code>PutMapping</code>, <code>DeleteMapping</code>, and <code>PatchMapping</code>) are reachable remotely.
+This class should be analyzed to make sure that remotely exposed methods are safe to expose to potential attackers.</p>
+
+        </body>
+</html>

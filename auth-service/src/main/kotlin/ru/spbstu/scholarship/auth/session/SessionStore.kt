@@ -68,8 +68,14 @@ class SessionStore(
         redis.getExpire(sessionKey(sid)).takeIf { it > 0 }?.let { Duration.ofSeconds(it) } ?: Duration.ZERO
 
     fun markReauthenticated(sid: String) {
-        redis.opsForHash<String, String>().put(sessionKey(sid), "reauth_at", Instant.now().epochSecond.toString())
+        val h = redis.opsForHash<String, String>()
+        h.put(sessionKey(sid), "reauth_at", Instant.now().epochSecond.toString())
+        h.delete(sessionKey(sid), "reauth_failures")
     }
+
+    /** Счётчик неудачных повторных вводов пароля живёт в самой сессии и исчезает вместе с ней. */
+    fun registerReauthFailure(sid: String): Long =
+        redis.opsForHash<String, String>().increment(sessionKey(sid), "reauth_failures", 1)
 
     /** Отзыв сессии: после удаления ключа любой токен доступа с этим sid отклоняется сервисами (401). */
     fun revoke(sid: String) {

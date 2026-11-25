@@ -165,7 +165,7 @@ services:
 
   # ------------------------------------------------------------------ брокер (TB-06)
   kafka:
-    image: apache/kafka:3.9.1
+    image: apache/kafka:3.9.2
     restart: unless-stopped
     networks: [backend]
     volumes: [kafka-data:/var/lib/kafka/data]
@@ -209,7 +209,7 @@ services:
 
   # одноразовый контейнер: топики, DLT и ACL для учётных записей сервисов
   kafka-init:
-    image: apache/kafka:3.9.1
+    image: apache/kafka:3.9.2
     networks: [backend]
     depends_on:
       kafka: { condition: service_healthy }
@@ -219,9 +219,11 @@ services:
       KAFKA_ADMIN_PASSWORD: ${KAFKA_ADMIN_PASSWORD:?}
     restart: "no"
 
-  # веб-интерфейс для демонстрации сообщений в топиках (на защите)
+  # веб-интерфейс для демонстрации сообщений в топиках (на защите).
+  # ЛР5, V-D03: вход обязателен — в топике auth.password-reset лежат коды восстановления доступа;
+  # kafbat/kafka-ui — поддерживаемое продолжение provectuslabs/kafka-ui (0.7.2 не обновляется, 5 Critical)
   kafka-ui:
-    image: provectuslabs/kafka-ui:v0.7.2
+    image: kafbat/kafka-ui:v1.5.1
     restart: unless-stopped
     networks: [backend]
     depends_on:
@@ -236,10 +238,13 @@ services:
         org.apache.kafka.common.security.plain.PlainLoginModule required
         username="admin" password="${KAFKA_ADMIN_PASSWORD:?}";
       DYNAMIC_CONFIG_ENABLED: "false"
+      AUTH_TYPE: LOGIN_FORM
+      SPRING_SECURITY_USER_NAME: admin
+      SPRING_SECURITY_USER_PASSWORD: ${KAFKA_UI_PASSWORD:?}
 
   # ------------------------------------------------------------------ хранилища (TB-03)
   postgres:
-    image: postgres:16-alpine
+    image: postgres:16.16-alpine
     restart: unless-stopped
     networks: [backend]
     volumes: [pg-data:/var/lib/postgresql/data]
@@ -256,7 +261,7 @@ services:
 
   # миграции Liquibase — отдельный одноразовый контейнер
   liquibase:
-    image: liquibase/liquibase:4.31.1
+    image: liquibase/liquibase:4.33.0
     networks: [backend]
     depends_on:
       postgres: { condition: service_healthy }
@@ -271,7 +276,7 @@ services:
     restart: "no"
 
   redis:
-    image: redis:7.4-alpine
+    image: redis:7.4.12-alpine
     restart: unless-stopped
     networks: [backend]
     volumes: [./redis/start.sh:/start.sh:ro]
@@ -309,7 +314,10 @@ services:
       start_period: 10s
 
   # ------------------------------------------------------------------ заглушки внешних систем (TB-04)
-  # R-09: корпоративный каталог учётных записей
+  # R-09: корпоративный каталог учётных записей.
+  # ЛР5: osixia/openldap:1.5.0 (Debian 10, EOL) оставлен осознанно — заглушка внешней системы
+  # только для локального стенда, порт не публикуется, сервисы входят учётной записью readonly;
+  # обоснование и план — в отчёте ЛР5 (раздел SCA). В эксплуатации R-09 — каталог университета.
   ldap:
     image: osixia/openldap:1.5.0
     restart: unless-stopped
@@ -332,15 +340,17 @@ services:
       retries: 30
       start_period: 10s
 
-  # R-08: почтовый сервис — локальная заглушка, письма видны в веб-интерфейсе
+  # R-08: почтовый сервис — локальная заглушка, письма видны в веб-интерфейсе.
+  # ЛР5, V-D04: веб-интерфейс и API Mailpit — только со входом (в письмах ссылки восстановления доступа)
   mailpit:
-    image: axllent/mailpit:v1.27
+    image: axllent/mailpit:v1.34
     restart: unless-stopped
     networks: [backend]
     ports: ["127.0.0.1:8025:8025"]
     environment:
       MP_SMTP_AUTH: "${SMTP_USER:?}:${SMTP_PASSWORD:?}"
       MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      MP_UI_AUTH: "admin:${MAILPIT_UI_PASSWORD:?}"
       MP_MAX_MESSAGES: 1000
 
 networks:

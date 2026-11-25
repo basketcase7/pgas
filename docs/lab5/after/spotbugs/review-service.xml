@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.9.6" sequence="0" timestamp="1795562520557" analysisTimestamp="1795562520557" release="">
+  <Project projectName="review-service (spotbugsMain)">
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/EntryInput.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/RegistryRequest.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/RegistryView.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewController$registry$key$1.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewController.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewRequest.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewService$checksum$$inlined$sortedBy$1.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewService$Companion.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewService.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ReviewView.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/api/ScoreInput.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/CampaignForPayout.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/EntryCheck.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewRepository$ranking$1.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewRepository.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewRepositoryKt.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/repo/ReviewTarget.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/ReviewApplication.class</Jar>
+    <Jar>/src/review-service/build/classes/kotlin/main/ru/spbstu/scholarship/review/ReviewApplicationKt.class</Jar>
+    <AuxClasspathEntry>/src/platform/build/libs/platform-1.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.5.16/5c30cb2a0a69e25a8fc402d22e171dbca7b49278/spring-boot-starter-web-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.5.16/5840614f0a4371809023d7409b5ee132f686e55a/spring-boot-starter-json-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.21.9/153084eb70b74d8144811271076625a3a58c568c/jackson-datatype-jdk8-2.21.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.21.9/ed3e40e42499b805424e8c27057c8bfa776b156c/jackson-datatype-jsr310-2.21.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.21.9/77789942c321087af175cf6eeb6cadfe3a59cfec/jackson-module-parameter-names-2.21.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.21.9/ced10c34729d4bcebbaa152948c0b7097d905c51/jackson-databind-2.21.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.21.9/b43011ab1aed25a52492fb1a5934dba560199b27/jackson-core-2.21.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.21.9/825fcc4443ce027d3daeede5c1fe4ee6af9dbd05/jackson-module-kotlin-2.21.9.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/2.1.21/4929da533b3f04a101e4bb9ae0ee51a1d8107614/kotlin-reflect-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/97a0975aa19d925e109537af60eb46902920015c/kotlin-stdlib-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/3.5.16/ceb21619aa86e5b6ec2d8b8f0a18d9267aef8752/spring-boot-starter-jdbc-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/3.5.16/8f42bc34c6c1b98dd4b8585e322d799d90c27288/spring-boot-starter-data-redis-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/3.5.16/10d1b0d154545c910b47c7c64206b80239bd2309/spring-boot-starter-actuator-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/3.3.16/e33b8ab142f73c18dc88c39847fb25c8d6f54699/spring-kafka-3.3.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.nimbusds/nimbus-jose-jwt/10.3/5d7a2aed3502099fa8552e5c16726fd4c9a27e0c/nimbus-jose-jwt-10.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.5.16/d38b3f624f867a7d1e7f72a7adb193f6d4111114/spring-boot-starter-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.5.16/e76d97eb7710f95feaa82c9cf2fa74cc78acc64d/spring-boot-starter-tomcat-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.2.19/836c68c8797106000e44153686b1cfa1a806a998/spring-webmvc-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.2.19/f1dc7b238611aeaf9e256a230aa089057cf0e5b3/spring-web-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/6.3.3/7c5aec1e47a97ff40977e0193018865304ea9585/HikariCP-6.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/6.2.19/d7b6ea705a71dbbb4499437dd54b9217ce6c251a/spring-jdbc-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/6.6.0.RELEASE/8a9bb7a3291328f4a0156643dddd3f1194bd26f3/lettuce-core-6.6.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/3.5.13/722c28ecaa0ada4fa5a5c3cc671969ff89cfdfe7/spring-data-redis-3.5.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/3.5.16/c88feefc15654606964df42daa71fc8df4c94cbf/spring-boot-actuator-autoconfigure-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-jakarta9/1.15.12/723026e4168c2ff38d30b04ce6b28da7bfd688e5/micrometer-jakarta9-1.15.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.5.16/87db09240595b49b530b230252311836abd21df1/spring-boot-autoconfigure-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/3.5.16/b3f8312fdca225b7765b915e3b336307b6e34eb8/spring-boot-actuator-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.5.16/8e75e8d0d3cfbca088774df8d30b45bbd21e5d99/spring-boot-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/3.5.13/5f079057d71b11fa56810235552053d6f1bd0bd6/spring-data-keyvalue-3.5.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.2.19/a3c10a96896252b025988cf4832bfbf896cfd26d/spring-context-support-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.2.19/e218e4c4ecad1e821905628b2c4ce8561d937baa/spring-context-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.15.12/5064deed80753c36607e21d7a7439b8007f48c52/micrometer-core-1.15.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.15.12/1d96fcaec8d2516236dfcb9914108e14bfd02238/micrometer-observation-1.15.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/6.2.19/930ad35c33e9e7047c144ec98990cd517f2d58ae/spring-messaging-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.2.19/aa1a170d935a3c39176d27a2353c34c2861b7dc/spring-tx-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.retry/spring-retry/2.0.13/4cf3f0ec5decf3c510c5331401ee55de209b454e/spring-retry-2.0.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/3.9.2/a06edbaa01458ed2e8cf1be69a18c2f231fda6e0/kafka-clients-3.9.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.21/b1bc1868bf02dc0bd6c7836257a036a331005309/jackson-annotations-2.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.5.16/18df7a243be45f11ee346cdd4d7b84d377917a2e/spring-boot-starter-logging-3.5.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.2.19/86a538bb7b2be38a0afc4ef049784def10a86c62/spring-aop-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/6.2.19/3c5c64cae0e25cd262bb71214e8628348353d1/spring-oxm-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.5.13/ce25ffb4e756e74416050b193a3f466d03493285/spring-data-commons-3.5.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.2.19/6d6b4774db3b036df46be6332d93b09d70e5c147/spring-beans-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.2.19/c7202d23797fa778c5ed55e502ac1a9f0d34012a/spring-expression-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.2.19/691459d4644894dae8e5c2d9550a4cfb8302f62f/spring-core-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/2.4/e0666b825b796f85521f02360e77f4c92c5a7a07/snakeyaml-2.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.55/b07cf802e82f358903a07f70757a4bcbe4fece20/tomcat-embed-websocket-10.1.55.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.55/740c1000c60766b3a4d99903434fd1a1d67ec229/tomcat-embed-core-10.1.55.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.55/202f2de13bd61be720cf302f28d63eda558d29f3/tomcat-embed-el-10.1.55.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/redis.clients.authentication/redis-authx-core/0.1.1-beta2/4037345ff29fb22c737bab2ed116a34262718ae5/redis-authx-core-0.1.1-beta2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.5.34/e598899bad5824511cd3019299254230468e1fa2/logback-classic-1.5.34.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.24.3/da1143e2a2531ee1c2d90baa98eb50a28a39d5a7/log4j-to-slf4j-2.24.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/2.0.18/79739c98001d5c9d078d087d5a348ec9e474ec8f/jul-to-slf4j-2.0.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.18/78a9e7a37cd6360e0b818e86341b24123d28d4df/slf4j-api-2.0.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.135.Final/567f8742a3d7a0a8be0401dada8fbdbaa7bf02b6/netty-handler-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.135.Final/9ceeb22325232e9998e3f0ae396e5e4cb462672f/netty-transport-native-unix-common-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.135.Final/cf36e54dc81aa160a93780478727bdb3c3fa4600/netty-codec-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.135.Final/cbc238f1f9707f3652252fdc48568cce0e9a01d9/netty-transport-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.135.Final/d43b00856050cfd4445a063d5816a4782ae422f9/netty-resolver-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.135.Final/6e60e222c27d3534e63e519fb1a9d66c485f62bd/netty-buffer-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.135.Final/3f1fd5004102cd1146a53d29127804569b63c90f/netty-common-4.1.135.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.7.19/4b4c09f49a6fa2fa122554453c2d71b5bf2077ef/reactor-core-3.7.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.15.12/eb539638d48571fa6ce4ea3eb8417cab37a63438/micrometer-commons-1.15.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.2.19/39b9c7d631961f3649511b08ef167420b086184b/spring-jcl-6.2.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.5.34/378692f76c337b3325c15bffb89e013dc1f897b4/logback-core-1.5.34.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/b02c125db8b6d295adf72ae6e71af5d83bce2370/log4j-api-2.24.3.jar</AuxClasspathEntry>
+    <SrcDir>/src/review-service/src/main/resources</SrcDir>
+    <SrcDir>/src/review-service/src/main/java</SrcDir>
+    <SrcDir>/src/review-service/src/main/kotlin</SrcDir>
+    <Plugin id="com.h3xstream.findsecbugs" enabled="true"/>
+  </Project>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="768b9ef327baac7efe6ac1a6f7e57db4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.RegistryRequest.component3() may expose internal representation by returning RegistryRequest.entries</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.RegistryRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" start="218" end="218" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[line 218]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.RegistryRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.RegistryRequest" name="component3" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.RegistryRequest.component3()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.RegistryRequest" name="entries" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.RegistryRequest.entries</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" startBytecode="4" endBytecode="4" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>In ReviewService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="c734078f2941ccc8b01ed6a5ace585a6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.RegistryRequest.getEntries() may expose internal representation by returning RegistryRequest.entries</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.RegistryRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" start="218" end="218" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[line 218]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.RegistryRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.RegistryRequest" name="getEntries" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" start="218" end="218" startBytecode="0" endBytecode="46" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.RegistryRequest.getEntries()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.RegistryRequest" name="entries" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.RegistryRequest.entries</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" primary="true" start="218" end="218" startBytecode="4" endBytecode="4" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 218]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="5654d177425cdf4b2940c565d808e10e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.review.api.RegistryRequest(String, String, List) may expose internal representation by storing an externally mutable object into RegistryRequest.entries</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.RegistryRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" start="218" end="218" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[line 218]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.RegistryRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.RegistryRequest" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" start="218" end="218" startBytecode="0" endBytecode="91" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.review.api.RegistryRequest(String, String, List)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.RegistryRequest" name="entries" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.RegistryRequest.entries</Message>
+    </Field>
+    <LocalVariable name="entries" register="3" pc="16" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named entries</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.RegistryRequest" primary="true" start="218" end="218" startBytecode="16" endBytecode="16" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 218]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="483e99126043f7adb04886492c462b10" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.ReviewController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="21" end="62" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt">
+        <Message>At ReviewController.kt:[lines 21-62]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewController" name="ranking" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.GetMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="61" end="62" startBytecode="0" endBytecode="152" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewController.ranking(AuthUser, UUID)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="61" end="62" startBytecode="0" endBytecode="152" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt" synthetic="true">
+      <Message>At ReviewController.kt:[lines 61-62]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="4f3caac2e0aeb9fa0e4e1c623da3fdb4" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.ReviewController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="21" end="62" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt">
+        <Message>At ReviewController.kt:[lines 21-62]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewController" name="registry" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Ljava/lang/String;Lru/spbstu/scholarship/review/api/RegistryRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="52" end="55" startBytecode="0" endBytecode="245" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewController.registry(AuthUser, UUID, String, RegistryRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="52" end="55" startBytecode="0" endBytecode="245" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt" synthetic="true">
+      <Message>At ReviewController.kt:[lines 52-55]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="30143facbe09ff9334d30175475f8f6b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.ReviewController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="21" end="62" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt">
+        <Message>At ReviewController.kt:[lines 21-62]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewController" name="review" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Ljava/lang/String;Lru/spbstu/scholarship/review/api/ReviewRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PatchMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="35" end="40" startBytecode="0" endBytecode="375" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewController.review(AuthUser, UUID, String, ReviewRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewController" start="35" end="40" startBytecode="0" endBytecode="375" sourcefile="ReviewController.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewController.kt" synthetic="true">
+      <Message>At ReviewController.kt:[lines 35-40]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="f72213ab895678310e5031a0b270f67" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.ReviewRequest.component2() may expose internal representation by returning ReviewRequest.scores</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" start="214" end="214" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[line 214]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewRequest" name="component2" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewRequest.component2()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewRequest" name="scores" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewRequest.scores</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" startBytecode="4" endBytecode="4" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>In ReviewService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="5b6ca6e1252988c7012ac1701cac090a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.review.api.ReviewRequest.getScores() may expose internal representation by returning ReviewRequest.scores</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" start="214" end="214" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[line 214]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewRequest" name="getScores" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" start="214" end="214" startBytecode="0" endBytecode="46" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewRequest.getScores()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewRequest" name="scores" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewRequest.scores</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" primary="true" start="214" end="214" startBytecode="4" endBytecode="4" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 214]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="a53cf888b711c105b5c46b430aa12055" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.review.api.ReviewRequest(String, List, String) may expose internal representation by storing an externally mutable object into ReviewRequest.scores</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewRequest" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" start="214" end="214" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[line 214]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewRequest</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewRequest" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" start="214" end="214" startBytecode="0" endBytecode="91" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.review.api.ReviewRequest(String, List, String)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewRequest" name="scores" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.Nullable">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewRequest.scores</Message>
+    </Field>
+    <LocalVariable name="scores" register="2" pc="11" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named scores</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewRequest" primary="true" start="214" end="214" startBytecode="11" endBytecode="11" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 214]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="8e0bd6355283ee2e12dc44008f041a28" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="createRegistry" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Ljava/util/UUID;Lru/spbstu/scholarship/review/api/RegistryRequest;)Lkotlin/Pair;" isStatic="false" primary="true" classAnnotationNames="org.springframework.transaction.annotation.Transactional,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="109" end="180" startBytecode="0" endBytecode="1052" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="13" pc="703" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="244" end="244" startBytecode="705" endBytecode="705" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 244]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="248" end="248" startBytecode="811" endBytecode="811" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ReviewService.kt:[line 248]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="252" end="252" startBytecode="1026" endBytecode="1026" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ReviewService.kt:[line 252]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="256" end="256" startBytecode="1382" endBytecode="1382" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ReviewService.kt:[line 256]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="274" end="274" startBytecode="2255" endBytecode="2255" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ReviewService.kt:[line 274]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="1340e45741094cc1c58d0bdcd4b83189" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.review.api.ReviewService.ranking(AuthUser, UUID)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="ranking" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;)Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="192" end="197" startBytecode="0" endBytecode="164" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewService.ranking(AuthUser, UUID)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="10" pc="241" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="282" end="282" startBytecode="243" endBytecode="243" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 282]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" priority="2" rank="17" abbrev="BC" category="STYLE" instanceHash="4eee81ff060498933a86fef1e58443e3" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Questionable cast to abstract collection</ShortMessage>
+    <LongMessage>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="review" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;ILru/spbstu/scholarship/review/api/ReviewRequest;)Lru/spbstu/scholarship/review/api/ReviewView;" isStatic="false" primary="true" classAnnotationNames="org.springframework.transaction.annotation.Transactional,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="42" end="95" startBytecode="0" endBytecode="723" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)</Message>
+    </Method>
+    <Type descriptor="Ljava/util/Collection;" role="TYPE_FOUND">
+      <SourceLine classname="java.util.Collection" start="418" end="771" sourcefile="Collection.java" sourcepath="java/util/Collection.java">
+        <Message>At Collection.java:[lines 418-771]</Message>
+      </SourceLine>
+      <Message>Actual type java.util.Collection</Message>
+    </Type>
+    <Type descriptor="Ljava/util/List;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.util.List" start="141" end="1193" sourcefile="List.java" sourcepath="java/util/List.java">
+        <Message>At List.java:[lines 141-1193]</Message>
+      </SourceLine>
+      <Message>Expected java.util.List</Message>
+    </Type>
+    <LocalVariable name="destination$iv$iv" register="11" pc="450" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from destination$iv$iv</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="225" end="225" startBytecode="452" endBytecode="452" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 225]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="229" end="229" startBytecode="558" endBytecode="558" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at ReviewService.kt:[line 229]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="b7c4f4ce69781388679fa9df169e135f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper) may expose internal representation by storing an externally mutable object into ReviewService.audit</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/review/repo/ReviewRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/session/SessionLookup;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="26" end="26" startBytecode="0" endBytecode="206" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewService" name="audit" signature="Lru/spbstu/scholarship/platform/audit/AuditLog;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewService.audit</Message>
+    </Field>
+    <LocalVariable name="audit" register="2" pc="50" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named audit</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="28" end="28" startBytecode="50" endBytecode="50" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 28]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="d5b328dfdad89933727f4406f9c960e0" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper) may expose internal representation by storing an externally mutable object into ReviewService.om</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/review/repo/ReviewRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/session/SessionLookup;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="26" end="26" startBytecode="0" endBytecode="206" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewService" name="om" signature="Lcom/fasterxml/jackson/databind/ObjectMapper;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewService.om</Message>
+    </Field>
+    <LocalVariable name="om" register="6" pc="73" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named om</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="32" end="32" startBytecode="73" endBytecode="73" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 32]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="e3e857c32c5d7f949fd5fa03270976ef" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper) may expose internal representation by storing an externally mutable object into ReviewService.repo</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/review/repo/ReviewRepository;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/idempotency/IdempotencyStore;Lru/spbstu/scholarship/platform/events/EventPublisher;Lru/spbstu/scholarship/platform/session/SessionLookup;Lcom/fasterxml/jackson/databind/ObjectMapper;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="26" end="26" startBytecode="0" endBytecode="206" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.review.api.ReviewService(ReviewRepository, AuditLog, IdempotencyStore, EventPublisher, SessionLookup, ObjectMapper)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewService" name="repo" signature="Lru/spbstu/scholarship/review/repo/ReviewRepository;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewService.repo</Message>
+    </Field>
+    <LocalVariable name="repo" register="1" pc="45" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named repo</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="27" end="27" startBytecode="45" endBytecode="45" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 27]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" priority="3" rank="20" abbrev="RCN" category="STYLE" instanceHash="1640c26d806634e247abcaf3c8537dbe" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Redundant nullcheck of value known to be non-null</ShortMessage>
+    <LongMessage>Redundant nullcheck of Object.toString(), which is known to be non-null in ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="review" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;ILru/spbstu/scholarship/review/api/ReviewRequest;)Lru/spbstu/scholarship/review/api/ReviewView;" isStatic="false" primary="true" classAnnotationNames="org.springframework.transaction.annotation.Transactional,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="42" end="95" startBytecode="0" endBytecode="3771" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewService.review(AuthUser, UUID, int, ReviewRequest)</Message>
+    </Method>
+    <Method classname="java.lang.Object" name="toString" signature="()Ljava/lang/String;" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.lang.Object" start="257" end="257" startBytecode="0" endBytecode="77" sourcefile="Object.java" sourcepath="java/lang/Object.java"/>
+      <Message>Return value of Object.toString() of type String</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="44" end="44" startBytecode="113" endBytecode="113" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at ReviewService.kt:[line 44]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SA_LOCAL_SELF_ASSIGNMENT" priority="2" rank="17" abbrev="SA" category="STYLE" instanceHash="9a00b9b74a706772159ee842e1160f45" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Self assignment of local variable</ShortMessage>
+    <LongMessage>Self assignment of pid in ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="25" end="282" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 25-282]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService" name="createRegistry" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Ljava/util/UUID;Ljava/util/UUID;Lru/spbstu/scholarship/review/api/RegistryRequest;)Lkotlin/Pair;" isStatic="false" primary="true" classAnnotationNames="org.springframework.transaction.annotation.Transactional,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" start="109" end="180" startBytecode="0" endBytecode="6352" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewService.createRegistry(AuthUser, UUID, UUID, RegistryRequest)</Message>
+    </Method>
+    <LocalVariable name="pid" register="17" pc="1983" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named pid</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" primary="true" start="166" end="166" startBytecode="1983" endBytecode="1983" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 166]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" instanceHash="ceb9fd7ce366f0ab0c63e50a8a13925" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="493">
+    <ShortMessage>Public static method may expose internal representation by returning a mutable object or array</ShortMessage>
+    <LongMessage>Public static ru.spbstu.scholarship.review.api.ReviewService$Companion.getTRANSITIONS() may expose internal representation by returning ReviewService.TRANSITIONS</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.api.ReviewService$Companion" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService$Companion" start="200" end="203" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>At ReviewService.kt:[lines 200-203]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.api.ReviewService$Companion</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.api.ReviewService$Companion" name="getTRANSITIONS" signature="()Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService$Companion" start="203" end="203" startBytecode="0" endBytecode="45" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt"/>
+      <Message>In method ru.spbstu.scholarship.review.api.ReviewService$Companion.getTRANSITIONS()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.api.ReviewService" name="TRANSITIONS" signature="Ljava/util/Map;" isStatic="true" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+        <Message>In ReviewService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.api.ReviewService.TRANSITIONS</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.review.api.ReviewService$Companion" primary="true" start="203" end="203" startBytecode="0" endBytecode="45" sourcefile="ReviewService.kt" sourcepath="ru/spbstu/scholarship/review/api/ReviewService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/api/ReviewService.kt">
+      <Message>At ReviewService.kt:[line 203]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="495569aef85901d49def72784a8e9db7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.review.repo.ReviewRepository(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into ReviewRepository.jdbc</LongMessage>
+    <Class classname="ru.spbstu.scholarship.review.repo.ReviewRepository" primary="true" classAnnotationNames="org.springframework.stereotype.Repository,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.review.repo.ReviewRepository" start="22" end="147" sourcefile="ReviewRepository.kt" sourcepath="ru/spbstu/scholarship/review/repo/ReviewRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/repo/ReviewRepository.kt">
+        <Message>At ReviewRepository.kt:[lines 22-147]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.review.repo.ReviewRepository</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.review.repo.ReviewRepository" name="&lt;init&gt;" signature="(Lorg/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.review.repo.ReviewRepository" start="22" end="22" startBytecode="0" endBytecode="67" sourcefile="ReviewRepository.kt" sourcepath="ru/spbstu/scholarship/review/repo/ReviewRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/repo/ReviewRepository.kt"/>
+      <Message>In method new ru.spbstu.scholarship.review.repo.ReviewRepository(NamedParameterJdbcTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.review.repo.ReviewRepository" name="jdbc" signature="Lorg/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.review.repo.ReviewRepository" sourcefile="ReviewRepository.kt" sourcepath="ru/spbstu/scholarship/review/repo/ReviewRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/repo/ReviewRepository.kt">
+        <Message>In ReviewRepository.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.review.repo.ReviewRepository.jdbc</Message>
+    </Field>
+    <LocalVariable name="jdbc" register="1" pc="12" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named jdbc</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.review.repo.ReviewRepository" primary="true" start="22" end="22" startBytecode="12" endBytecode="12" sourcefile="ReviewRepository.kt" sourcepath="ru/spbstu/scholarship/review/repo/ReviewRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/review/repo/ReviewRepository.kt">
+      <Message>At ReviewRepository.kt:[line 22]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="SECURITY">
+    <Description>Security</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="BC_BAD_CAST_TO_ABSTRACT_COLLECTION" abbrev="BC" category="STYLE" cweid="704">
+    <ShortDescription>Questionable cast to abstract collection</ShortDescription>
+    <Details><![CDATA[
+
+<p>
+This code casts a Collection to an abstract collection
+(such as <code>List</code>, <code>Set</code>, or <code>Map</code>).
+Ensure that you are guaranteed that the object is of the type
+you are casting to. If all you need is to be able
+to iterate through a collection, you don't need to cast it to a Set or List.
+</p>
+<p>See <a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SPRING_ENDPOINT" abbrev="SECSC" category="SECURITY">
+    <ShortDescription>Found Spring endpoint</ShortDescription>
+    <Details><![CDATA[
+            
+<p>This class is a Spring Controller. All methods annotated with <code>RequestMapping</code> (as well as its shortcut annotations <code>GetMapping</code>, <code>PostMapping</code>, <code>PutMapping</code>, <code>DeleteMapping</code>, and <code>PatchMapping</code>) are reachable remotely.
+This class should be analyzed to make sure that remotely exposed methods are safe to expose to potential attackers.</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="SA_LOCAL_SELF_ASSIGNMENT" abbrev="SA" category="STYLE">
+    <ShortDescription>Self assignment of local variable</ShortDescription>
+    <Details><![CDATA[
+
+<p> This method contains a self assignment of a local variable; e.g.</p>
+<pre><code>public void foo() {
+    int x = 3;
+    x = x;
+}
+</code></pre>
+<p>
+Such assignments are useless, and may indicate a logic error or typo.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="MS_EXPOSE_REP" abbrev="MS" category="MALICIOUS_CODE">
+    <ShortDescription>Public static method may expose internal representation by returning a mutable object or array</ShortDescription>
+    <Details><![CDATA[
+
+  <p> A public static method returns a reference to a mutable object or
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" abbrev="RCN" category="STYLE">
+    <ShortDescription>Redundant nullcheck of value known to be non-null</ShortDescription>
+    <Details><![CDATA[
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="BC">
+    <Description>Bad casts of object references</Description>
+  </BugCode>
+  <BugCode abbrev="SECSC">
+    <Description>Spring Endpoint</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method may expose internal representation</Description>
+  </BugCode>
+  <BugCode abbrev="MS" cweid="493">
+    <Description>Mutable static field</Description>
+  </BugCode>
+  <BugCode abbrev="RCN" cweid="476">
+    <Description>Redundant comparison to null</Description>
+  </BugCode>
+  <BugCode abbrev="SA">
+    <Description>Useless self-operation</Description>
+  </BugCode>
+  <BugCode abbrev="EI2">
+    <Description>Storing reference to mutable object</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 24 Nov 2026 23:22:00 +0000" total_classes="0" referenced_classes="0" total_bugs="19" total_size="0" num_packages="2" java_version="21.0.9" vm_version="21.0.9+10-LTS" cpu_seconds="33.07" clock_seconds="25.96" peak_mbytes="257.58" alloc_mbytes="1976.00" gc_seconds="0.50" priority_3="4" priority_2="15">
+    <FileStats path="ru/spbstu/scholarship/review/api/ReviewController.kt" bugCount="3" size="0" bugHash="6d680d44d7818f18080f8e371b97a491"/>
+    <FileStats path="ru/spbstu/scholarship/review/api/ReviewService.kt" bugCount="15" size="0" bugHash="cb63e0cd3068908d4fb255ea5d02f8f6"/>
+    <FileStats path="ru/spbstu/scholarship/review/repo/ReviewRepository.kt" bugCount="1" size="0" bugHash="9101343c71e74180ebf0021f1606fe0b"/>
+    <FindBugsProfile></FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

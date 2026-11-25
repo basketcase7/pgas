@@ -115,7 +115,14 @@ class AuthService(
     fun reauth(user: AuthUser, password: String) {
         val record = users.findById(user.id)
         if (record == null || !hasher.matches(password, record.passwordHash)) {
-            audit.write("auth.reauth", "user", user.id, user.id, AuditResult.DENIED)
+            // ЛР5, V-M04: защита в самом сервисе, а не только лимит шлюза — после
+            // REAUTH_MAX_FAILURES неудач сессия отзывается, токен доступа перестаёт действовать
+            val failures = sessions.registerReauthFailure(user.sessionId)
+            val revoked = failures >= REAUTH_MAX_FAILURES
+            if (revoked) sessions.revoke(user.sessionId)
+            audit.write("auth.reauth", "user", user.id, user.id, AuditResult.DENIED,
+                mapOf("failures" to failures, "session_revoked" to revoked))
+            if (revoked) throw Errors.unauthorized("session_revoked")
             throw ApiException(HttpStatus.FORBIDDEN, "invalid_credentials", "Неверный пароль")
         }
         sessions.markReauthenticated(user.sessionId)
@@ -192,7 +199,10 @@ class AuthService(
     // ------------------------------------------------------------------ контакт для notifier
     fun contactOf(id: UUID) = users.findById(id)?.let { mapOf("email" to it.email, "full_name" to it.fullName) }
 
-    companion object { val RESET_TTL: Duration = Duration.ofMinutes(15) }
+    companion object {
+        val RESET_TTL: Duration = Duration.ofMinutes(15)
+        const val REAUTH_MAX_FAILURES = 5L
+    }
 }
 
 object PasswordPolicy {

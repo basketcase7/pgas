@@ -45,6 +45,7 @@ class ApplicationRepository(private val jdbc: NamedParameterJdbcTemplate) {
      *   :own  — заявитель видит только applicant_id = sub;
      *   :unit — сотрудник/комиссия/поддержка видят заявки кампаний своего подразделения.
      * Чужая заявка и несуществующая дают одинаковый результат — ноль строк.
+     * Черновик (draft) ещё не подан — его видит только владелец (ЛР5, V-M02).
      */
     fun findVisible(id: UUID, subject: UUID, own: Boolean, unit: Boolean): ApplicationRow? = jdbc.query(
         """
@@ -55,7 +56,8 @@ class ApplicationRepository(private val jdbc: NamedParameterJdbcTemplate) {
         JOIN campaigns c ON c.id = a.campaign_id
         WHERE a.id = :id
           AND (   (:own  AND a.applicant_id = :sub)
-               OR (:unit AND c.unit_id = (SELECT u.unit_id FROM users u WHERE u.id = :sub)) )
+               OR (:unit AND a.status <> 'draft'
+                         AND c.unit_id = (SELECT u.unit_id FROM users u WHERE u.id = :sub)) )
         """.trimIndent(),
         MapSqlParameterSource().addValue("id", id).addValue("sub", subject).addValue("own", own).addValue("unit", unit),
     ) { rs, _ ->
@@ -195,7 +197,8 @@ class ApplicationRepository(private val jdbc: NamedParameterJdbcTemplate) {
                 JOIN campaigns c ON c.id = a.campaign_id
                 JOIN users u ON u.id = a.applicant_id
                 WHERE (   (:own  AND a.applicant_id = :sub)
-                       OR (:unit AND c.unit_id = (SELECT me.unit_id FROM users me WHERE me.id = :sub)) )
+                       OR (:unit AND a.status <> 'draft'
+                                 AND c.unit_id = (SELECT me.unit_id FROM users me WHERE me.id = :sub)) )
                   AND (CAST(:campaign AS uuid) IS NULL OR a.campaign_id = CAST(:campaign AS uuid))
                   AND (CAST(:status AS text) IS NULL OR a.status = CAST(:status AS application_status))
                   AND (CAST(:type AS text) IS NULL OR a.type = CAST(:type AS application_type))

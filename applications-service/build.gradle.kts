@@ -8,7 +8,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.kafka:spring-kafka")
     // S3-клиент: выдача presigned-ссылок (POST с политикой и GET)
-    implementation("io.minio:minio:8.5.17")
+    implementation("io.minio:minio:8.6.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("org.postgresql:postgresql")
 }

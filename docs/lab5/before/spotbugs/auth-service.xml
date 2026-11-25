@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.9.6" sequence="0" timestamp="1795559671331" analysisTimestamp="1795559671331" release="">
+  <Project projectName="auth-service (spotbugsMain)">
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthController$Companion.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthController.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthService$Companion.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/AuthService.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/InternalController.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/IssuedTokens.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/LoginRequest.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/PasswordPolicy.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/ReauthRequest.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/RegisterRequest.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/ResetConfirmRequest.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/ResetRequest.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/TokenResponse.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/api/UserView.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/AuthApplication.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/AuthApplicationKt.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/crypto/PasswordHasher.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult$Invalid.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult$Ok.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult$Reused.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$RotateResult.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore$Session.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/session/SessionStore.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/token/TokenIssuer.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/user/UserRecord.class</Jar>
+    <Jar>/src/auth-service/build/classes/kotlin/main/ru/spbstu/scholarship/auth/user/UserRepository.class</Jar>
+    <AuxClasspathEntry>/src/platform/build/libs/platform-1.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.5.6/83d6174983b3d6649525a272222af212728a9892/spring-boot-starter-web-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.5.6/62143e29dbac1e72759da7dd85fb8f85a3d582f7/spring-boot-starter-json-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.19.2/a720d3946c3a1ab04b780f3b3163d62eee6948a0/jackson-datatype-jdk8-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.19.2/72e73f048b36d9df82aef146bf8b2ae63b2e28e2/jackson-datatype-jsr310-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.19.2/3c4ce467c11364c72ec4967c570fd5a2d1be1d0b/jackson-module-parameter-names-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.19.2/46509399d28f57ca32c6bb4b0d4e10e8f062051e/jackson-databind-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.19.2/c5381f11988ae3d424b197a26087d86067b6d7d/jackson-annotations-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.19.2/50f3b4bd59b9ff51a0ed493e7b5abaf5c39709bf/jackson-core-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.19.2/c052fdf35343bf6b4e132e75515243e0d497db64/jackson-module-kotlin-2.19.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/2.1.21/4929da533b3f04a101e4bb9ae0ee51a1d8107614/kotlin-reflect-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/97a0975aa19d925e109537af60eb46902920015c/kotlin-stdlib-2.1.21.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/3.5.6/812d2dc9a662d9ab640bea01b383e82d881fc586/spring-boot-starter-jdbc-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/3.5.6/cd8b9c7e3d4139528b58e74d65b708d12d5d612d/spring-boot-starter-data-redis-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/3.5.6/3e00af7ce0236ea8644bf76284f538beba3e76c7/spring-boot-starter-actuator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/3.3.10/83828f352490c0eaf7dcfb0e4947fec83edd506f/spring-kafka-3.3.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/6.5.5/83f9ebdd4706d23d697a7012aa946b64b54476f6/spring-security-crypto-6.5.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.81/d17c094daef57dbd80af71687a475aa6df7cbe54/bcprov-jdk18on-1.81.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.nimbusds/nimbus-jose-jwt/10.3/5d7a2aed3502099fa8552e5c16726fd4c9a27e0c/nimbus-jose-jwt-10.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.5.6/2a2de314809a7c4c9b7303063c1313e03fe31ad3/spring-boot-starter-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.5.6/9384211e92c82344e23b00a580cc769724ea9a0c/spring-boot-starter-tomcat-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.2.11/3313fe95e06c1d3c94d00301cbed56ed1a9d2a86/spring-webmvc-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.2.11/e590ac3e1aaea2d34a5ccb5c25ad84acbada8468/spring-web-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/6.3.3/7c5aec1e47a97ff40977e0193018865304ea9585/HikariCP-6.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/6.2.11/8aadfc8bed1630563c65bb5628e2175ecd508998/spring-jdbc-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/6.6.0.RELEASE/8a9bb7a3291328f4a0156643dddd3f1194bd26f3/lettuce-core-6.6.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/3.5.4/519115a1fc8adf97adb1367419065b589733a12f/spring-data-redis-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/3.5.6/7b7f4245c6ea91cb28edf73368998748d318b603/spring-boot-actuator-autoconfigure-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-jakarta9/1.15.4/639673a45d74ddeeaab885b0251687644059d88f/micrometer-jakarta9-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.5.6/6b8fc2519774de4e82b0dbb5651093ce2ca20836/spring-boot-autoconfigure-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/3.5.6/cf67879f31058782b4a04a4c19978f30c5cb477c/spring-boot-actuator-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.5.6/a02f486ab700dad1f81e54cb37651d92a3f9d700/spring-boot-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/3.5.4/8140e2fd2950886f8b4f165ef0f0df37d1085607/spring-data-keyvalue-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.2.11/b092cbb9c21eab6fbbbf57b21eaef8da6d3a96a6/spring-context-support-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.2.11/bbfb4d55385b2b65ecaf04937d209cf467eaba2f/spring-context-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.15.4/603fe6d384d9b58ab709f4ca17baa9ca17ce7a4/micrometer-core-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.15.4/8cd0aed0ff098a7937f2f8f81705840f2d60a432/micrometer-observation-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/6.2.11/74df574d43104cdb0e9bf60bb6bef787ec05c8b6/spring-messaging-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.2.11/f2b8bef65f6682019002c12a628886637e596261/spring-tx-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.retry/spring-retry/2.0.12/62a14736086ffd6f382f0df3bf066a5a34f174fa/spring-retry-2.0.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/3.9.1/86ca079953ed5606257ff298c24666b26da6985b/kafka-clients-3.9.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.5.6/61717f15cb53d2a0cce6428b29adbdc2ed5f2f25/spring-boot-starter-logging-3.5.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.2.11/1e970383810700506d646c2fa8943725f123f000/spring-aop-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/6.2.11/1a57a7ba5e5be04e03fd45001e137e35714517f5/spring-oxm-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.5.4/b61f6528cb8b39b471775a4b27f0437f6646f1e6/spring-data-commons-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.2.11/8d92eb837b70094d7316f6a07770eefd360bc53c/spring-beans-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.2.11/7190c1c69576516efef1a061d956dccf17cb0b86/spring-expression-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.2.11/f4860eb6ea92abb8ae6c5e82e2e7efc395cef8d/spring-core-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/2.4/e0666b825b796f85521f02360e77f4c92c5a7a07/snakeyaml-2.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.46/e98da6e2f659ec02062d2c84a07b7262e82d8b74/tomcat-embed-websocket-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.46/64d4eee6e42eb61492a7b84d458327bfb1c1d957/tomcat-embed-core-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.46/e1fc6986d030e791415535e28fd21c0be11810de/tomcat-embed-el-10.1.46.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/redis.clients.authentication/redis-authx-core/0.1.1-beta2/4037345ff29fb22c737bab2ed116a34262718ae5/redis-authx-core-0.1.1-beta2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.5.18/fc371f3fc97a639de2d67947cffb7518ec5e3d40/logback-classic-1.5.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.24.3/da1143e2a2531ee1c2d90baa98eb50a28a39d5a7/log4j-to-slf4j-2.24.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/2.0.17/524cb6ccc2b68a57604750e1ab8b13b5a786a6aa/jul-to-slf4j-2.0.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.17/d9e58ac9c7779ba3bf8142aff6c830617a7fe60f/slf4j-api-2.0.17.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.127.Final/5e9ee8931666a12b52340309f92d51d0b49611de/netty-handler-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.127.Final/9cc0512d2ddfe9ae76c6db796e1980a8bdbadae1/netty-transport-native-unix-common-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.127.Final/b05d16b459b6c6042197a1f3aef671cf535767c3/netty-codec-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.127.Final/9925d9d6be72436b661ba6a71cc8d2897fe83cf0/netty-transport-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.127.Final/2b34a14b6ec23761d6d2300a1c261914401f2553/netty-resolver-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.127.Final/356b4f2e759d36fec774cd17e583a7609d8ec15d/netty-buffer-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.127.Final/ada4ab671678f956e1cd5067ba94bc340af1d8bf/netty-common-4.1.127.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.7.11/8ac8ee9da2424c81c029f8c361e34838f77a1b78/reactor-core-3.7.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.15.4/f73f10deeee5700b15c2f0f41ae79e2689b39613/micrometer-commons-1.15.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.2.11/819fc7e968ac07d4b042be7cfb8d99c267142ac7/spring-jcl-6.2.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.5.18/6c0375624f6f36b4e089e2488ba21334a11ef13f/logback-core-1.5.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/gradle/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/b02c125db8b6d295adf72ae6e71af5d83bce2370/log4j-api-2.24.3.jar</AuxClasspathEntry>
+    <SrcDir>/src/auth-service/src/main/resources</SrcDir>
+    <SrcDir>/src/auth-service/src/main/java</SrcDir>
+    <SrcDir>/src/auth-service/src/main/kotlin</SrcDir>
+    <Plugin id="com.h3xstream.findsecbugs" enabled="true"/>
+  </Project>
+  <BugInstance type="COOKIE_USAGE" priority="3" rank="15" abbrev="SECCU" category="SECURITY" instanceHash="2d0c30748a0d283e4209a4a70e9a2749" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="315">
+    <ShortMessage>Potentially sensitive data in a cookie</ShortMessage>
+    <LongMessage>Sensitive data may be stored by the application in a cookie</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="refresh" signature="(Ljakarta/servlet/http/HttpServletRequest;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="55" end="58" startBytecode="0" endBytecode="417" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.refresh(HttpServletRequest, String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" start="56" end="56" startBytecode="88" endBytecode="88" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+      <Message>At AuthController.kt:[line 56]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="f5f33f706b4cc4eaa8bed3b6f8d8b712" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="login" signature="(Lru/spbstu/scholarship/auth/api/LoginRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="40" end="45" startBytecode="0" endBytecode="293" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.login(LoginRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="40" end="45" startBytecode="0" endBytecode="293" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 40-45]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="fc2d54ff0c6ea82b226ede82147aaff4" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="logout" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="64" end="65" startBytecode="0" endBytecode="118" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.logout(AuthUser)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="64" end="65" startBytecode="0" endBytecode="118" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 64-65]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="6b32ac151983732fcb375f4846e1bc2" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="reauth" signature="(Lru/spbstu/scholarship/platform/security/AuthUser;Lru/spbstu/scholarship/auth/api/ReauthRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="71" end="74" startBytecode="0" endBytecode="203" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.reauth(AuthUser, ReauthRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="71" end="74" startBytecode="0" endBytecode="203" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 71-74]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="ebf86130cf60f9cb4e00f04ba77a1690" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="refresh" signature="(Ljakarta/servlet/http/HttpServletRequest;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="55" end="58" startBytecode="0" endBytecode="417" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.refresh(HttpServletRequest, String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="55" end="58" startBytecode="0" endBytecode="417" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 55-58]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="fad5428decc3521c54a94ead286667cc" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="register" signature="(Lru/spbstu/scholarship/auth/api/RegisterRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="80" end="86" startBytecode="0" endBytecode="428" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.register(RegisterRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="80" end="86" startBytecode="0" endBytecode="428" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 80-86]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="c4355e38cddc442d8834aaec7f682c79" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="resetConfirm" signature="(Lru/spbstu/scholarship/auth/api/ResetConfirmRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="102" end="106" startBytecode="0" endBytecode="266" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.resetConfirm(ResetConfirmRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="102" end="106" startBytecode="0" endBytecode="266" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 102-106]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="4b91ed39518da280cca92e9b52833765" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.AuthController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="33" end="142" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 33-142]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthController" name="resetRequest" signature="(Lru/spbstu/scholarship/auth/api/ResetRequest;)Lorg/springframework/http/ResponseEntity;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.PostMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="92" end="95" startBytecode="0" endBytecode="259" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.AuthController.resetRequest(ResetRequest)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthController" start="92" end="95" startBytecode="0" endBytecode="259" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 92-95]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="37cff1a14bc1d9149a7e275181ced782" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate) may expose internal representation by storing an externally mutable object into AuthService.audit</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" start="30" end="207" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>At AuthService.kt:[lines 30-207]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/auth/user/UserRepository;Lru/spbstu/scholarship/auth/crypto/PasswordHasher;Lru/spbstu/scholarship/auth/token/TokenIssuer;Lru/spbstu/scholarship/auth/session/SessionStore;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/events/EventPublisher;Lorg/springframework/data/redis/core/StringRedisTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" start="31" end="31" startBytecode="0" endBytecode="273" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.api.AuthService" name="audit" signature="Lru/spbstu/scholarship/platform/audit/AuditLog;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>In AuthService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.api.AuthService.audit</Message>
+    </Field>
+    <LocalVariable name="audit" register="6" pc="87" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named audit</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" primary="true" start="37" end="37" startBytecode="87" endBytecode="87" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+      <Message>At AuthService.kt:[line 37]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="52c2156cd83dc8ab905ac30c0ccd6f25" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate) may expose internal representation by storing an externally mutable object into AuthService.redis</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" start="30" end="207" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>At AuthService.kt:[lines 30-207]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/auth/user/UserRepository;Lru/spbstu/scholarship/auth/crypto/PasswordHasher;Lru/spbstu/scholarship/auth/token/TokenIssuer;Lru/spbstu/scholarship/auth/session/SessionStore;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/events/EventPublisher;Lorg/springframework/data/redis/core/StringRedisTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" start="31" end="31" startBytecode="0" endBytecode="273" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.api.AuthService" name="redis" signature="Lorg/springframework/data/redis/core/StringRedisTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>In AuthService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.api.AuthService.redis</Message>
+    </Field>
+    <LocalVariable name="redis" register="8" pc="99" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named redis</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" primary="true" start="39" end="39" startBytecode="99" endBytecode="99" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+      <Message>At AuthService.kt:[line 39]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="77cd4d77ef86dbf0fb27014e73f87e8c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate) may expose internal representation by storing an externally mutable object into AuthService.users</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.AuthService" primary="true" classAnnotationNames="org.springframework.stereotype.Service,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" start="30" end="207" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>At AuthService.kt:[lines 30-207]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.AuthService</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.AuthService" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/auth/user/UserRepository;Lru/spbstu/scholarship/auth/crypto/PasswordHasher;Lru/spbstu/scholarship/auth/token/TokenIssuer;Lru/spbstu/scholarship/auth/session/SessionStore;Lru/spbstu/scholarship/platform/catalog/LdapCatalog;Lru/spbstu/scholarship/platform/audit/AuditLog;Lru/spbstu/scholarship/platform/events/EventPublisher;Lorg/springframework/data/redis/core/StringRedisTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" start="31" end="31" startBytecode="0" endBytecode="273" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.api.AuthService(UserRepository, PasswordHasher, TokenIssuer, SessionStore, LdapCatalog, AuditLog, EventPublisher, StringRedisTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.api.AuthService" name="users" signature="Lru/spbstu/scholarship/auth/user/UserRepository;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>In AuthService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.api.AuthService.users</Message>
+    </Field>
+    <LocalVariable name="users" register="1" pc="59" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named users</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.AuthService" primary="true" start="32" end="32" startBytecode="59" endBytecode="59" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+      <Message>At AuthService.kt:[line 32]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SPRING_ENDPOINT" priority="3" rank="15" abbrev="SECSC" category="SECURITY" instanceHash="6262a06c49f51ffac2fe05a198bdc46b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Found Spring endpoint</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.InternalController is a Spring endpoint (Controller)</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.InternalController" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.RestController,org.springframework.web.bind.annotation.RequestMapping,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.InternalController" start="128" end="137" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt">
+        <Message>At AuthController.kt:[lines 128-137]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.InternalController</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.InternalController" name="contact" signature="(Ljava/util/UUID;Ljava/lang/String;)Ljava/util/Map;" isStatic="false" primary="true" classAnnotationNames="org.springframework.web.bind.annotation.GetMapping,org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.InternalController" start="134" end="137" startBytecode="0" endBytecode="156" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.InternalController.contact(UUID, String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.InternalController" start="134" end="137" startBytecode="0" endBytecode="156" sourcefile="AuthController.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthController.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthController.kt" synthetic="true">
+      <Message>At AuthController.kt:[lines 134-137]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="e263d65c41078dfda8908076f0c2c872" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.UserView.component3() may expose internal representation by returning UserView.roles</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.UserView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" start="28" end="28" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>At AuthService.kt:[line 28]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.UserView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.UserView" name="component3" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.UserView.component3()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.api.UserView" name="roles" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>In AuthService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.api.UserView.roles</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" startBytecode="4" endBytecode="4" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+      <Message>In AuthService.kt</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="70a1b82fcad7b48580a9da9f72b243a8" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>ru.spbstu.scholarship.auth.api.UserView.getRoles() may expose internal representation by returning UserView.roles</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.UserView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" start="28" end="28" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>At AuthService.kt:[line 28]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.UserView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.UserView" name="getRoles" signature="()Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" start="28" end="28" startBytecode="0" endBytecode="46" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt"/>
+      <Message>In method ru.spbstu.scholarship.auth.api.UserView.getRoles()</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.api.UserView" name="roles" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>In AuthService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.api.UserView.roles</Message>
+    </Field>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" primary="true" start="28" end="28" startBytecode="4" endBytecode="4" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+      <Message>At AuthService.kt:[line 28]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="85a1bb02c401777d106cacff7c2a2431" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.api.UserView(UUID, String, List, UUID) may expose internal representation by storing an externally mutable object into UserView.roles</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.api.UserView" primary="true" classAnnotationNames="kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" start="28" end="28" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>At AuthService.kt:[line 28]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.api.UserView</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.api.UserView" name="&lt;init&gt;" signature="(Ljava/util/UUID;Ljava/lang/String;Ljava/util/List;Ljava/util/UUID;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" start="28" end="28" startBytecode="0" endBytecode="132" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.api.UserView(UUID, String, List, UUID)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.api.UserView" name="roles" signature="Ljava/util/List;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+        <Message>In AuthService.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.api.UserView.roles</Message>
+    </Field>
+    <LocalVariable name="roles" register="3" pc="41" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named roles</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.api.UserView" primary="true" start="28" end="28" startBytecode="41" endBytecode="41" sourcefile="AuthService.kt" sourcepath="ru/spbstu/scholarship/auth/api/AuthService.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/api/AuthService.kt">
+      <Message>At AuthService.kt:[line 28]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="e2a1a2c5a7d824e2938f2e6d7a0deeb0" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap(UserRepository, PasswordHasher, String) may expose internal representation by storing an externally mutable object into DemoPasswordBootstrap.users</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" start="19" end="36" sourcefile="DemoPasswordBootstrap.kt" sourcepath="ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt">
+        <Message>At DemoPasswordBootstrap.kt:[lines 19-36]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" name="&lt;init&gt;" signature="(Lru/spbstu/scholarship/auth/user/UserRepository;Lru/spbstu/scholarship/auth/crypto/PasswordHasher;Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" start="19" end="19" startBytecode="0" endBytecode="138" sourcefile="DemoPasswordBootstrap.kt" sourcepath="ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap(UserRepository, PasswordHasher, String)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" name="users" signature="Lru/spbstu/scholarship/auth/user/UserRepository;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" sourcefile="DemoPasswordBootstrap.kt" sourcepath="ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt">
+        <Message>In DemoPasswordBootstrap.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap.users</Message>
+    </Field>
+    <LocalVariable name="users" register="1" pc="24" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named users</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.bootstrap.DemoPasswordBootstrap" primary="true" start="20" end="20" startBytecode="24" endBytecode="24" sourcefile="DemoPasswordBootstrap.kt" sourcepath="ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt">
+      <Message>At DemoPasswordBootstrap.kt:[line 20]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="CT_CONSTRUCTOR_THROW" priority="2" rank="16" abbrev="CT" category="BAD_PRACTICE" instanceHash="e400d5afd531f0da1e9e9aea55c639" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Be wary of letting constructors throw exceptions.</ShortMessage>
+    <LongMessage>Exception thrown in class ru.spbstu.scholarship.auth.crypto.PasswordHasher at new ru.spbstu.scholarship.auth.crypto.PasswordHasher(String) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.crypto.PasswordHasher" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.crypto.PasswordHasher" start="20" end="53" sourcefile="PasswordHasher.kt" sourcepath="ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt">
+        <Message>At PasswordHasher.kt:[lines 20-53]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.crypto.PasswordHasher</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.crypto.PasswordHasher" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.crypto.PasswordHasher" start="20" end="20" startBytecode="0" endBytecode="317" sourcefile="PasswordHasher.kt" sourcepath="ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.crypto.PasswordHasher(String)</Message>
+    </Method>
+    <SourceLine classname="ru.spbstu.scholarship.auth.crypto.PasswordHasher" primary="true" start="22" end="22" startBytecode="69" endBytecode="69" sourcefile="PasswordHasher.kt" sourcepath="ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt">
+      <Message>At PasswordHasher.kt:[line 22]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.auth.crypto.PasswordHasher" start="22" end="22" startBytecode="69" endBytecode="69" sourcefile="PasswordHasher.kt" sourcepath="ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt">
+      <Message>At PasswordHasher.kt:[line 22]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="7f8cc39f9817c1f8c92ef4ad3032f033" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.session.SessionStore(StringRedisTemplate, Duration) may expose internal representation by storing an externally mutable object into SessionStore.redis</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.session.SessionStore" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="20" end="96" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt">
+        <Message>At SessionStore.kt:[lines 20-96]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.session.SessionStore</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.session.SessionStore" name="&lt;init&gt;" signature="(Lorg/springframework/data/redis/core/StringRedisTemplate;Ljava/time/Duration;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="20" end="20" startBytecode="0" endBytecode="100" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.session.SessionStore(StringRedisTemplate, Duration)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.session.SessionStore" name="redis" signature="Lorg/springframework/data/redis/core/StringRedisTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt">
+        <Message>In SessionStore.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.session.SessionStore.redis</Message>
+    </Field>
+    <LocalVariable name="redis" register="1" pc="18" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named redis</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" primary="true" start="21" end="21" startBytecode="18" endBytecode="18" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt">
+      <Message>At SessionStore.kt:[line 21]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE" instanceHash="910b9bcd589e4797d2fc93cb2dfb4a9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference due to return value of called method</ShortMessage>
+    <LongMessage>Possible null pointer dereference in ru.spbstu.scholarship.auth.session.SessionStore.remainingTtl(String) due to return value of called method</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.session.SessionStore" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="20" end="96" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt">
+        <Message>At SessionStore.kt:[lines 20-96]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.session.SessionStore</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.session.SessionStore" name="remainingTtl" signature="(Ljava/lang/String;)Ljava/time/Duration;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="68" end="68" startBytecode="0" endBytecode="256" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt"/>
+      <Message>In method ru.spbstu.scholarship.auth.session.SessionStore.remainingTtl(String)</Message>
+    </Method>
+    <LocalVariable name="?" register="2" pc="25" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from ?</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" primary="true" start="68" end="68" startBytecode="25" endBytecode="25" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at SessionStore.kt:[line 68]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="68" end="68" startBytecode="15" endBytecode="15" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at SessionStore.kt:[line 68]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE" instanceHash="4b852a6144f1553032a8db177b556054" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference due to return value of called method</ShortMessage>
+    <LongMessage>Possible null pointer dereference in ru.spbstu.scholarship.auth.session.SessionStore.rotate(String, String) due to return value of called method</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.session.SessionStore" primary="true" classAnnotationNames="org.springframework.stereotype.Component,kotlin.Metadata,kotlin.jvm.internal.SourceDebugExtension">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="20" end="96" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt">
+        <Message>At SessionStore.kt:[lines 20-96]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.session.SessionStore</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.session.SessionStore" name="rotate" signature="(Ljava/lang/String;Ljava/lang/String;)Lru/spbstu/scholarship/auth/session/SessionStore$RotateResult;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="51" end="64" startBytecode="0" endBytecode="749" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt"/>
+      <Message>In method ru.spbstu.scholarship.auth.session.SessionStore.rotate(String, String)</Message>
+    </Method>
+    <LocalVariable name="?" register="9" pc="159" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from ?</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" primary="true" start="59" end="59" startBytecode="159" endBytecode="159" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at SessionStore.kt:[line 59]</Message>
+    </SourceLine>
+    <SourceLine classname="ru.spbstu.scholarship.auth.session.SessionStore" start="59" end="59" startBytecode="145" endBytecode="145" sourcefile="SessionStore.kt" sourcepath="ru/spbstu/scholarship/auth/session/SessionStore.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/session/SessionStore.kt" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at SessionStore.kt:[line 59]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="6fd3c1a3d384b5f7a7332b4fa2ebc3ea" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new ru.spbstu.scholarship.auth.user.UserRepository(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into UserRepository.jdbc</LongMessage>
+    <Class classname="ru.spbstu.scholarship.auth.user.UserRepository" primary="true" classAnnotationNames="org.springframework.stereotype.Repository,kotlin.Metadata">
+      <SourceLine classname="ru.spbstu.scholarship.auth.user.UserRepository" start="20" end="81" sourcefile="UserRepository.kt" sourcepath="ru/spbstu/scholarship/auth/user/UserRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/user/UserRepository.kt">
+        <Message>At UserRepository.kt:[lines 20-81]</Message>
+      </SourceLine>
+      <Message>In class ru.spbstu.scholarship.auth.user.UserRepository</Message>
+    </Class>
+    <Method classname="ru.spbstu.scholarship.auth.user.UserRepository" name="&lt;init&gt;" signature="(Lorg/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate;)V" isStatic="false" primary="true">
+      <SourceLine classname="ru.spbstu.scholarship.auth.user.UserRepository" start="20" end="20" startBytecode="0" endBytecode="81" sourcefile="UserRepository.kt" sourcepath="ru/spbstu/scholarship/auth/user/UserRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/user/UserRepository.kt"/>
+      <Message>In method new ru.spbstu.scholarship.auth.user.UserRepository(NamedParameterJdbcTemplate)</Message>
+    </Method>
+    <Field classname="ru.spbstu.scholarship.auth.user.UserRepository" name="jdbc" signature="Lorg/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate;" isStatic="false" primary="true" classAnnotationNames="org.jetbrains.annotations.NotNull">
+      <SourceLine classname="ru.spbstu.scholarship.auth.user.UserRepository" sourcefile="UserRepository.kt" sourcepath="ru/spbstu/scholarship/auth/user/UserRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/user/UserRepository.kt">
+        <Message>In UserRepository.kt</Message>
+      </SourceLine>
+      <Message>Field ru.spbstu.scholarship.auth.user.UserRepository.jdbc</Message>
+    </Field>
+    <LocalVariable name="jdbc" register="1" pc="12" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named jdbc</Message>
+    </LocalVariable>
+    <SourceLine classname="ru.spbstu.scholarship.auth.user.UserRepository" primary="true" start="20" end="20" startBytecode="12" endBytecode="12" sourcefile="UserRepository.kt" sourcepath="ru/spbstu/scholarship/auth/user/UserRepository.kt" relSourcepath="kotlin/ru/spbstu/scholarship/auth/user/UserRepository.kt">
+      <Message>At UserRepository.kt:[line 20]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="SECURITY">
+    <Description>Security</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SPRING_ENDPOINT" abbrev="SECSC" category="SECURITY">
+    <ShortDescription>Found Spring endpoint</ShortDescription>
+    <Details><![CDATA[
+            
+<p>This class is a Spring Controller. All methods annotated with <code>RequestMapping</code> (as well as its shortcut annotations <code>GetMapping</code>, <code>PostMapping</code>, <code>PutMapping</code>, <code>DeleteMapping</code>, and <code>PatchMapping</code>) are reachable remotely.
+This class should be analyzed to make sure that remotely exposed methods are safe to expose to potential attackers.</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" abbrev="NP" category="STYLE">
+    <ShortDescription>Possible null pointer dereference due to return value of called method</ShortDescription>
+    <Details><![CDATA[
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   ]]></Details>
+  </BugPattern>
+  <BugPattern type="COOKIE_USAGE" abbrev="SECCU" category="SECURITY" cweid="315">
+    <ShortDescription>Potentially sensitive data in a cookie</ShortDescription>
+    <Details><![CDATA[
+            
+<p>The information stored in a custom cookie should not be sensitive or related to the session. In most cases, sensitive data should only be stored in session
+and referenced by the user's session cookie. See HttpSession (<code>HttpServletRequest.getSession()</code>)</p>
+<p>Custom cookies can be used for information that needs to live longer than and is independent of a specific session.</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315: Cleartext Storage of Sensitive Information in a Cookie</a>
+</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="CT_CONSTRUCTOR_THROW" abbrev="CT" category="BAD_PRACTICE">
+    <ShortDescription>Be wary of letting constructors throw exceptions.</ShortDescription>
+    <Details><![CDATA[
+      
+            <p>Classes that throw exceptions in their constructors are vulnerable to Finalizer attacks</p>
+
+            <p>A finalizer attack can be prevented, by declaring the class final, using an empty finalizer declared as final, or by a clever use of a private constructor.</p>
+
+            <p>See <a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ11-J.+Be+wary+of+letting+constructors+throw+exceptions"><code>SEI CERT Rule OBJ-11</code></a>
+            for more information.
+            </p>
+            
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="SECCU">
+    <Description>Potentially Sensitive Data in Cookie</Description>
+  </BugCode>
+  <BugCode abbrev="CT">
+    <Description>Constructor throws</Description>
+  </BugCode>
+  <BugCode abbrev="NP" cweid="476">
+    <Description>Null pointer dereference</Description>
+  </BugCode>
+  <BugCode abbrev="SECSC">
+    <Description>Spring Endpoint</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method may expose internal representation</Description>
+  </BugCode>
+  <BugCode abbrev="EI2">
+    <Description>Storing reference to mutable object</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 24 Nov 2026 22:34:31 +0000" total_classes="0" referenced_classes="0" total_bugs="21" total_size="0" num_packages="5" java_version="21.0.9" vm_version="21.0.9+10-LTS" cpu_seconds="22.84" clock_seconds="17.58" peak_mbytes="321.24" alloc_mbytes="1976.00" gc_seconds="0.53" priority_3="9" priority_2="12">
+    <FileStats path="ru/spbstu/scholarship/auth/api/AuthController.kt" bugCount="9" size="0" bugHash="8d8dd4f42c8ebdf2a2590495492cffd0"/>
+    <FileStats path="ru/spbstu/scholarship/auth/api/AuthService.kt" bugCount="6" size="0" bugHash="8c74addc524494e5d642136b343a7b62"/>
+    <FileStats path="ru/spbstu/scholarship/auth/bootstrap/DemoPasswordBootstrap.kt" bugCount="1" size="0" bugHash="34cc65ab2805d3d70402e61fe5f23b0c"/>
+    <FileStats path="ru/spbstu/scholarship/auth/crypto/PasswordHasher.kt" bugCount="1" size="0" bugHash="b1f0c78e8a3859326010469e9363d088"/>
+    <FileStats path="ru/spbstu/scholarship/auth/session/SessionStore.kt" bugCount="3" size="0" bugHash="132cb5b7311c9cd6452d309e71b92831"/>
+    <FileStats path="ru/spbstu/scholarship/auth/user/UserRepository.kt" bugCount="1" size="0" bugHash="f160df88e73aedce742dedd8502e4e6f"/>
+    <FindBugsProfile></FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
