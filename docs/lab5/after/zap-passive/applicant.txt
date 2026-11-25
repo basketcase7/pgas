@@ -1,0 +1,41 @@
+Found Java version 17.0.21
+Available memory: 7901 MB
+Using JVM args: -Xmx1975m
+379 [main] INFO  org.parosproxy.paros.Constant - Copying default configuration to /home/zap/.ZAP/config.xml
+464 [main] INFO  org.parosproxy.paros.Constant - Creating directory /home/zap/.ZAP/session
+465 [main] INFO  org.parosproxy.paros.Constant - Creating directory /home/zap/.ZAP/dirbuster
+465 [main] INFO  org.parosproxy.paros.Constant - Creating directory /home/zap/.ZAP/fuzzers
+466 [main] INFO  org.parosproxy.paros.Constant - Creating directory /home/zap/.ZAP/plugin
+Job requestor set url = http://applicant-web:8080/
+Job requestor set method = GET
+Job requestor set responseCode = 200
+Job requestor set url = http://applicant-web:8080/api.js
+Job requestor set method = GET
+Job requestor set responseCode = 200
+Job requestor set url = http://applicant-web:8080/api/v1/applications
+Job requestor set method = GET
+Job requestor set responseCode = 200
+Job requestor set headers = [Authorization: Bearer [redacted]]
+Job requestor set url = http://applicant-web:8080/api/v1/campaigns
+Job requestor set method = GET
+Job requestor set responseCode = 200
+Job requestor set headers = [Authorization: Bearer [redacted]]
+Job passiveScan-wait set maxDuration = 2
+Job report set template = traditional-json
+Job report set reportDir = /zap/wrk
+Job report set reportFile = applicant.json
+Job report set reportTitle = applicant
+Job requestor started
+Job requestor requesting URL http://applicant-web:8080/
+Job requestor requesting URL http://applicant-web:8080/api.js
+Job requestor requesting URL http://applicant-web:8080/api/v1/applications
+Job requestor requesting URL http://applicant-web:8080/api/v1/campaigns
+Job requestor finished, time taken: 00:00:00
+Job passiveScan-wait started
+Job passiveScan-wait finished, time taken: 00:00:01
+Job report started
+Job report generated report /zap/wrk/applicant.json
+Job report finished, time taken: 00:00:00
+Automation plan succeeded!
+Nov 25, 2026 5:58:35 AM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.

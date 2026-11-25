@@ -1,0 +1,126 @@
+
+=== A. Три проверочных запроса (ЛР № 2, ЛР № 3)
+[OK]   A1 объект другого пользователя с действительным токеном → 404, как несуществующий
+        ← 404 {"error":"not_found","message":"Объект не найден","request_id":"b22637da-9d3c-41b3-8c71-bf2691310f1f"}
+[OK]   A2 лишние поля status/applicant_id/role → 400, строка не создана
+        ← 400 {"error":"invalid_request","message":"Недопустимое поле в теле запроса: status","request_id":"b20281c7-daef-4f8b-b3ec-23d556b40f42"}
+[OK]   A3 привилегированная операция (реестр выплат) токеном заявителя → 403
+        ← 403 {"error":"forbidden","message":"Операция доступна только председателю комиссии","request_id":"bd1b3b47-d6e0-487b-88f9-49158eedefeb"}
+
+=== B. Подделанный и просроченный токен
+[OK]   B1 подпись чужим ключом RSA (верные iss/aud/exp) → 401
+        ← 401 {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"0c7d05c6-a4ca-4dfb-8634-98fd81075d73"}
+[OK]   B2 alg=none → 401
+        ← 401 {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"5dee2aa2-d1b4-4d66-91d9-829ad725f0d6"}
+[OK]   B3 подмена алгоритма: HS256 с открытым ключом как секретом → 401
+        ← 401 {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"389910b8-2c0a-425c-a600-85927bac03a9"}
+[OK]   B4 изменённая роль в полезной нагрузке с прежней подписью → 401
+        ← 401 {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"5d6d8e24-89ff-4fd7-8f74-e0d003ab1965"}
+[OK]   B5 просроченный токен с верной подписью (exp −1 ч) → 401
+        ← 401 {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"61840147-64c9-4e6f-8f83-242f83e4d569"}
+[OK]   B6 верная подпись, но несуществующая сессия sid (отозван/подделан) → 401
+        ← 401 {"error":"session_revoked","message":"Требуется действующий токен доступа","request_id":"a7b506cf-be95-4889-b397-ab0ef4fa6327"}
+[OK]   B7 refresh-токен вместо токена доступа → 401
+        ← 401 {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"26028fc3-3886-459b-bd49-875867531821"}
+[OK]   B8 токен после выхода (сессия удалена) → 401
+        ← 401
+
+=== C. Повторная отправка неидемпотентных операций
+[OK]   C1 два одновременных POST /applications с одним Idempotency-Key → одна заявка
+        ← 201/200 ids=1ffd5ce8-9642-47cc-8f8f-4aa7c989a7ca
+[OK]   C2 тот же запрос с новым ключом → 409 (ограничение БД)
+        ← 409 {"error":"duplicate_application","message":"У вас уже есть заявка в этой кампании","request_id":"0a42d372-8404-4769-938c-f1997188099c"}
+[OK]   C3 без Idempotency-Key → 400
+        ← 400
+[OK]   C4 в БД одна заявка stud001 в кампании c2
+[OK]   C5 два одновременных PATCH с одной версией (If-Match) → 200 и 409
+        ← 409/200
+[OK]   C6 реестр выплат: повтор с тем же ключом → тот же реестр, с новым → 409
+        ← 201/200/409
+[OK]   C7 в payout_entries ровно 2 строки (нет двойного начисления)
+
+=== D. Заголовки безопасности, CORS, cookie
+[OK]   D1 шлюз: HSTS, nosniff, X-Frame-Options DENY, Cache-Control no-store
+        ← {"hsts":"max-age=31536000","xcto":"nosniff","xfo":"DENY","cc":"no-store"}
+[OK]   D2 шлюз: Content-Security-Policy для ответов API
+        ← CSP=default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+[OK]   D3 шлюз не раскрывает Server/X-Powered-By
+        ← server=undefined
+[OK]   D4 CORS: чужой Origin не получает Access-Control-Allow-Origin
+        ← preflight=403 ACAO=—/—
+[OK]   D5 cookie refresh_token: HttpOnly; Secure; SameSite=Strict; Path=/api/v1/auth
+        ← refresh_token=…; Path=/api/v1/auth; Max-Age=28800; Expires=Wed, 25 Nov 2026 07:35:33 GMT; Secure; HttpOnly; SameSite=Strict
+[OK]   D6 http://localhost:8080: CSP, nosniff, XFO, Referrer-Policy, без версии nginx
+        ← server=nginx csp=default-src 'self'; script-src 'self'; s…
+[OK]   D7 http://127.0.0.1:8081: CSP, nosniff, XFO, Referrer-Policy, без версии nginx
+        ← server=nginx csp=default-src 'self'; script-src 'self'; s…
+[OK]   D8 ответ /applications-attachments/: Referrer-Policy, X-Frame-Options, Cache-Control no-store
+        ← {"status":403,"rp":"no-referrer","xfo":"DENY","cc":"no-store"}
+
+=== E. Раскрытие информации в ошибках
+[OK]   E1 битый JSON → 400, без стека/SQL/версий
+        ← 400 {"error":"invalid_request","message":"Тело запроса не соответствует схеме","request_id":"8cdc8d6f-cd7e-4585-b3a9-f48ef02cd3e2"}
+[OK]   E2 неверный тип поля → 400, без стека/SQL/версий
+        ← 400 {"error":"invalid_request","message":"Неверный формат поля: type","request_id":"21e08b2c-38e5-48b5-93f6-c70921d21b02"}
+[OK]   E3 неподдерживаемый метод → 405, без стека/SQL/версий
+        ← 405 {"error":"method_not_allowed","message":"Метод не поддерживается","request_id":"21629fb6-57c9-45b4-9af4-379a3f7f896b"}
+[OK]   E4 неподдерживаемый Content-Type → 415, без стека/SQL/версий
+        ← 415 {"error":"unsupported_media_type","message":"Ожидается application/json","request_id":"ba53c0c8-1793-49c6-9824-3466bfd53ff0"}
+[OK]   E5 тело больше лимита (64 КБ) → 413, без стека/SQL/версий
+        ← 413 {"error":"payload_too_large","message":"Превышен допустимый размер тела запроса","request_id":"2702b8c3-2e9d-47b2-90dd-dadc1747b133"}
+[OK]   E6 несуществующий путь → 404, без стека/SQL/версий
+        ← 404 {"timestamp":"2026-11-24T23:35:37.699+00:00","path":"/api/v1/no-such-endpoint","status":404,"error":"Not Found","requestId":"c607f0b4-50"}
+[OK]   E7 некорректный UUID в пути → 404, без стека/SQL/версий
+        ← 404 {"error":"not_found","message":"Объект не найден","request_id":"b25b019a-e311-4c77-ae27-83ad75c74063"}
+[OK]   E8 NUL-байт в строке JSON (password-reset) → 400, без стека/SQL/версий
+        ← 400 {"error":"invalid_request","message":"Неверный формат поля: email","request_id":"3037f46d-18c5-45aa-aaf4-10b7db3d6024"}
+[OK]   E9 NUL-байт в строке JSON (вход) → 400, без стека/SQL/версий
+        ← 400 {"error":"invalid_request","message":"Неверный формат поля: login","request_id":"b8741959-12bf-461f-874e-5cac2ae2537c"}
+
+=== F. Инъекции
+[OK]   F1 SQL в sort → 400 (белый список)
+        ← 400
+[OK]   F2 SQL в status → 400 без задержки
+        ← 400 14 мс
+[OK]   F3 подделанный курсор → 400
+        ← 400
+[OK]   F4 LDAP-фильтр в external_id → 400
+        ← 400 {"error":"invalid_request","message":"Некорректный логин","request_id":"739f1773-bdc2-44c2-95a9-1e4cf8ea4347"}
+[OK]   F5 HTML в значении перечисления не отражается как разметка (JSON, nosniff)
+        ← 400 application/json
+
+=== G. Обход маршрутизации и внутренние эндпоинты
+[OK]   G1 шлюз: /api/v1/auth/../../internal/... не отдаёт контакт пользователя
+        ← 401 {"error":"missing_token","message":"Требуется действующий токен доступа","request_id":"64439fcd-2f1c-43aa-bb02-e72c4c9c964a"}
+[OK]   G2 шлюз: «..;» в пути не обходит проверку токена
+        ← 401
+[OK]   G3 actuator сервисов через шлюз недоступен
+        ← 404
+[OK]   G4 обход через «..» не даёт чужую заявку
+        ← 404
+
+=== H. Ограничение частоты на входе и при повторном вводе пароля
+[OK]   H1 вход: серия попыток с одного IP → 429 и Retry-After (лимит 20/мин)
+        ← HTTP 429 на попытке 11, Retry-After=21
+[OK]   H2 OP-16 reauth: перебор пароля по токену доступа останавливается (429 лимит шлюза или 401 отзыв сессии, ≤ 5 попыток)
+        ← HTTP 401 на попытке 5
+
+=== I. Права на объект и свойства (ручной разбор карты кода)
+[OK]   I1 служба поддержки (R-07) видит только статус — без текста заявки и оснований
+        ← поля: id,campaign_id,type,status,submitted_at
+[OK]   I2 сотрудник не видит неподанный черновик заявителя (e03, draft) → 404
+        ← 404 {"error":"not_found","message":"Объект не найден","request_id":"ec50edd8-a840-4597-8a29-a28604f2863f"}
+[OK]   I3 в списке сотрудника нет черновиков
+        ← 200 items=0
+[OK]   I4 OP-03 по черновику → 404 (как несуществующая), а не 400 с подтверждением существования
+        ← 404 {"error":"not_found","message":"Объект не найден","request_id":"d7c2810f-9d64-4214-a02b-3966f21318f3"}
+[OK]   I5 OP-06 по чужой заявке → 404 (проверка владельца до ответа)
+        ← 404 {"error":"not_found","message":"Объект не найден","request_id":"d01dd12b-0ff3-4b40-8c34-abc174aa5caa"}
+
+=== J. Служебные веб-интерфейсы на 127.0.0.1
+[OK]   J1 Kafka UI требует входа (в топике auth.password-reset лежат коды восстановления)
+        ← 302 
+[OK]   J2 Mailpit (письма со ссылками восстановления) требует входа
+        ← 401
+
+ИТОГО: успешно 53, находок 0

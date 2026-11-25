@@ -1,0 +1,837 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		platform (spotbugsMain)</p>
+      <p>SpotBugs version: 4.9.6</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/audit/AuditLog.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/audit/AuditResult.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/catalog/CatalogEntry.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/catalog/CatalogUnavailableException.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/catalog/LdapCatalog.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/events/ApplicationEvent.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/events/EventPublisher$publishAfterCommit$1.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/events/EventPublisher.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/events/PasswordResetEvent.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/events/Topics.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/idempotency/IdempotencyStore$Companion.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/idempotency/IdempotencyStore.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/idempotency/StoredResponse.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/security/AuthUser.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/security/Permission.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/security/RolePermissions.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/security/Roles.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/session/RedisSessionLookup$Companion.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/session/RedisSessionLookup.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/session/SessionLookup.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/token/AccessToken.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/token/AccessTokenVerifier$Companion.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/token/AccessTokenVerifier.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/token/InvalidTokenException.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/token/Pem.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/util/Hashing.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/ApiErrorHandler.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/ApiException.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/AuthenticationFilter$Companion.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/AuthenticationFilter.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/AuthUserArgumentResolver.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/Errors.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/NulRejectingStringDeserializer.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/PlatformWebConfig.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/RequestIdFilter.class</li>
+         <li>/src/platform/build/classes/kotlin/main/ru/spbstu/scholarship/platform/web/RequestIds.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>745 lines of code analyzed,
+	in 36 classes, 
+	in 9 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">21</td>
+            <td align="right">28.19</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Low Priority Warnings</td>
+            <td align="right">8</td>
+            <td align="right">10.74</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>29</b>
+            </td>
+            <td align="right">
+               <b>38.93</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">18</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">7</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">3</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>29</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e572');">
+            <td>
+               <span class="priority-3">SnVI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.web.NulRejectingStringDeserializer is Serializable; consider declaring a serialVersionUID</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e572" style="display: none;">
+                  <a href="#SE_NO_SERIALVERSIONID">Bug type SE_NO_SERIALVERSIONID (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.NulRejectingStringDeserializer<br/>At JsonInput.kt:[lines 16-22]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e272');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.security.AuthUser.component3() may expose internal representation by returning AuthUser.roles</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e272" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.security.AuthUser<br/>In method ru.spbstu.scholarship.platform.security.AuthUser.component3()<br/>Field ru.spbstu.scholarship.platform.security.AuthUser.roles<br/>In Permissions.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e288');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.security.AuthUser.getRoles() may expose internal representation by returning AuthUser.roles</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e288" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.security.AuthUser<br/>In method ru.spbstu.scholarship.platform.security.AuthUser.getRoles()<br/>Field ru.spbstu.scholarship.platform.security.AuthUser.roles<br/>At Permissions.kt:[line 62]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e345');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.security.Roles.getUNIT_SCOPED() may expose internal representation by returning Roles.UNIT_SCOPED</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e345" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.security.Roles<br/>In method ru.spbstu.scholarship.platform.security.Roles.getUNIT_SCOPED()<br/>Field ru.spbstu.scholarship.platform.security.Roles.UNIT_SCOPED<br/>At Permissions.kt:[line 14]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e379');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.token.AccessToken.component4() may expose internal representation by returning AccessToken.roles</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e379" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.token.AccessToken<br/>In method ru.spbstu.scholarship.platform.token.AccessToken.component4()<br/>Field ru.spbstu.scholarship.platform.token.AccessToken.roles<br/>In AccessTokenVerifier.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e395');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.token.AccessToken.getRoles() may expose internal representation by returning AccessToken.roles</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e395" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.token.AccessToken<br/>In method ru.spbstu.scholarship.platform.token.AccessToken.getRoles()<br/>Field ru.spbstu.scholarship.platform.token.AccessToken.roles<br/>At AccessTokenVerifier.kt:[line 17]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e471');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>ru.spbstu.scholarship.platform.web.ApiException.getHeaders() may expose internal representation by returning ApiException.headers</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e471" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.ApiException<br/>In method ru.spbstu.scholarship.platform.web.ApiException.getHeaders()<br/>Field ru.spbstu.scholarship.platform.web.ApiException.headers<br/>At ApiException.kt:[line 13]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e116');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.audit.AuditLog(NamedParameterJdbcTemplate, ObjectMapper, PlatformTransactionManager) may expose internal representation by storing an externally mutable object into AuditLog.jdbc</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e116" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.audit.AuditLog<br/>In method new ru.spbstu.scholarship.platform.audit.AuditLog(NamedParameterJdbcTemplate, ObjectMapper, PlatformTransactionManager)<br/>Field ru.spbstu.scholarship.platform.audit.AuditLog.jdbc<br/>Local variable named jdbc<br/>At AuditLog.kt:[line 24]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e134');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.audit.AuditLog(NamedParameterJdbcTemplate, ObjectMapper, PlatformTransactionManager) may expose internal representation by storing an externally mutable object into AuditLog.om</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e134" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.audit.AuditLog<br/>In method new ru.spbstu.scholarship.platform.audit.AuditLog(NamedParameterJdbcTemplate, ObjectMapper, PlatformTransactionManager)<br/>Field ru.spbstu.scholarship.platform.audit.AuditLog.om<br/>Local variable named om<br/>At AuditLog.kt:[line 25]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e218');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.events.EventPublisher(KafkaTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into EventPublisher.kafka</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e218" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.events.EventPublisher<br/>In method new ru.spbstu.scholarship.platform.events.EventPublisher(KafkaTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.platform.events.EventPublisher.kafka<br/>Local variable named kafka<br/>At Events.kt:[line 44]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e236');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.events.EventPublisher(KafkaTemplate, ObjectMapper) may expose internal representation by storing an externally mutable object into EventPublisher.om</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e236" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.events.EventPublisher<br/>In method new ru.spbstu.scholarship.platform.events.EventPublisher(KafkaTemplate, ObjectMapper)<br/>Field ru.spbstu.scholarship.platform.events.EventPublisher.om<br/>Local variable named om<br/>At Events.kt:[line 44]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e254');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.idempotency.IdempotencyStore(NamedParameterJdbcTemplate) may expose internal representation by storing an externally mutable object into IdempotencyStore.jdbc</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e254" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.idempotency.IdempotencyStore<br/>In method new ru.spbstu.scholarship.platform.idempotency.IdempotencyStore(NamedParameterJdbcTemplate)<br/>Field ru.spbstu.scholarship.platform.idempotency.IdempotencyStore.jdbc<br/>Local variable named jdbc<br/>At IdempotencyStore.kt:[line 15]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e305');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.security.AuthUser(UUID, String, Set, UUID) may expose internal representation by storing an externally mutable object into AuthUser.roles</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e305" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.security.AuthUser<br/>In method new ru.spbstu.scholarship.platform.security.AuthUser(UUID, String, Set, UUID)<br/>Field ru.spbstu.scholarship.platform.security.AuthUser.roles<br/>Local variable named roles<br/>At Permissions.kt:[line 62]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e361');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.session.RedisSessionLookup(StringRedisTemplate) may expose internal representation by storing an externally mutable object into RedisSessionLookup.redis</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e361" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.session.RedisSessionLookup<br/>In method new ru.spbstu.scholarship.platform.session.RedisSessionLookup(StringRedisTemplate)<br/>Field ru.spbstu.scholarship.platform.session.RedisSessionLookup.redis<br/>Local variable named redis<br/>At SessionLookup.kt:[line 16]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e411');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.token.AccessToken(UUID, String, String, Set, UUID, Instant) may expose internal representation by storing an externally mutable object into AccessToken.roles</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e411" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.token.AccessToken<br/>In method new ru.spbstu.scholarship.platform.token.AccessToken(UUID, String, String, Set, UUID, Instant)<br/>Field ru.spbstu.scholarship.platform.token.AccessToken.roles<br/>Local variable named roles<br/>At AccessTokenVerifier.kt:[line 17]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e487');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.web.ApiException(HttpStatus, String, String, Map) may expose internal representation by storing an externally mutable object into ApiException.headers</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e487" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.ApiException<br/>In method new ru.spbstu.scholarship.platform.web.ApiException(HttpStatus, String, String, Map)<br/>Field ru.spbstu.scholarship.platform.web.ApiException.headers<br/>Local variable named headers<br/>At ApiException.kt:[line 13]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e524');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.web.AuthenticationFilter(AccessTokenVerifier, SessionLookup, ObjectMapper, List) may expose internal representation by storing an externally mutable object into AuthenticationFilter.objectMapper</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e524" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.AuthenticationFilter<br/>In method new ru.spbstu.scholarship.platform.web.AuthenticationFilter(AccessTokenVerifier, SessionLookup, ObjectMapper, List)<br/>Field ru.spbstu.scholarship.platform.web.AuthenticationFilter.objectMapper<br/>Local variable named objectMapper<br/>At Filters.kt:[line 57]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e542');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.web.AuthenticationFilter(AccessTokenVerifier, SessionLookup, ObjectMapper, List) may expose internal representation by storing an externally mutable object into AuthenticationFilter.publicPaths</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e542" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.AuthenticationFilter<br/>In method new ru.spbstu.scholarship.platform.web.AuthenticationFilter(AccessTokenVerifier, SessionLookup, ObjectMapper, List)<br/>Field ru.spbstu.scholarship.platform.web.AuthenticationFilter.publicPaths<br/>Local variable named publicPaths<br/>At Filters.kt:[line 58]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e603');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new ru.spbstu.scholarship.platform.web.PlatformWebConfig(String, List) may expose internal representation by storing an externally mutable object into PlatformWebConfig.publicPaths</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e603" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.PlatformWebConfig<br/>In method new ru.spbstu.scholarship.platform.web.PlatformWebConfig(String, List)<br/>Field ru.spbstu.scholarship.platform.web.PlatformWebConfig.publicPaths<br/>Local variable named publicPaths<br/>At PlatformWebConfig.kt:[line 34]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e172');">
+            <td>
+               <span class="priority-3">SECCRLFLOG</span>
+            </td>
+            <td>This use of org/slf4j/Logger.error(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e172" style="display: none;">
+                  <a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.events.EventPublisher<br/>In method ru.spbstu.scholarship.platform.events.EventPublisher.send$lambda$1(EventPublisher, String, String, SendResult, Throwable)<br/>At Events.kt:[line 59]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ru/spbstu/scholarship/platform/events/EventPublisher.send$lambda$1(Lru/spbstu/scholarship/platform/events/EventPublisher;Ljava/lang/String;Ljava/lang/String;Lorg/springframework/kafka/support/SendResult;Ljava/lang/Throwable;)Lkotlin/Unit; parameter 3<br/>Unknown source ru/spbstu/scholarship/platform/events/EventPublisher.send$lambda$1(Lru/spbstu/scholarship/platform/events/EventPublisher;Ljava/lang/String;Ljava/lang/String;Lorg/springframework/kafka/support/SendResult;Ljava/lang/Throwable;)Lkotlin/Unit; parameter 0<br/>Unknown source ru/spbstu/scholarship/platform/events/EventPublisher.send$lambda$1(Lru/spbstu/scholarship/platform/events/EventPublisher;Ljava/lang/String;Ljava/lang/String;Lorg/springframework/kafka/support/SendResult;Ljava/lang/Throwable;)Lkotlin/Unit; parameter 2<br/>Method usage not detected</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e196');">
+            <td>
+               <span class="priority-3">SECCRLFLOG</span>
+            </td>
+            <td>This use of org/slf4j/Logger.info(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e196" style="display: none;">
+                  <a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.events.EventPublisher<br/>In method ru.spbstu.scholarship.platform.events.EventPublisher.send$lambda$1(EventPublisher, String, String, SendResult, Throwable)<br/>At Events.kt:[line 60]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ru/spbstu/scholarship/platform/events/EventPublisher.send$lambda$1(Lru/spbstu/scholarship/platform/events/EventPublisher;Ljava/lang/String;Ljava/lang/String;Lorg/springframework/kafka/support/SendResult;Ljava/lang/Throwable;)Lkotlin/Unit; parameter 2<br/>Unknown source ru/spbstu/scholarship/platform/events/EventPublisher.send$lambda$1(Lru/spbstu/scholarship/platform/events/EventPublisher;Ljava/lang/String;Ljava/lang/String;Lorg/springframework/kafka/support/SendResult;Ljava/lang/Throwable;)Lkotlin/Unit; parameter 3<br/>Method usage not detected</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e444');">
+            <td>
+               <span class="priority-3">SECCRLFLOG</span>
+            </td>
+            <td>This use of org/slf4j/Logger.error(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e444" style="display: none;">
+                  <a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.ApiErrorHandler<br/>In method ru.spbstu.scholarship.platform.web.ApiErrorHandler.unexpected(Exception, HttpServletRequest)<br/>At ApiErrorHandler.kt:[line 76]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ru/spbstu/scholarship/platform/web/ApiErrorHandler.unexpected(Ljava/lang/Exception;Ljakarta/servlet/http/HttpServletRequest;)Lorg/springframework/http/ResponseEntity; parameter 1<br/>Unknown source jakarta/servlet/http/HttpServletRequest.getMethod()Ljava/lang/String;<br/>Unknown source jakarta/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Method usage not detected<br/>In ApiErrorHandler.kt</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e506');">
+            <td>
+               <span class="priority-3">SECCRLFLOG</span>
+            </td>
+            <td>This use of org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e506" style="display: none;">
+                  <a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.AuthenticationFilter<br/>In method ru.spbstu.scholarship.platform.web.AuthenticationFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain)<br/>At Filters.kt:[line 76]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ru/spbstu/scholarship/platform/token/InvalidTokenException.getMessage()Ljava/lang/String;</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e152');">
+            <td>
+               <span class="priority-2">SECLDAPI</span>
+            </td>
+            <td>This use of javax/naming/directory/InitialDirContext.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e152" style="display: none;">
+                  <a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.catalog.LdapCatalog<br/>In method ru.spbstu.scholarship.platform.catalog.LdapCatalog.find(String)<br/>At LdapCatalog.kt:[line 49]<br/>Sink method javax/naming/directory/InitialDirContext.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 3<br/>Unknown source ru/spbstu/scholarship/platform/catalog/LdapCatalog.baseDn<br/>At LdapCatalog.kt:[line 49]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e560');">
+            <td>
+               <span class="priority-3">SECSH</span>
+            </td>
+            <td>Request header can easily be altered by the client</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e560" style="display: none;">
+                  <a href="#SERVLET_HEADER">Bug type SERVLET_HEADER (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.AuthenticationFilter<br/>In method ru.spbstu.scholarship.platform.web.AuthenticationFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain)<br/>At Filters.kt:[line 69]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e621');">
+            <td>
+               <span class="priority-3">SECSH</span>
+            </td>
+            <td>Request header can easily be altered by the client</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e621" style="display: none;">
+                  <a href="#SERVLET_HEADER">Bug type SERVLET_HEADER (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.RequestIdFilter<br/>In method ru.spbstu.scholarship.platform.web.RequestIdFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain)<br/>At Filters.kt:[line 35]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e323');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.platform.security.RolePermissions.of(Set)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e323" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.security.RolePermissions<br/>In method ru.spbstu.scholarship.platform.security.RolePermissions.of(Set)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At Permissions.kt:[line 77]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e581');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Questionable cast from Collection to abstract class java.util.List in ru.spbstu.scholarship.platform.web.PlatformWebConfig.authenticationFilter(AccessTokenVerifier, SessionLookup, ObjectMapper)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e581" style="display: none;">
+                  <a href="#BC_BAD_CAST_TO_ABSTRACT_COLLECTION">Bug type BC_BAD_CAST_TO_ABSTRACT_COLLECTION (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.web.PlatformWebConfig<br/>In method ru.spbstu.scholarship.platform.web.PlatformWebConfig.authenticationFilter(AccessTokenVerifier, SessionLookup, ObjectMapper)<br/>Actual type java.util.Collection<br/>Expected java.util.List<br/>Value loaded from destination$iv$iv<br/>At PlatformWebConfig.kt:[line 77]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e429');">
+            <td>
+               <span class="priority-3">RCN</span>
+            </td>
+            <td>Redundant nullcheck of kotlin.collections.CollectionsKt.toSet(Iterable), which is known to be non-null in ru.spbstu.scholarship.platform.token.AccessTokenVerifier.verify(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e429" style="display: none;">
+                  <a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+                  <br/>In class ru.spbstu.scholarship.platform.token.AccessTokenVerifier<br/>In method ru.spbstu.scholarship.platform.token.AccessTokenVerifier.verify(String)<br/>Return value of kotlin.collections.CollectionsKt.toSet(Iterable) of type java.util.Set<br/>Redundant null check at AccessTokenVerifier.kt:[line 68]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="BC_BAD_CAST_TO_ABSTRACT_COLLECTION">BC_BAD_CAST_TO_ABSTRACT_COLLECTION: Questionable cast to abstract collection</a>
+      </h2>
+
+<p>
+This code casts a Collection to an abstract collection
+(such as <code>List</code>, <code>Set</code>, or <code>Map</code>).
+Ensure that you are guaranteed that the object is of the type
+you are casting to. If all you need is to be able
+to iterate through a collection, you don't need to cast it to a Set or List.
+</p>
+<p>See <a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE: Redundant nullcheck of value known to be non-null</a>
+      </h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    <h2>
+         <a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+      </h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        <h2>
+         <a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+      </h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <strong>Code at risk:</strong><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p><strong>Solution:</strong></p>
+<p>
+Safe evaluation of Java code using "StringUtils" library.<br/>
+<pre>if(StringUtils.isAlphanumeric(username)) {
+    NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);
+}</pre>
+</p>
+<br/><p>
+<strong>References</strong><br/>
+<a href="https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html">LDAP Injection Prevention Cheat Sheet</a><br/>
+<a href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection">OWASP: Top 10 A1:2017-Injection</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+</p>
+
+        <h2>
+         <a name="SERVLET_HEADER">SERVLET_HEADER: HTTP headers untrusted</a>
+      </h2>
+            
+<p>Request headers can easily be altered by the requesting user. In general, no assumption should be made that
+the request came from a regular browser without modification by an attacker. As such, it is recommended that you
+not trust this value in any security decisions you make with respect to a request.</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/807.html">CWE-807: Untrusted Inputs in a Security Decision</a>
+</p>
+
+        <h2>
+         <a name="SE_NO_SERIALVERSIONID">SE_NO_SERIALVERSIONID: Class is Serializable, but doesn't define serialVersionUID</a>
+      </h2>
+
+  <p> This class implements the <code>Serializable</code> interface, but does
+  not define a <code>serialVersionUID</code> field.&nbsp;
+  A change as simple as adding a reference to a .class object
+    will add synthetic fields to the class,
+   which will unfortunately change the implicit
+   serialVersionUID (e.g., adding a reference to <code>String.class</code>
+   will generate a static field <code>class$java$lang$String</code>).
+   Also, different source code to bytecode compilers may use different
+   naming conventions for synthetic variables generated for
+   references to class objects or inner classes.
+   To ensure interoperability of Serializable across versions,
+   consider adding an explicit serialVersionUID.</p>
+
+    </body>
+</html>

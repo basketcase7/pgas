@@ -1,0 +1,295 @@
+
+=== Аутентификация (OP-07): одинаковый ответ на неверный логин и неверный пароль
+[OK]   401 (ожидалось 401) неверный пароль
+        ← {"error":"invalid_credentials","message":"Неверный логин или пароль","request_id":"6382864b-6209-43a9-bb23-a37af701e239"}
+[OK]   401 (ожидалось 401) несуществующий логин
+        ← {"error":"invalid_credentials","message":"Неверный логин или пароль","request_id":"17391865-b2ce-4698-ade0-bf3b85887596"}
+[OK]   тела ответов совпадают (кроме request_id)
+[OK]   400 (ожидалось 400) лишнее поле в теле входа → 400
+        ← {"error":"invalid_request","message":"Недопустимое поле в теле запроса: role","request_id":"dfcbce6c-fd7d-4002-9d34-159fb7c8e4d2"}
+[OK]   200 (ожидалось 200) вход stud001
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход stud002@example.edu
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход stud004
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход emp001
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход emp002
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход chair001
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход chair002
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   200 (ожидалось 200) вход sup001
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   в токене нет ПДн (только идентификаторы и роли) — aud,sub,nbf,roles,iss,exp,iat,unit_id,jti,sid
+
+=== Токены: просроченный, подделанный, без токена → 401
+[OK]   401 (ожидалось 401) без токена
+        ← {"error":"missing_token","message":"Требуется действующий токен доступа","request_id":"46cb266e-40f8-44e8-bef7-55681048825a"}
+[OK]   401 (ожидалось 401) просроченный токен (верная подпись, exp в прошлом)
+        ← {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"5a45d560-5ea4-4453-b071-219090c05ace"}
+[OK]   401 (ожидалось 401) подделанная подпись
+        ← {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"072700d9-28b9-4c61-b3eb-43ae6f5b8a36"}
+[OK]   401 (ожидалось 401) изменённая полезная нагрузка (роль) с прежней подписью
+        ← {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"2162686c-5136-4699-8465-301bf874b04f"}
+[OK]   401 (ожидалось 401) alg=none
+        ← {"error":"invalid_token","message":"Требуется действующий токен доступа","request_id":"e2e8e86e-d552-43b8-8bc4-65bbf4110726"}
+
+=== OP-01 GET /applications/{id} — права на объект
+[OK]   200 (ожидалось 200) своя заявка (stud001 → e01)
+        ← {"id":"e0000000-0000-4000-8000-000000000001","campaign_id":"c0000000-0000-4000-8000-000000000001","type":"pgas","status":"submitted","applicant_id":"b0000000-00
+[OK]   ответ без хеша пароля и служебных полей — id,campaign_id,type,status,applicant_id,statement,declared_grounds,submitted_at
+[OK]   ETag с версией — "1"
+[OK]   404 (ожидалось 404) ПРОВЕРКА 1: чужая заявка (stud001 → e02 stud002)
+        ← {"error":"not_found","message":"Объект не найден","request_id":"9486f6d2-2a79-469e-b1ee-79f594e79986"}
+[OK]   404 (ожидалось 404) несуществующая заявка
+        ← {"error":"not_found","message":"Объект не найден","request_id":"6dbd1c66-62dd-4715-9a65-1994de421820"}
+[OK]   чужая и несуществующая неразличимы
+[OK]   404 (ожидалось 404) попытка «от имени другого» через ?applicant_id= игнорируется
+        ← {"error":"not_found","message":"Объект не найден","request_id":"4a374c2c-b6b1-4f5b-b7ef-0db5da8b2eaf"}
+[OK]   404 (ожидалось 404) некорректный id → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"93767adb-64a2-4014-8dc8-0bf4033802e0"}
+[OK]   200 (ожидалось 200) сотрудник своего подразделения (emp001 → e01)
+        ← {"id":"e0000000-0000-4000-8000-000000000001","campaign_id":"c0000000-0000-4000-8000-000000000001","type":"pgas","status":"submitted","applicant_id":"b0000000-00
+[OK]   сотруднику видны scores[] и attachments[]
+[OK]   404 (ожидалось 404) сотрудник другого подразделения (emp002 → e01)
+        ← {"error":"not_found","message":"Объект не найден","request_id":"c9657742-b742-448e-be43-42434ff5a51b"}
+[OK]   200 (ожидалось 200) служба поддержки (sup001 → e01, include=attachments)
+        ← {"id":"e0000000-0000-4000-8000-000000000001","campaign_id":"c0000000-0000-4000-8000-000000000001","type":"pgas","status":"submitted","submitted_at":"2026-11-19T
+[OK]   поддержке вложения и баллы не отдаются
+[OK]   200 (ожидалось 200) заявитель: баллы после публикации итогов не видны, пока нет протокола (e04)
+        ← {"id":"e0000000-0000-4000-8000-000000000004","campaign_id":"c0000000-0000-4000-8000-000000000003","type":"pgas","status":"approved","applicant_id":"b0000000-000
+[OK]   scores[] заявителю до протокола отсутствует
+
+=== OP-04 GET /applications — область выборки задаёт сервер
+[OK]   200 (ожидалось 200) список stud001
+        ← {"items":[{"id":"e0000000-0000-4000-8000-000000000001","status":"submitted","type":"pgas"},{"id":"e0000000-0000-4000-8000-000000000004","status":"approved","typ
+[OK]   в списке заявителя только свои заявки и нет applicant_name — e0000000,e0000000
+[OK]   200 (ожидалось 200) ?applicant_id=stud002 не расширяет область
+        ← {"items":[{"id":"e0000000-0000-4000-8000-000000000001","status":"submitted","type":"pgas"},{"id":"e0000000-0000-4000-8000-000000000004","status":"approved","typ
+[OK]   заявки stud002 не появились
+[OK]   200 (ожидалось 200) сотрудник: фильтр кампании + сортировка по баллам
+        ← {"items":[{"id":"e0000000-0000-4000-8000-000000000005","status":"approved","type":"pgas","applicant_name":"Петрова Анна Сергеевна"}],"next_cursor":"LXRvdGFsX3Nj
+[OK]   у сотрудника есть applicant_name и курсор следующей страницы
+[OK]   200 (ожидалось 200) следующая страница по курсору
+        ← {"items":[{"id":"e0000000-0000-4000-8000-000000000004","status":"approved","type":"pgas","applicant_name":"Иванов Иван Иванович"}]}
+[OK]   400 (ожидалось 400) sort вне белого списка → 400
+        ← {"error":"invalid_request","message":"Недопустимое значение sort","request_id":"ff0b57cf-f3a6-49ee-ba5e-0586eb4695ab"}
+[OK]   400 (ожидалось 400) limit=500 → 400
+        ← {"error":"invalid_request","message":"limit: от 1 до 100","request_id":"e51ade35-31a1-4b4c-9442-49252afbd808"}
+[OK]   400 (ожидалось 400) status вне списка → 400
+        ← {"error":"invalid_request","message":"Недопустимое значение status","request_id":"b7ba1c11-c0b2-4691-a045-d2e005e51008"}
+[OK]   403 (ожидалось 403) служба поддержки не имеет applications:list → 403
+        ← {"error":"forbidden","message":"Недостаточно прав для операции","request_id":"08d13e39-c13e-4f0f-8b2c-353d28f835a2"}
+[OK]   200 (ожидалось 200) emp002 (другое подразделение) не видит заявки ICST
+        ← {"items":[{"id":"e0000000-0000-4000-8000-000000000006","status":"submitted","type":"pgas","applicant_name":"Сидоров Пётр Алексеевич"}]}
+[OK]   у emp002 только заявки IEE — e0000000
+
+=== OP-17 GET /campaigns
+[OK]   200 (ожидалось 200) кампании для заявителя
+        ← {"items":[{"id":"c0000000-0000-4000-8000-000000000001","title":"ПГАС, весенний семестр","type":"pgas","unit_name":"Институт компьютерных наук и кибербезопасност
+
+=== OP-02 POST /applications — создание, идемпотентность, лишние поля
+[OK]   201 (ожидалось 201) создание (stud001, кампания c2)
+        ← {"id":"73087d6b-a7b8-4a5b-b7b9-503b80242ec1","status":"draft","created_at":"2026-11-24T23:33:24.501933Z"}
+[OK]   Location указывает на ресурс — /api/v1/applications/73087d6b-a7b8-4a5b-b7b9-503b80242ec1
+[OK]   200 (ожидалось 200) повтор с тем же Idempotency-Key → 200, та же заявка
+        ← {"id":"73087d6b-a7b8-4a5b-b7b9-503b80242ec1","status":"draft","created_at":"2026-11-24T23:33:24.501933Z"}
+[OK]   повтор вернул тот же id
+[OK]   422 (ожидалось 422) тот же ключ, другое тело → 422
+        ← {"error":"idempotency_key_reused","message":"Idempotency-Key уже использован с другим содержимым запроса","request_id":"7b6ee68e-1a89-4a79-a417-51bc8c4b929d"}
+[OK]   409 (ожидалось 409) другой ключ → 409 (uq_application_per_campaign)
+        ← {"error":"duplicate_application","message":"У вас уже есть заявка в этой кампании","request_id":"0ef62952-c889-4edf-a97a-b4f84cc58aa9"}
+[OK]   400 (ожидалось 400) ПРОВЕРКА 2: лишние поля status/applicant_id/role → 400
+        ← {"error":"invalid_request","message":"Недопустимое поле в теле запроса: status","request_id":"6fdc72d4-83fa-4a17-a241-e1321a7f43bb"}
+[OK]   строка в БД: владелец и статус — серверные — b0000000-0000-4000-8000-000000000001 | draft
+[OK]   попытка с лишними полями не создала строку
+[OK]   400 (ожидалось 400) без Idempotency-Key → 400
+        ← {"error":"invalid_request","message":"Заголовок Idempotency-Key обязателен","request_id":"ca9fd2b2-50c6-47cd-9ea3-edab3e54f1a1"}
+[OK]   422 (ожидалось 422) кампания закрыта (c3) → 422
+        ← {"error":"campaign_closed","message":"Приём заявок в кампанию закрыт","request_id":"106af41d-05bf-432b-8121-0dfce52782d6"}
+[OK]   400 (ожидалось 400) statement длиннее 4000 → 400
+        ← {"error":"invalid_request","message":"Поле statement: от 1 до 4000 символов","request_id":"b915dd47-2967-4dbc-9bcf-962c1017e0a7"}
+[OK]   400 (ожидалось 400) основание вне справочника → 400
+        ← {"error":"invalid_request","message":"Недопустимое основание в declared_grounds: vip","request_id":"c647c788-67d8-49f9-a40f-04cf106f171b"}
+[OK]   403 (ожидалось 403) отчисленный по каталогу (stud004) → 403
+        ← {"error":"not_active_student","message":"По данным каталога вы не являетесь действующим обучающимся","request_id":"d09175c4-3a56-49fc-8ded-b2908c907808"}
+[OK]   403 (ожидалось 403) сотрудник не может создавать заявки → 403
+        ← {"error":"forbidden","message":"Недостаточно прав для операции","request_id":"ffca7655-ec16-4716-95d3-987f0ee3754a"}
+
+=== OP-10 вложение: ссылка на загрузку + загрузка напрямую в хранилище
+[OK]   201 (ожидалось 201) ссылка на загрузку (своя заявка)
+        ← {"attachment_id":"bc6acead-050a-4132-8738-25c6b422c211","method":"POST","upload_url":"/applications-attachments/","form_fields":{"x-amz-date":"20261124T233325Z"
+[OK]   404 (ожидалось 404) ссылка на чужую заявку → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"78f699e1-4cbf-4474-b87e-1f78d70278c1"}
+[OK]   400 (ожидалось 400) недопустимый тип файла → 400
+        ← {"error":"invalid_request","message":"Допустимы только PDF, JPEG, PNG","request_id":"53d3e11d-47a9-4925-bf2d-372c7e0c7aea"}
+[OK]   хранилище отклоняет файл другого размера (политика подписи) — HTTP 400
+[OK]   загрузка файла заявленного размера принята хранилищем — HTTP 204
+[OK]   200 (ожидалось 200) карточка со списком вложений
+        ← {"id":"73087d6b-a7b8-4a5b-b7b9-503b80242ec1","campaign_id":"c0000000-0000-4000-8000-000000000002","type":"material_aid","status":"draft","applicant_id":"b000000
+[OK]   скачивание по presigned-ссылке возвращает тот же файл — HTTP 200
+[OK]   без подписи хранилище файл не отдаёт — HTTP 403
+
+=== OP-18 подача и события в Kafka → notifier → почта
+[OK]   200 (ожидалось 200) подача черновика
+        ← {"id":"73087d6b-a7b8-4a5b-b7b9-503b80242ec1","status":"submitted","submitted_at":"2026-11-24T23:33:25.582351Z"}
+[OK]   200 (ожидалось 200) повторная подача — тот же результат
+        ← {"id":"73087d6b-a7b8-4a5b-b7b9-503b80242ec1","status":"submitted","submitted_at":"2026-11-24T23:33:25.582351Z"}
+[OK]   404 (ожидалось 404) подача чужой заявки → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"efbb4c42-7356-4c6b-9f1f-0be1ddd5f939"}
+[OK]   notifier получил событие из Kafka и отправил письмо — Заявка № 503b80242ec1: подана
+[OK]   в письме нет текста обоснования и сумм (B-14)
+
+=== OP-03 PATCH /applications/{id}/review
+[OK]   200 (ожидалось 200) чтение версии (ETag) сотрудником
+        ← {"id":"e0000000-0000-4000-8000-000000000001","campaign_id":"c0000000-0000-4000-8000-000000000001","type":"pgas","status":"submitted","applicant_id":"b0000000-00
+[OK]   428 (ожидалось 428) без If-Match → 428
+        ← {"error":"precondition_required","message":"Заголовок If-Match обязателен (версия из ETag)","request_id":"c31ac3e9-fadf-4709-8ec8-4621fdc56bb8"}
+[OK]   409 (ожидалось 409) устаревшая версия в If-Match → 409
+        ← {"error":"version_mismatch","message":"Заявку уже изменил другой сотрудник — перечитайте её","request_id":"7b46830a-21f5-4d5e-8603-cac97bd84a85"}
+[OK]   400 (ожидалось 400) лишнее поле reviewed_by → 400
+        ← {"error":"invalid_request","message":"Недопустимое поле в теле запроса: reviewed_by","request_id":"d598d355-e74d-405f-826b-8b2060e3f0ef"}
+[OK]   403 (ожидалось 403) заявитель не может проверять → 403
+        ← {"error":"forbidden","message":"Роль не вправе проверять заявки","request_id":"52e84348-80f7-4a07-9c76-0aa715d01219"}
+[OK]   404 (ожидалось 404) сотрудник другого подразделения → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"6023837a-2770-46b8-9d69-a00fca5eaac5"}
+[OK]   200 (ожидалось 200) взять на рассмотрение
+        ← {"id":"e0000000-0000-4000-8000-000000000001","status":"under_review","version":2,"reviewed_by":"b0000000-0000-4000-8000-000000000011"}
+[OK]   reviewed_by взят из токена
+[OK]   400 (ожидалось 400) одобрение ПГАС без баллов → 400
+        ← {"error":"invalid_request","message":"Для одобрения заявки на ПГАС обязательны баллы (scores)","request_id":"07013d9a-4cc5-43c5-95a2-a21da18c2784"}
+[OK]   400 (ожидалось 400) балл выше максимума критерия → 400
+        ← {"error":"invalid_request","message":"Балл должен быть от 0 до 40.00","request_id":"fdb607aa-fd4c-4fd5-a794-f1c14bd947a3"}
+[OK]   400 (ожидалось 400) отклонение без причины → 400
+        ← {"error":"invalid_request","message":"При отклонении обязательна причина (reason)","request_id":"46503b50-82f2-4c0c-b1e9-8301658d804a"}
+[OK]   200 (ожидалось 200) одобрение с баллами
+        ← {"id":"e0000000-0000-4000-8000-000000000001","status":"approved","total_score":45,"version":3,"reviewed_by":"b0000000-0000-4000-8000-000000000011"}
+[OK]   сумма баллов посчитана сервером — 45
+[OK]   409 (ожидалось 409) повтор того же PATCH со старой версией → 409
+        ← {"error":"version_mismatch","message":"Заявку уже изменил другой сотрудник — перечитайте её","request_id":"69caf7b6-9eb4-4ea3-ad0c-4221a2e76521"}
+[OK]   404 (ожидалось 404) черновик для сотрудника не существует (ЛР5, V-M02) → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"026d4a01-6922-40f9-b202-88b52a972ffd"}
+[OK]   изменение записано в audit_log в той же транзакции — application.reviewed success
+[OK]   письмо о смене статуса (событие review-service) — Заявка № 000000000001: одобрена
+
+=== OP-12 GET /campaigns/{id}/ranking
+[OK]   200 (ожидалось 200) рейтинг кампании c1 (emp001)
+        ← {"campaign_id":"c0000000-0000-4000-8000-000000000001","title":"ПГАС, весенний семестр","quota":3,"items":[{"application_id":"e0000000-0000-4000-8000-00000000000
+[OK]   403 (ожидалось 403) заявитель → 403
+        ← {"error":"forbidden","message":"Недостаточно прав для операции","request_id":"cfd8ea09-da12-45ee-b626-6796199308d7"}
+[OK]   404 (ожидалось 404) кампания чужого подразделения → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"ab69a9af-7e3f-4580-a608-90567a78dc7f"}
+
+=== OP-05 POST /campaigns/{id}/payout-registry — привилегированная операция
+[OK]   403 (ожидалось 403) ПРОВЕРКА 3: токен заявителя → 403
+        ← {"error":"forbidden","message":"Операция доступна только председателю комиссии","request_id":"48726c0f-efa7-47b4-beef-571f60ac930c"}
+[OK]   403 (ожидалось 403) сотрудник (reviewer) своей кампании → 403
+        ← {"error":"forbidden","message":"Операция доступна только председателю комиссии","request_id":"f1daa1e4-5e00-4f33-b8ef-c6d24e9fe1c1"}
+[OK]   428 (ожидалось 428) председатель без Idempotency-Key → 428
+        ← {"error":"precondition_required","message":"Заголовок Idempotency-Key обязателен","request_id":"fddb6f89-8aa4-48c2-82c0-afcd5605ebdf"}
+[OK]   403 (ожидалось 403) председатель без повторного ввода пароля → 403 reauth_required
+        ← {"error":"reauth_required","message":"Подтвердите личность повторным вводом пароля","request_id":"ce21108b-74e3-40b2-abd4-07fd9846cbc3"}
+[OK]   403 (ожидалось 403) повторный ввод пароля: неверный → 403
+        ← {"error":"invalid_credentials","message":"Неверный пароль","request_id":"0f30c15a-85eb-4593-b52d-2e7c0b5d58fa"}
+[OK]   204 (ожидалось 204) повторный ввод пароля (OP-16), chair002
+        ← null
+[OK]   400 (ожидалось 400) лишнее поле checksum → 400
+        ← {"error":"invalid_request","message":"Недопустимое поле в теле запроса: checksum","request_id":"6316cee2-2369-429b-b77a-5b5b18ba0461"}
+[OK]   403 (ожидалось 403) председатель ДРУГОЙ комиссии (chair002 → кампания ICST) → 403
+        ← {"error":"forbidden","message":"Кампания не закреплена за вашей комиссией","request_id":"0552cd48-2336-4e70-bad6-d351c3c97415"}
+[OK]   204 (ожидалось 204) повторный ввод пароля (OP-16), chair001
+        ← null
+[OK]   422 (ожидалось 422) в реестре заявка из другой кампании/не approved → 422
+        ← {"error":"quota_exceeded","message":"Число получателей превышает квоту кампании (2)","request_id":"028fcca2-76f5-44ea-987e-e0d6a2e306f0"}
+[OK]   422 (ожидалось 422) сумма вне диапазона кампании → 422
+        ← {"error":"amount_out_of_range","message":"entries[0]: сумма вне диапазона 5000.00–15000.00","request_id":"4b847b43-6756-4afb-a9c3-12198c713cba"}
+[OK]   201 (ожидалось 201) формирование реестра
+        ← {"registry_id":"75f4a3d4-f230-4305-b383-8a41af68d218","protocol_id":"75f4a3d4-f230-4305-b383-8a41af68d218","entries_count":2,"total_amount":21000.5,"checksum":"
+[OK]   итоговая сумма и SHA-256 — 21000.5 76b27a28628611e2bbce6cef023ecd4bdd4d57566f45b891414e0200014c089e
+[OK]   200 (ожидалось 200) повтор с тем же ключом → 200 и тот же реестр
+        ← {"registry_id":"75f4a3d4-f230-4305-b383-8a41af68d218","protocol_id":"75f4a3d4-f230-4305-b383-8a41af68d218","entries_count":2,"total_amount":21000.5,"checksum":"
+[OK]   повтор не создал новый реестр
+[OK]   409 (ожидалось 409) новый ключ → 409 (реестр уже есть)
+        ← {"error":"registry_exists","message":"Реестр по этой кампании уже сформирован","request_id":"3e260dc2-fe39-44bd-83a9-276b89c18a1f"}
+[OK]   в payout_entries ровно 2 строки, получатели из БД
+[OK]   третий рубеж: БД не даёт второе начисление по заявке — ERROR: ERROR:  duplicate key value violates unique constraint "uq_payout_per_application"
+[OK]   422 (ожидалось 422) после протокола статусы не меняются → 422
+        ← {"error":"campaign_closed","message":"Кампания закрыта протоколом: статусы больше не меняются","request_id":"8aac9a5b-077f-4c5f-a074-cd566c6dd816"}
+[OK]   200 (ожидалось 200) заявитель видит баллы после публикации итогов
+        ← {"id":"e0000000-0000-4000-8000-000000000004","campaign_id":"c0000000-0000-4000-8000-000000000003","type":"pgas","status":"approved","applicant_id":"b0000000-000
+[OK]   scores[] появились
+
+=== OP-13 DELETE /applications/{id} и OP-06/OP-11 (501)
+[OK]   404 (ожидалось 404) отзыв чужой заявки → 404
+        ← {"error":"not_found","message":"Объект не найден","request_id":"9663df0c-3afe-479d-9c43-4371f5eb5077"}
+[OK]   204 (ожидалось 204) отзыв своей поданной заявки
+        ← null
+[OK]   204 (ожидалось 204) повторный DELETE — идемпотентен
+        ← null
+[OK]   409 (ожидалось 409) отзыв одобренной заявки → 409
+        ← {"error":"invalid_status","message":"Заявка уже на рассмотрении — отзыв невозможен","request_id":"bcf7ee7f-f4bf-4957-b74f-073c4ff3333f"}
+[OK]   501 (ожидалось 501) OP-06 проверка полноты — заглушка 501
+        ← {"error":"not_implemented","message":"Проверка полноты языковой моделью в этой версии не реализована"}
+[OK]   501 (ожидалось 501) OP-11 отчёт о полноте — заглушка 501
+        ← {"error":"not_implemented","message":"Проверка полноты языковой моделью в этой версии не реализована"}
+
+=== OP-08 обновление с ротацией и OP-15 выход
+[OK]   200 (ожидалось 200) обновление токена по cookie
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   400 (ожидалось 400) без X-Requested-With → 400
+        ← {"error":"invalid_request","message":"Требуется заголовок X-Requested-With","request_id":"8e5e5679-2233-47ee-b65a-232b02ce8151"}
+[OK]   200 (ожидалось 200) новый токен доступа работает
+        ← {"items":[{"id":"e0000000-0000-4000-8000-000000000003","status":"draft","type":"material_aid"},{"id":"e0000000-0000-4000-8000-000000000002","status":"submitted"
+[OK]   401 (ожидалось 401) повторное использование старого refresh → 401
+        ← {"error":"invalid_refresh","message":"Требуется действующий токен доступа","request_id":"0cb19a73-5707-4627-a24b-6971e81e1507"}
+[OK]   401 (ожидалось 401) после обнаружения повтора вся сессия отозвана → 401
+        ← {"error":"session_revoked","message":"Требуется действующий токен доступа","request_id":"86839e7c-0ea6-4b0f-9f7b-57fa6b427662"}
+[OK]   200 (ожидалось 200) вход stud002
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   204 (ожидалось 204) выход
+        ← null
+[OK]   401 (ожидалось 401) ПОСЛЕ ВЫХОДА токен отклоняется (отозван) → 401
+        ← {"error":"session_revoked","message":"Требуется действующий токен доступа","request_id":"de4440aa-74bc-4b34-9e49-410e2cadfe0e"}
+
+=== OP-14 регистрация
+[OK]   201 (ожидалось 201/409) регистрация действующего обучающегося stud010
+        ← {"id":"53ab5928-f31e-47a7-b72f-26b1cd81363d"}
+[OK]   422 (ожидалось 422) регистрация с чужим e-mail → 422
+        ← {"error":"registration_failed","message":"Регистрация невозможна: данные не совпадают с каталогом обучающихся","request_id":"3c7a8abc-bbf2-4cb3-b296-d912d15f7df
+[OK]   400 (ожидалось 400) лишнее поле role при регистрации → 400
+        ← {"error":"invalid_request","message":"Недопустимое поле в теле запроса: role","request_id":"fca9fcad-3b26-4a2f-8cd4-f4b0c7697282"}
+[OK]   пароль в БД — Argon2id с параметрами m=65536,t=3,p=4
+
+=== OP-09 восстановление доступа (почта — Mailpit)
+[OK]   202 (ожидалось 202) запрос для существующего адреса → 202
+        ← {"status":"accepted","message":"Если адрес зарегистрирован, на него отправлено письмо со ссылкой для смены пароля"}
+[OK]   202 (ожидалось 202) запрос для несуществующего адреса → такой же 202
+        ← {"status":"accepted","message":"Если адрес зарегистрирован, на него отправлено письмо со ссылкой для смены пароля"}
+[OK]   ответы неразличимы
+[OK]   письмо с одноразовой ссылкой пришло
+[OK]   200 (ожидалось 200) вход stud003
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+[OK]   204 (ожидалось 204) смена пароля по коду
+        ← null
+[OK]   400 (ожидалось 400) код срабатывает один раз → 400
+        ← {"error":"invalid_reset_token","message":"Код восстановления недействителен или истёк","request_id":"0b43c0c1-5c11-4d04-b0a5-1b2af1418c89"}
+[OK]   401 (ожидалось 401) старые сессии завершены после смены пароля → 401
+        ← {"error":"session_revoked","message":"Требуется действующий токен доступа","request_id":"32c8c19a-bde9-4e0b-87c0-8c4f0039abfb"}
+[OK]   401 (ожидалось 401) вход со старым паролем → 401
+        ← {"error":"invalid_credentials","message":"Неверный логин или пароль","request_id":"2601b92a-fb5b-4fec-b6fe-adce93932a6d"}
+[OK]   200 (ожидалось 200) вход stud003
+        ← {"access_token":"eyJraWQiOiJhdXRoLTEiLCJ0eXAiOiJhdCtqd3QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzY2hvbGFyc2hpcC1hcGkiLCJzdWIiOiJiMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMD
+
+=== Учётная запись приложения в БД (задание 2.2)
+[OK]   DROP TABLE под svc_applications → ошибка прав — ERROR: ERROR:  must be owner of table users
+[OK]   CREATE TABLE под svc_applications → ошибка прав — ERROR: ERROR:  permission denied for schema public
+[OK]   UPDATE audit_log под svc_review → ошибка прав (журнал только дополняется) — ERROR: ERROR:  permission denied for table audit_log
+[OK]   svc_applications не читает реестр выплат — ERROR: ERROR:  permission denied for table payout_entries
+
+=== Ограничение частоты (шлюз, счётчики в Redis)
+[OK]   серия попыток входа с одного IP упирается в лимит 20/мин → 429 — HTTP 429 на попытке 6
+
+ИТОГО: успешно 149, ошибок 0
